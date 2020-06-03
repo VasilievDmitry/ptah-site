@@ -1,5 +1,6 @@
 import TheMainPage from './components/pages/TheMainPage'
 import TheLoginPage from './components/pages/TheLoginPage'
+import TheSignUpPage from './components/pages/TheSignUpPage'
 
 const routes = [
   {
@@ -14,6 +15,13 @@ const routes = [
     component: TheLoginPage,
     meta: {
       title: 'Ptah — Sign in'
+    }
+  },
+  {
+    path: '/signup',
+    component: TheSignUpPage,
+    meta: {
+      title: 'Ptah — Sign up'
     }
   }
 ]
