@@ -59,6 +59,7 @@ export default {
     /**
      * confirm user's email by token from link
      * @param commit
+     * @param dispatch
      * @param token {String} confirm token
      * @returns {Promise.<T>|Promise<any>|Promise}
      */
@@ -85,11 +86,15 @@ export default {
 
     /**
      * second step of restoring password - generate new password and send it via email
+     * @param commit
+     * @param dispatch
      * @param token {String}
      */
-    restorePwdSecond (token) {
+    restorePwdSecond ({ commit, dispatch }, token) {
       return axios.post(`${process.env.VUE_APP_API}/auth/restore_password_step1`, { token })
         .then((response) => {
+          commit('setUser', response.data)
+          dispatch('setToken', response.data)
           return response.data
         })
     },

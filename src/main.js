@@ -7,6 +7,7 @@ import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 import axios from 'axios/index'
+import '@components/_globals'
 import { getCookie, deleteCookie } from './utils'
 
 Vue.config.productionTip = false
