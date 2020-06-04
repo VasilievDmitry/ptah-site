@@ -50,9 +50,9 @@ export default {
     login ({ commit, dispatch }, data) {
       return axios.post(`${process.env.VUE_APP_API}/auth/login`, data)
         .then((response) => {
-          commit('setUser', response)
-          dispatch('setToken', response)
-          return response
+          commit('setUser', response.data)
+          dispatch('setToken', response.data)
+          return response.data
         })
     },
 
