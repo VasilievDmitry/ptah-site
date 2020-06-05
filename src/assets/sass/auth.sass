@@ -40,18 +40,36 @@ body
     position: relative
     background-color: #ffffff
 
-    @media only screen and (max-width: 768px)
-      &
-        width: 100%
-  &-left
-    background-image: url(../../assets/images/bg_auth.svg)
     background-size: cover
     background-position: bottom left
     background-repeat: no-repeat
     @media only screen and (max-width: 768px)
       &
+        width: 100%
+  &-left
+    background-image: url(../../assets/images/bg_auth.svg)
+    @media only screen and (max-width: 768px)
+      &
         display: none
   &-right
+    @media only screen and (max-width: 768px)
+      &
+        background-image: url(../../assets/images/bg_auth_m.svg)
+    &__logo-ptah
+      position: absolute
+      top: 1.6rem
+      left: 1.6rem
+
+      display: none
+
+      width: 9rem
+      height: 3rem
+
+      & svg path
+        fill: #0D0D0C
+      @media only screen and (max-width: 768px)
+        &
+          display: block
     &__get-start
       position: absolute
       top: 1rem
@@ -64,7 +82,7 @@ body
       display: flex
       justify-content: flex-end
       align-items: center
-      & a
+      & .link
         display: inline-block
         margin: 0 0 0 1.6rem
         background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
@@ -78,6 +96,31 @@ body
           background: linear-gradient(-270deg, #9E00FB 0%, #F9005B 100%)
           -webkit-background-clip: text
           -webkit-text-fill-color: transparent
+      @media only screen and (max-width: 768px)
+        &
+          top: auto
+          bottom: 10%
+          right: 0
+          left: 0
+          text-align: center
+
+          justify-content: center
+          &._m-hide
+            display: none
+    .link-m
+      display: none
+
+      position: absolute
+      top: 2.5rem
+      right: 3rem
+      font-size: 1.6rem
+      font-weight: 500
+      line-height: 2.2rem
+      color: #0D0D0C
+      letter-spacing: 0.16px
+      @media only screen and (max-width: 768px)
+        &
+          display: block
     &-contain
       padding: 1rem
 
@@ -161,7 +204,16 @@ body
     display: flex
     align-items: center
     justify-content: center
+  &__forgot-link
+    font-size: 1.2rem
+    line-height: 1.6rem
+    color: #0D0D0C
+    opacity: 0.6
 
+    transition: all .3s cubic-bezier(.2,.85,.4,1.275)
+    &:hover
+      cursor: pointer
+      opacity: 1
 
 .b-form
   width: 100%

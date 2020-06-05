@@ -1,14 +1,84 @@
 <template>
   <div>
-    <form action="" @submit="submit" v-if="!emailSendSuccess">
-      <div><input type="email" placeholder="email" v-model="email"></div>
-      <div><button type="submit">Submit</button></div>
-      <div class="error" v-if="errorText.length">{{errorText}}</div>
-    </form>
-
     <div v-if="emailSendSuccess">
       An email was sent to the specified email address. Please follow the link in it.
     </div>
+
+    <form action="" @submit.prevent="submit" class="b-auth" v-if="!emailSendSuccess">
+      <div class="b-auth-left">
+      <span class="b-auth-logo-ptah">
+        <BasePtahLogo />
+      </span>
+
+        <span class="b-auth-center">
+        <span class="b-auth-center__text">
+          Sell your game directly to consumers with
+        </span>
+        <span class="b-auth-center__logo-ptah">
+          <BasePtahLogo />
+        </span>
+      </span>
+      </div>
+      <div class="b-auth-right">
+        <span class="b-auth-right__logo-ptah">
+          <BasePtahLogo />
+        </span>
+        <span class="b-auth-right__get-start">
+          <span>
+            Don`t have an account?
+          </span>
+          <span class="link link_m-hide" @click="goToSignUp">
+            Get started
+          </span>
+        </span>
+        <div class="b-auth-right-contain">
+          <!-- form -->
+          <div class="b-auth-form">
+            <div class="b-auth-form__chapter">
+              Forgot your password?
+            </div>
+
+            <div class="b-auth-form__description">
+              Enter your email address below and we'll get you back on track.
+            </div>
+
+            <div class="b-auth-form__delimiter" />
+
+            <div class="b-form">
+              <div class="b-form-row">
+                <base-text-field-auth
+                  label="Email"
+                  placeholder="Email or login"
+                  type="text"
+                  :hasError="errorText.length > 0"
+                  :errorText="errorText"
+                  v-model="email"
+                />
+              </div><!--/.b-form-row -->
+              <div class="b-form-row">
+                <div class="b-auth-form__description-after-form">
+                  <button
+                    class="b-button-main"
+                    type="submit"
+                    :disabled="!disabledBtn"
+                  >
+                    Request
+                  </button>
+                </div>
+              </div><!--/.b-form-row -->
+              <div class="b-form-row">
+                <div class="b-auth-form__description-after-form">
+                  <span class="b-auth-form__forgot-link" @click="goToSignIn">
+                    Back to Sign in
+                  </span>
+                </div>
+              </div><!--/.b-form-row -->
+            </div>
+          </div>
+          <!--/ end form -->
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -23,6 +93,12 @@ export default {
       email: '',
       emailSendSuccess: false,
       errorText: ''
+    }
+  },
+
+  computed: {
+    disabledBtn () {
+      return this.email !== ''
     }
   },
 
@@ -41,6 +117,14 @@ export default {
             this.errorText = 'Something went wrong'
           }
         })
+    },
+
+    goToSignIn () {
+      this.$router.push({ path: `/login` })
+    },
+
+    goToSignUp () {
+      this.$router.push({ path: `/signup` })
     }
   }
 }

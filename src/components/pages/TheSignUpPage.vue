@@ -1,14 +1,5 @@
 <template>
   <div>
-    <!--h1>Sign up</h1>
-    <form action="" @submit.prevent="submit">
-      <div><input type="email" v-model="email" placeholder="email"/></div>
-      <div><input type="text" v-model="name" placeholder="name"></div>
-      <div><input type="password" v-model="password" placeholder="password" autocomplete="new-password"/></div>
-      <div><input type="password" v-model="repeatPassword" placeholder="repeat password"/></div>
-      <div><button type="submit">Sign up</button></div>
-    </form-->
-
     <form action="" @submit.prevent="submit" class="b-auth">
       <div class="b-auth-left">
       <span class="b-auth-logo-ptah">
@@ -25,17 +16,20 @@
       </span>
       </div>
       <div class="b-auth-right">
-      <span class="b-auth-right__get-start">
-        <span>
-          Don`t have an account?
+        <span class="b-auth-right__logo-ptah">
+          <BasePtahLogo />
         </span>
-        <a
-          href="https://docs.stg.ptah.super.com/"
-          target="_blank"
-        >
-          Get started
-        </a>
-      </span>
+        <span class="b-auth-right__get-start _m-hide">
+          <span>
+            Already have an account?
+          </span>
+          <span class="link" @click="goToLoginPage">
+            Sign in
+          </span>
+        </span>
+        <span class="link-m" @click="goToLoginPage">
+          Sign in
+        </span>
         <div class="b-auth-right-contain">
           <!-- form -->
           <div class="b-auth-form">
@@ -200,11 +194,8 @@ export default {
         })
           .then(() => {
             // redirect to onboarding
-            this.resetErrors()
           })
           .catch(e => {
-            this.resetErrors()
-
             const mess = e.response.data.error.message
             const name = this.errorsArr[mess].name
             const text = this.errorsArr[mess].text
@@ -223,6 +214,10 @@ export default {
       Object.keys(this.errorTexts).forEach(key => {
         this.errorTexts[key] = ''
       })
+    },
+
+    goToLoginPage () {
+      this.$router.push({ path: `/login` })
     }
   }
 }

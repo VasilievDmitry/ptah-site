@@ -115,6 +115,8 @@ export default {
     clickEye () {
       this.showPass = !this.showPass
 
+      this.$refs.inputText.focus()
+
       this.showPass
         ? this.inputType = 'text'
         : this.inputType = this.type
