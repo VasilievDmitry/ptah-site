@@ -5,6 +5,9 @@ import qs from 'qs'
 const allowedPaths = [
   '/',
   '/login',
+  '/signup',
+  '/restore',
+  '/policy',
   '/404'
 ]
 
