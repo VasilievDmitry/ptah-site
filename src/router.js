@@ -1,10 +1,12 @@
 import VueRouter from 'vue-router'
 import routes from './routes'
 import qs from 'qs'
+import { getCookie } from './utils'
 
 const allowedPaths = [
   '/',
   '/login',
+  '/signup',
   '/404'
 ]
 
@@ -26,7 +28,7 @@ let router = new VueRouter(
 
 router.beforeEach(
   (to, from, next) => {
-    if (!allowedPaths.includes(to.path) && (localStorage.getItem('token') === null)) {
+    if (!allowedPaths.includes(to.path) && (getCookie('token') === null)) {
       next('/login')
       return
     }

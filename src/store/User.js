@@ -112,7 +112,7 @@ export default {
       })
         .then((response) => {
           dispatch('setToken', response.data)
-          return response
+          return response.data
         })
         .catch((error) => {
           console.warn(error)
