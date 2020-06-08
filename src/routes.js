@@ -1,6 +1,8 @@
 import TheMainPage from './components/pages/TheMainPage'
 import TheLoginPage from './components/pages/TheLoginPage'
 import TheSignUpPage from './components/pages/TheSignUpPage'
+import TheRestorePwdPage from './components/pages/TheRestorePwdPage'
+import ThePrivacyPolicyPage from './components/pages/ThePrivacyPolicyPage'
 
 const routes = [
   {
@@ -22,6 +24,20 @@ const routes = [
     component: TheSignUpPage,
     meta: {
       title: 'Ptah — Sign up'
+    }
+  },
+  {
+    path: '/restore',
+    component: TheRestorePwdPage,
+    meta: {
+      title: 'Ptah — Restore password'
+    }
+  },
+  {
+    path: '/policy',
+    component: ThePrivacyPolicyPage,
+    meta: {
+      title: 'Ptah — Terms of Service & Privacy Policy'
     }
   }
 ]
