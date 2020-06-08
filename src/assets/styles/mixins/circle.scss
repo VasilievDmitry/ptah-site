@@ -1,0 +1,35 @@
+/// @param {Integer} $item-count - Number of items on the circle
+/// @param {Length} $circle-size - Large circle size
+@mixin on-circle($item-count, $circle-size) {
+    position: relative;
+    border-radius: 50%;
+
+    > * {
+        display: block;
+        position: absolute;
+        top:  50%;
+        left: 50%;
+        width: 68px;
+        height: 68px;
+        margin: -30px;
+        border-radius: 50%;
+        $angle: (360 / $item-count);
+        $rot: 0;
+
+        @media (max-width: $tablet) {
+            width: 48px;
+            height: 48px;
+            margin: -20px;
+        }
+
+        @for $i from 1 through $item-count {
+            &:nth-of-type(#{$i}) {
+                transform:
+                        rotate($rot * 1deg - 90deg)
+                        translate($circle-size / 2)
+                        rotate($rot * -1deg + 90deg);
+            }
+            $rot: $rot + $angle;
+        }
+    }
+}

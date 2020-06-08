@@ -1,0 +1,74 @@
+.swiper-button {
+    position: absolute;
+    z-index: 3;
+    top: 60%;
+    left: 65px;
+    transform: translateY(-50%);
+    width: 55px;
+    min-width: auto;
+    height: 55px;
+    padding: 0;
+    background: $purple-blue;
+    border: none;
+    border-radius: 50%;
+    transition: box-shadow $ease-in;
+
+    @media (max-width: $mobile) {
+        left: 20px;
+        width: 32px;
+        height: 32px;
+    }
+
+    &:hover {
+        box-shadow: 0px 1px 5px rgba($black, 0.1), 0px 3px 4px rgba($black, 0.12), 0px 2px 4px rgba($black, 0.14);
+    }
+
+    &:active {
+        box-shadow: 0px 8px 10px rgba($black, 0.14), 0px 3px 14px rgba($black, 0.12);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 18px;
+        left: 22px;
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+        border-left: 4px solid $white;
+        border-bottom: 4px solid $white;
+        transform: rotate(45deg);
+
+        @media (max-width: $mobile) {
+            top: 11px;
+            left: 12px;
+            width: 8px;
+            height: 8px;
+            border-left: 3px solid $white;
+            border-bottom: 3px solid $white;
+        }
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.1;
+        pointer-events: none;
+    }
+
+    &.swiper-button-next {
+        left: calc(100% - 120px);
+        right: auto;
+
+        @media (max-width: $mobile) {
+            left: calc(100% - 50px);
+        }
+
+        &::after {
+            left: 15px;
+            transform: rotate(-135deg);
+
+            @media (max-width: $mobile) {
+                left: 10px;
+            }
+        }
+    }
+}
