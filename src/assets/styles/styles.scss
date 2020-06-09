@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@900&family=Rubik:wght@500;700&display=swap');
+@import "~normalize.css/normalize.css";
+@import "src/assets/styles/colors";
+@import "src/assets/styles/variables";
+@import "src/assets/styles/fonts";
+
+html, body {
+    overflow-x: hidden;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $font-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    font-size: 22px;
+    line-height: 24px;
+
+    @media (max-width: $desktop) {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 130px 0 0;
+
+    @media (max-width: $desktop) {
+        padding: 71px 0 0;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 0;
+    }
+}
+
+.link--embeded {
+    padding: 0;
+    font-size: 26px;
+    line-height: 36px;
+    text-decoration: none;
+    color: $purple2;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: $laptop) {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
