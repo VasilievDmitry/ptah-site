@@ -7,7 +7,10 @@
       <h2 class="feature__subtitle">
         {{ subtitle }}
       </h2>
-      <Button text="Try for free" />
+      <Button
+        @click="onStartFreeClick"
+        text="Try for free"
+      />
       <div class="feature__icon">
         <div class="feature__icon-gif-wrapper">
           <img
@@ -32,6 +35,11 @@ export default {
   props: {
     title: String,
     subtitle: String
+  },
+  methods: {
+    onStartFreeClick () {
+      this.$router.push({ path: `/signup` })
+    }
   }
 };
 </script>

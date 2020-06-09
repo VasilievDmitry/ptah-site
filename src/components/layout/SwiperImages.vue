@@ -1,7 +1,10 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
     <swiper-slide v-for="(image, index) in images" :key="image + index">
-      <img :src="`../assets/images/${image}`" alt="slide" />
+      <img
+        :src="require(`@assets/images/${image}`)"
+        alt="slide"
+      />
     </swiper-slide>
     <button
       class="swiper-button swiper-button-prev"

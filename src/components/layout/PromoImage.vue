@@ -3,7 +3,7 @@
     <div class="promo-image__container">
       <div class="promo-image__content">
         <img
-          :src="`../assets/images/${icon}`"
+          :src="require(`@assets/images/${icon}`)"
           alt="icon"
           class="promo-image__icon"
         />
@@ -11,7 +11,7 @@
         <p class="promo-image__desc">{{ description }}</p>
       </div>
       <img
-        :src="`../assets/images/${image}`"
+        :src="require(`@assets/images/${image}`)"
         alt="image"
         class="promo-image__image"
       />

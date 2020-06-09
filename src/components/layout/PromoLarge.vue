@@ -2,13 +2,13 @@
   <section class="promo-large">
     <div class="promo-large__upper">
       <img
-        :src="`../assets/images/${image}`"
+        :src="require(`@assets/images/${image}`)"
         alt="Promo image"
         class="promo-large__upper-image"
       />
       <div class="promo-large__upper-content">
         <img
-          :src="`../assets/images/${icon}`"
+          :src="require(`@assets/images/${icon}`)"
           alt="Promo icon"
           class="promo-large__upper-icon"
         />

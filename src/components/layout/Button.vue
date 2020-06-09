@@ -1,6 +1,12 @@
 <template>
-  <button @click="handleClick" class="button" :disabled="isDisabled">
-    <span class="button__text">{{ text }}</span>
+  <button
+    @click="handleClick"
+    class="button"
+    :disabled="isDisabled"
+  >
+    <span class="button__text">
+      {{ text }}
+    </span>
   </button>
 </template>
 
@@ -14,7 +20,7 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$emit("onBurgerClick");
+      this.$emit("click");
     }
   },
   data: () => ({

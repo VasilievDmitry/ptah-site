@@ -1,5 +1,16 @@
 <template>
-  <router-link class="link" :to="href">{{ text }}</router-link>
+  <span>
+    <template v-if="!externalRef">
+      <router-link class="link" :to="href">
+        {{ text }}
+      </router-link>
+    </template>
+    <template v-else>
+      <a class="link" :href="href" target="_blank">
+        {{ text }}
+      </a>
+    </template>
+  </span>
 </template>
 
 <script>
@@ -7,7 +18,11 @@ export default {
   name: "Link",
   props: {
     href: String,
-    text: String
+    text: String,
+    externalRef: {
+      default: false,
+      type: Boolean
+    }
   }
 };
 </script>

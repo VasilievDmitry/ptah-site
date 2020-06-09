@@ -5,7 +5,11 @@
         {{ title }}
       </h3>
       <p class="promo-short__subtitle">{{ subtitle }}</p>
-      <Button class="black" :text="button" />
+      <Button
+        class="black"
+        :text="button"
+        @click="onStartFreeClick"
+      />
     </div>
   </section>
 </template>
@@ -20,6 +24,11 @@ export default {
     title: String,
     subtitle: String,
     button: String
+  },
+  methods: {
+    onStartFreeClick () {
+      this.$router.push({ path: `/signup` })
+    }
   }
 };
 </script>

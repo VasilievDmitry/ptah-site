@@ -34,9 +34,9 @@
             <li class="footer__menu-item">
               <Link href="/" text="Overview" />
             </li>
-            <li class="footer__menu-item">
+            <!--li class="footer__menu-item">
               <Link href="/pricing" text="Pricing" />
-            </li>
+            </li-->
           </ul>
           <ul class="footer__menu">
             <li class="footer__menu-header">
@@ -57,7 +57,7 @@
               <Link href="/about" text="About us" />
             </li>
             <li class="footer__menu-item footer__menu-item--icon">
-              <a href="github.com" class="footer__menu-link" target="_blank">
+              <a :href="linkToGithub" class="footer__menu-link" target="_blank">
                 <span>GitHub</span>
                 <IconGithub />
               </a>
@@ -76,7 +76,7 @@
             </li>
           </ul>
         </div>
-        <a href="#" class="footer__blog">
+        <!--a href="#" class="footer__blog">
           <h5 class="footer__blog-title">
             From the blog
           </h5>
@@ -84,7 +84,7 @@
           <span class="footer__blog-description"
             >How to promote your landing page?</span
           >
-        </a>
+        </a-->
       </div>
       <p class="footer__copyright">© 2020, Phat. All Rights Reserved.</p>
     </div>
@@ -100,7 +100,10 @@ import IconTwit from "../../assets/icons/twit.svg";
 
 export default {
   name: "Footer",
-  components: { Button, Link, IconGithub, IconFb, IconTwit }
+  components: { Button, Link, IconGithub, IconFb, IconTwit },
+  data: () => ({
+    linkToGithub: process.env.VUE_APP_GITHUB
+  }),
 };
 </script>
 
@@ -328,6 +331,7 @@ export default {
     align-items: center;
     color: $white;
     text-decoration: none;
+    cursor: pointer;
 
     > svg {
       width: 38px;

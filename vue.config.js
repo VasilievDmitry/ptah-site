@@ -18,18 +18,18 @@ module.exports = {
 
     svgRule
       .use("babel-loader")
-      .loader("babel-loader")
-      .end()
+        .loader("babel-loader")
+        .end()
       .use("vue-svg-loader")
-      .loader("vue-svg-loader")
-      .options({
-        svgo: {
-          plugins: [
-            { removeDimensions: true },
-            { removeUselessStrokeAndFill: true },
-            { removeViewBox: false }
-          ]
-        }
-      });
+        .loader("vue-svg-loader")
+        .options({
+          svgo: {
+            plugins: [
+              { removeDimensions: true },
+              { removeUselessStrokeAndFill: true },
+              { removeViewBox: false }
+            ]
+          }
+        });
   }
 }

@@ -7,7 +7,7 @@
             <div class="swiper-rounded-images__image-wrapper">
               <img
                 class="swiper-rounded-images__image"
-                :src="`../assets/images/${slide.image}`"
+                :src="require(`@assets/images/${slide.image}`)"
                 alt="slide"
               />
             </div>

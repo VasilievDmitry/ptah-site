@@ -3,7 +3,11 @@
     <div class="promo__container">
       <h3 class="promo__title">{{ title }}</h3>
       <p class="promo__subtitle">{{ subtitle }}</p>
-      <Button :class="{ alter: isAlter }" :text="button" />
+      <Button
+        :class="{ alter: isAlter }"
+        :text="button"
+        @click="handleClick"
+      />
     </div>
   </section>
 </template>
@@ -18,6 +22,11 @@ export default {
     subtitle: String,
     button: String,
     isAlter: Boolean
+  },
+  methods: {
+    handleClick() {
+      this.$emit("clickBtnPromo");
+    }
   }
 };
 </script>

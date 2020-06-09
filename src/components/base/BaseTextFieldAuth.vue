@@ -155,6 +155,7 @@ export default {
       margin-bottom: .9rem
       display: block
       position: relative
+      text-align: left
       &_focus
         color: rgba(13, 13, 12, 0.5)
 

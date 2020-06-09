@@ -21,19 +21,24 @@
             class="header__menu-link linkHeader"
           />
         </li>
-        <li class="header__menu-item">
+        <!--li class="header__menu-item">
           <Link
             href="/pricing"
             text="Pricing"
             class="header__menu-link linkHeader"
           />
-        </li>
+        </li-->
         <li class="header__menu-item">
-          <Link href="#" text="Docs" class="header__menu-link linkHeader" />
+          <Link
+            :href="linkToHelp"
+            :externalRef="true"
+            text="Docs"
+            class="header__menu-link linkHeader"
+          />
         </li>
         <li class="header__menu-item">
           <a
-            href="github.com"
+            :href="linkToGithub"
             target="_blank"
             class="header__menu-link linkHeader header__menu-link--icon"
           >
@@ -46,11 +51,17 @@
       </ul>
     </nav>
     <div class="header__controls">
-      <a href="#" class="header__controls-login">Sign in</a>
-      <Button class="small header__controls-button" text="Start free" />
+      <a href="/login" class="header__controls-login">
+        Sign in
+      </a>
+      <Button
+        class="small header__controls-button"
+        text="Start for Free"
+        @click="onStartFreeClick"
+      />
       <Button
         class="burger header__controls-toggle"
-        @onBurgerClick="onBurgerClick"
+        @click="onBurgerClick"
       />
     </div>
   </header>
@@ -66,11 +77,16 @@ export default {
   name: "Header",
   components: { Button, Link, IconLogo, IconGithub },
   data: () => ({
-    isActive: false
+    isActive: false,
+    linkToHelp: process.env.VUE_APP_HELP,
+    linkToGithub: process.env.VUE_APP_GITHUB
   }),
   methods: {
-    onBurgerClick() {
+    onBurgerClick () {
       this.isActive = !this.isActive;
+    },
+    onStartFreeClick () {
+      this.$router.push({ path: `/signup` })
     }
   }
 };

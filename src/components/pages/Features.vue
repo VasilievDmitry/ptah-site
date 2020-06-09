@@ -95,6 +95,7 @@
         title="Create your own website"
         subtitle="and sell your game directly to consumers"
         button="Try for free"
+        @clickBtnPromo="clickBtnPromo"
       />
     </main>
     <Footer />
@@ -118,6 +119,11 @@ export default {
     Footer,
     Header,
     Promo
+  },
+  methods: {
+    clickBtnPromo () {
+      this.$router.push({ path: `/signup` })
+    }
   }
 };
 </script>

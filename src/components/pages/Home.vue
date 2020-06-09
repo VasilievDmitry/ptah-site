@@ -51,6 +51,7 @@
         subtitle="unlimited number of landing pages included"
         button="See all specs"
         isAlter
+        @clickBtnPromo="clickBtnPromo"
       />
       <SwiperImages
         :images="[
@@ -93,6 +94,14 @@ export default {
     Header,
     FeatureMain,
     SwiperImages
+  },
+  data: () => ({
+    linkToSpecs: process.env.VUE_APP_HELP
+  }),
+  methods: {
+    clickBtnPromo () {
+      window.open(this.linkToSpecs)
+    }
   }
 };
 </script>
