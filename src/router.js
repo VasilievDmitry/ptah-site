@@ -7,6 +7,8 @@ const allowedPaths = [
   '/',
   '/login',
   '/signup',
+  '/restore',
+  '/policy',
   '/404'
 ]
 
