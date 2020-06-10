@@ -98,7 +98,8 @@ export default {
     return {
       email: '',
       password: '',
-      errorText: ''
+      errorText: '',
+      bg: 'bg_auth.svg'
     }
   },
 

@@ -9,6 +9,9 @@ const allowedPaths = [
   '/signup',
   '/restore',
   '/policy',
+  '/about',
+  '/pricing',
+  '/features',
   '/404'
 ]
 

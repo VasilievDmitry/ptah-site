@@ -1,15 +1,20 @@
-import TheMainPage from './components/pages/TheMainPage'
 import TheLoginPage from './components/pages/TheLoginPage'
 import TheSignUpPage from './components/pages/TheSignUpPage'
 import TheRestorePwdPage from './components/pages/TheRestorePwdPage'
 import ThePrivacyPolicyPage from './components/pages/ThePrivacyPolicyPage'
 
+import Home from "./components/pages//Home.vue";
+import About from "./components/pages/About.vue";
+import Pricing from "./components/pages/Pricing.vue";
+import Features from "./components/pages/Features.vue";
+import Ui from "./components/pages/Ui.vue";
+
 const routes = [
   {
     path: '/',
-    component: TheMainPage,
+    component: Home,
     meta: {
-      title: 'Ptah — main page'
+      title: 'Ptah — Home'
     }
   },
   {
@@ -38,6 +43,34 @@ const routes = [
     component: ThePrivacyPolicyPage,
     meta: {
       title: 'Ptah — Terms of Service & Privacy Policy'
+    }
+  },
+  {
+    path: '/about',
+    component: About,
+    meta: {
+      title: 'Ptah — About'
+    }
+  },
+  {
+    path: '/pricing',
+    component: Pricing,
+    meta: {
+      title: 'Ptah — Pricing'
+    }
+  },
+  {
+    path: '/features',
+    component: Features,
+    meta: {
+      title: 'Ptah — Features'
+    }
+  },
+  {
+    path: '/ui',
+    component: Ui,
+    meta: {
+      title: 'Ptah — Ui kit'
     }
   }
 ]
