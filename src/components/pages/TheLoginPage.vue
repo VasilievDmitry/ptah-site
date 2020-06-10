@@ -40,8 +40,8 @@
               <div class="b-form-row">
                 <base-text-field-auth
                   label="Email"
-                  placeholder="Email or login"
-                  type="text"
+                  placeholder="Email"
+                  type="email"
                   :hasError="errorText.length > 0"
                   v-model="email"
                 />
