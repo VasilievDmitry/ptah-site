@@ -4,8 +4,8 @@
     <main class="main">
       <FeaturesDesc
         title="Features"
-        heading="Create a great landings with Ptah"
-        content="Ultrices amet condimentum amet sem sit integer eget dictum tortor. Hendrerit amet volutpat blandit malesuada in egestas. Id faucibus sit ut a ut elementum massa mi. Id faucibus sit ut a ut elementum massa mi."
+        heading="Promote your game with a professional site builder"
+        content="The Ptah makes editing pretty intuitive. Change and customize content right on the page in the real-time autosave preview area."
         :featuresList="[
           {
             name: '100+ Ready-to-Use Templates',
@@ -94,7 +94,7 @@
       <Promo
         title="Create your own website"
         subtitle="and sell your game directly to consumers"
-        button="Try for free"
+        button="Start for free"
         @clickBtnPromo="clickBtnPromo"
       />
     </main>

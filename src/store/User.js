@@ -115,8 +115,8 @@ export default {
           return response.data
         })
         .catch((error) => {
-          console.warn(error)
           dispatch('logout')
+          return error
         })
     },
 

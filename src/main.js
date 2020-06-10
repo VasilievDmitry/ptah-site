@@ -8,7 +8,7 @@ import store from './store'
 import { sync } from 'vuex-router-sync'
 import axios from 'axios/index'
 import '@components/_globals'
-import { getCookie, deleteCookie } from './utils'
+import { getCookie } from './utils'
 
 Vue.config.productionTip = false
 
@@ -33,10 +33,11 @@ axios.interceptors.request.use(setAuthCb)
 let refreshTokenPromise
 
 const createUpdateAuthInterceptor = (store, http) => async error => {
-  if (error.response.status === 500 &&
-    (error.response.config.url.indexOf('refresh') > -1 || error.response.config.url.indexOf('logout'))) {
-    deleteCookie('token')
-    window.location.href = `${process.env.VUE_APP_DOMAIN}/login`
+  let method = error.response.config.url.split('/').pop()
+  let status = error.response.status
+
+  if ((status === 500 || status === 401) && method === 'refresh') {
+    store.dispatch('User/logout')
   }
   if (error.response.data.error.code !== 401) {
     return Promise.reject(error)
@@ -47,6 +48,7 @@ const createUpdateAuthInterceptor = (store, http) => async error => {
   }
 
   await refreshTokenPromise
+
   refreshTokenPromise = null
 
   return http(error.config)

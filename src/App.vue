@@ -14,6 +14,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { getCookie } from '@src/utils'
 
 export default {
   name: 'App',
@@ -33,10 +34,12 @@ export default {
       // restore pwd
       this.restore(this.$route.query.restore_pwd)
     }
+
+    this.checkAuth()
   },
 
   methods: {
-    ...mapActions('User', ['confirmEmail', 'restorePwdSecond']),
+    ...mapActions('User', ['confirmEmail', 'restorePwdSecond', 'getUser']),
 
     confirm (token) {
       this.confirmEmail(token)
@@ -54,6 +57,13 @@ export default {
           // redirect to new pwd window
         })
         .catch(e => console.warn(e))
+    },
+
+    checkAuth () {
+      let token = getCookie('token')
+      if (token !== null && token.length !== 0) {
+        this.getUser()
+      }
     }
   }
 }
