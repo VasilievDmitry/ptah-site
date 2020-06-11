@@ -49,9 +49,9 @@
       <Promo
         title="Create as much as you need -"
         subtitle="unlimited number of landing pages included"
-        button="See all specs"
+        button="See full specs"
         isAlter
-        @clickBtnPromo="clickBtnPromo"
+        @clickBtnPromo="$router.push({ path: '/features' })"
       />
       <SwiperImages
         :images="[
@@ -94,14 +94,6 @@ export default {
     Header,
     FeatureMain,
     SwiperImages
-  },
-  data: () => ({
-    linkToSpecs: process.env.VUE_APP_HELP
-  }),
-  methods: {
-    clickBtnPromo () {
-      window.open(this.linkToSpecs)
-    }
   }
 };
 </script>

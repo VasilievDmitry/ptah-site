@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition mode="out-in" name="fade">
+      <router-view></router-view>
+    </transition>
 
     <base-confirm
       :isHideCancel="true"
@@ -71,4 +73,11 @@ export default {
 
 <style lang="scss">
 @import "assets/styles/styles";
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 </style>

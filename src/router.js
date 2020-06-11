@@ -27,6 +27,9 @@ let router = new VueRouter(
       let result = qs.stringify(query)
 
       return result ? ('?' + result) : ''
+    },
+    scrollBehavior() {
+      return { x: 0, y: 0 }
     }
   }
 )
