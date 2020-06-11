@@ -126,13 +126,17 @@ export default {
     submit () {
       this.$v.$touch()
 
-      if (this.$v.$invalid) {
+      if (!this.$v.$invalid) {
         this.login({
           email: this.email,
           password: this.password
         })
           .then(() => {
-            // redirect to dashboard
+            if (process.env.NODE_ENV === 'production') {
+              window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+            } else {
+              this.$router.push('/')
+            }
             this.errorText = ''
           })
           .catch(() => {

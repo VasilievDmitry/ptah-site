@@ -5,7 +5,7 @@ import ThePrivacyPolicyPage from './components/pages/ThePrivacyPolicyPage'
 
 import Home from "./components/pages//Home.vue";
 import About from "./components/pages/About.vue";
-import Pricing from "./components/pages/Pricing.vue";
+// import Pricing from "./components/pages/Pricing.vue";
 import Features from "./components/pages/Features.vue";
 import Ui from "./components/pages/Ui.vue";
 
@@ -14,21 +14,21 @@ const routes = [
     path: '/',
     component: Home,
     meta: {
-      title: 'Ptah — Home'
+      title: 'Home — Ptah'
     }
   },
   {
     path: '/login',
     component: TheLoginPage,
     meta: {
-      title: 'Ptah — Sign in'
+      title: 'Sign in — Ptah'
     }
   },
   {
     path: '/signup',
     component: TheSignUpPage,
     meta: {
-      title: 'Ptah — Sign up'
+      title: 'Sign up — Ptah'
     }
   },
   {
@@ -42,28 +42,28 @@ const routes = [
     path: '/policy',
     component: ThePrivacyPolicyPage,
     meta: {
-      title: 'Ptah — Terms of Service & Privacy Policy'
+      title: 'Terms of Service & Privacy Policy — Ptah'
     }
   },
   {
     path: '/about',
     component: About,
     meta: {
-      title: 'Ptah — About'
+      title: 'About — Ptah'
     }
   },
-  {
+  /*{
     path: '/pricing',
     component: Pricing,
     meta: {
       title: 'Ptah — Pricing'
     }
-  },
+  },*/
   {
     path: '/features',
     component: Features,
     meta: {
-      title: 'Ptah — Features'
+      title: 'Features — Ptah'
     }
   },
   {
@@ -72,6 +72,18 @@ const routes = [
     meta: {
       title: 'Ptah — Ui kit'
     }
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@components/pages/404'),
+    meta: {
+      title: '404 - Ptah'
+    }
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ]
 

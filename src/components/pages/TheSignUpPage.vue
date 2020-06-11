@@ -186,7 +186,7 @@ export default {
       this.$v.$touch()
       this.resetErrors()
 
-      if (this.$v.$invalid) {
+      if (!this.$v.$invalid) {
         this.signUp({
           email: this.email,
           name: this.name,
@@ -194,6 +194,11 @@ export default {
         })
           .then(() => {
             // redirect to onboarding
+            if (process.env.NODE_ENV === 'production') {
+              window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+            } else {
+              this.$router.push('/')
+            }
           })
           .catch(e => {
             const mess = e.response.data.error.message
