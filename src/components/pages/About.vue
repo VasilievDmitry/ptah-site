@@ -46,7 +46,17 @@
             name: 'CTO',
             image: 'https://s3.protocol.one/src/o_YnxbC.jpg',
             link: 'https://github.com/misterion'
-          }
+          },
+          {
+            name: 'QA',
+            image: 'https://s3-eu-west-1.amazonaws.com/dev.s3.ptah.super.com/image/62032125-6d9a-4f90-a541-b60bd65bafb1.jpg',
+            link: 'https://github.com/mike-kirpa/'
+          },
+          {
+            name: 'QA',
+            image: 'https://s3-eu-west-1.amazonaws.com/dev.s3.ptah.super.com/image/416d6833-79e0-4c40-bb65-0c33bfff5ba2.jpg',
+            link: 'https://github.com/Win32agent'
+          },
         ]"
       />
     </main>
