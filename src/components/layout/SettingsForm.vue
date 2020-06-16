@@ -1,0 +1,191 @@
+<template>
+  <div class="b-settings-form">
+    <form action="" @submit.prevent="submit">
+      <div class="b-auth-form">
+        <div class="b-form">
+          <div class="b-form-row">
+            <base-text-field-auth
+              label="Preferred name"
+              placeholder="Enter your name"
+              type="text"
+              :hasError="errors.name"
+              :errorText="errorTexts.name"
+              v-model="nameV"
+            />
+          </div><!--/.b-form-row -->
+          <div class="b-form-row">
+            <base-text-field-auth
+              label=""
+              placeholder=""
+              type="text"
+              v-model="email"
+              :disabled="true"
+            />
+          </div><!--/.b-form-row -->
+          <div class="b-form-row" v-if="!emailConfirmed && isSendConfirm">
+            <div class="b-auth-form__description-after-form">
+              <span class="b-auth-form__color-link">
+                Send confirmation on your email
+              </span>
+            </div>
+          </div><!--/.b-form-row -->
+          <div class="b-form-row" v-if="!emailConfirmed && !isSendConfirm">
+            <div class="b-text-confirm">
+              We’re sent you an email. Please, check it and verify your account.
+              <a @click="clickSendConfirm">Didn’t get an email?</a>
+            </div>
+          </div><!--/.b-form-row -->
+          <div class="b-form-row">
+            <div class="b-auth-form__description-after-form">
+              <button
+                class="b-button-main"
+                type="submit"
+                :disabled="disabled"
+              >
+                Update
+              </button>
+            </div>
+          </div><!--/.b-form-row -->
+        </div>
+      </div>
+      <!--/ end form -->
+    </form>
+  </div>
+</template>
+
+<script>
+import {mapActions, mapState} from 'vuex'
+
+export default {
+  name: 'SettingsForm',
+
+  data () {
+    return {
+      nameV: '',
+      errorText: {
+        name: ''
+      },
+      errors: {
+        name: false,
+      },
+      errorTexts: {
+        email: '',
+        name: '',
+        password: ''
+      },
+      errorsArr: {
+        'user_name_is_required': {
+          name: 'name',
+          text: 'Name is required'
+        }
+      },
+      disabled: false,
+      isSendConfirm: false
+    }
+  },
+
+  computed: {
+    ...mapState('User', ['isAuth', 'user']),
+
+    name () {
+      return this.user ? this.user.name : ''
+    },
+
+    email () {
+      return this.user ? this.user.email : ''
+    },
+
+    emailConfirmed () {
+      return this.user ? this.user.emailConfirmed : false
+    },
+
+    disabledBtn () {
+      return this.email !== '' &&  this.nameV !== ''
+    }
+  },
+
+  methods: {
+    ...mapActions('User', ['login', 'getUser', 'setUserName', 'sendConfirmation']),
+
+    resetErrors () {
+      Object.keys(this.errors).forEach(key => {
+        this.errors[key] = false
+      })
+
+      Object.keys(this.errorTexts).forEach(key => {
+        this.errorTexts[key] = ''
+      })
+    },
+
+    submit () {
+      this.disabled = true
+      this.resetErrors()
+
+      this.setUserName(this.nameV)
+        .then(() => {
+          this.disabled = false
+        })
+        .catch((e) => {
+          const mess = e.response.data.error.message
+          const name = this.errorsArr[mess].name
+          const text = this.errorsArr[mess].text
+
+          this.errorTexts[name] = text
+          this.errors[name] = true
+          this.disabled = false
+        })
+    },
+
+    clickSendConfirm () {
+      this.sendConfirmation()
+        .then(() => {
+          this.disabled = false
+          this.isSendConfirm = true
+        })
+        .catch(() => {
+          this.disabled = false
+          this.isSendConfirm = true
+        })
+    }
+  },
+
+  mounted () {
+    this.getUser()
+    setTimeout(() => {
+      this.nameV = this.name
+    }, 150)
+  }
+}
+</script>
+
+<style lang="sass">
+  @import '../../assets/sass/auth.sass'
+
+  .b-settings-form
+    width: 100%
+    @media only screen and (max-width: 768px)
+      &
+        max-width: 26rem
+
+  .b-text-confirm
+    padding: 1.8rem 0
+    font-size: 1.2rem
+    line-height: 1.8rem
+    color: #00ADB6
+    & a
+      font-size: 1.2rem
+      line-height: 1.8rem
+      display: inline-block
+      background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+
+      cursor: pointer
+      transition: all .3s cubic-bezier(.2,.85,.4,1.275)
+
+      &:hover
+        background: linear-gradient(-270deg, #9E00FB 0%, #F9005B 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+</style>

@@ -21,13 +21,13 @@
             class="header__menu-link linkHeader"
           />
         </li>
-        <!--li class="header__menu-item">
+        <li class="header__menu-item" v-if="false">
           <Link
             href="/pricing"
             text="Pricing"
             class="header__menu-link linkHeader"
           />
-        </li-->
+        </li>
         <li class="header__menu-item">
           <Link
             :href="linkToHelp"
@@ -50,43 +50,35 @@
         </li>
       </ul>
     </nav>
-    <div class="header__controls">
-      <a href="/login" class="header__controls-login">
-        Sign in
-      </a>
-      <Button
-        class="small header__controls-button"
-        text="Start for Free"
-        @click="onStartFreeClick"
-      />
-      <Button
-        class="burger header__controls-toggle"
-        @click="onBurgerClick"
-      />
-    </div>
+
+    <UserMenu @setActive="setActive" />
+
   </header>
 </template>
 
 <script>
 import Link from "./Link";
-import Button from "./Button";
 import IconLogo from "../../assets/icons/logo.svg";
 import IconGithub from "../../assets/icons/github.svg";
+import UserMenu from "./UserMenu";
 
 export default {
   name: "Header",
-  components: { Button, Link, IconLogo, IconGithub },
+  components: {
+    Link,
+    IconLogo,
+    IconGithub,
+    UserMenu
+  },
   data: () => ({
     isActive: false,
     linkToHelp: process.env.VUE_APP_HELP,
     linkToGithub: process.env.VUE_APP_GITHUB
   }),
+
   methods: {
-    onBurgerClick () {
-      this.isActive = !this.isActive;
-    },
-    onStartFreeClick () {
-      this.$router.push({ path: `/signup` })
+    setActive (value) {
+      this.isActive = value
     }
   }
 };
@@ -155,10 +147,11 @@ export default {
   &__menu {
     @media (max-width: $mobile) {
       pointer-events: none;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
+      bottom: 0;
       z-index: -1;
       background: url("../../assets/images/header_mobile.png");
       background-repeat: no-repeat;
@@ -248,68 +241,6 @@ export default {
         text-transform: none;
         font-weight: 600;
       }
-    }
-  }
-
-  &__controls {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0 auto;
-  }
-
-  &__controls-login {
-    display: block;
-    margin: 0 3vw 0 1vw;
-    font-size: 26px;
-    line-height: 30px;
-    font-weight: 800;
-    color: $white;
-    border: none;
-    background: none;
-    cursor: pointer;
-
-    @media (max-width: $desktop) {
-      font-size: 14px;
-      line-height: 19px;
-    }
-
-    @media (max-width: $mobile) {
-      display: none;
-      position: fixed;
-      top: 315px;
-      left: 50%;
-      margin: 0;
-      font-size: 18px;
-      line-height: 21px;
-      font-weight: 600;
-      transform: translateX(-50%);
-    }
-
-    &:hover {
-      background: $purple-pink;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      opacity: 1;
-    }
-
-    .header[isActive] .header__menu ~ .header__controls & {
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
-
-  &__controls-button {
-    @media (max-width: $mobile) {
-      display: none;
-    }
-  }
-
-  &__controls-toggle {
-    display: none;
-
-    @media (max-width: $mobile) {
-      display: inline-block;
-      vertical-align: middle;
     }
   }
 }

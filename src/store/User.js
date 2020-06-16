@@ -78,6 +78,8 @@ export default {
      * @returns {Promise.<T>|Promise<any>|Promise}
      */
     restorePwdFirst (email) {
+      console.log(email)
+      
       return axios.post(`${process.env.VUE_APP_API}/auth/restore_password_step1`, { email })
         .then((response) => {
           return response
@@ -165,6 +167,7 @@ export default {
       return axios.get(`${process.env.VUE_APP_API}/user`)
         .then(response => {
           commit('setUser', response.data)
+          commit('setAuth', true)
           return response.data
         })
     },
@@ -190,7 +193,7 @@ export default {
      * @return {Promise<AxiosResponse<T>>}
      */
     setUserPassword ({ commit }, password) {
-      return axios.post(`${process.env.VUE_APP_API}/user/password`, { password })
+      return axios.post(`${process.env.VUE_APP_API}/user/password`, password)
         .then(response => {
           commit('setUser', response.data)
           return response.data

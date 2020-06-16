@@ -23,11 +23,11 @@
           <span>
             Already have an account?
           </span>
-          <span class="link" @click="goToLoginPage">
+          <span class="b-get-link" @click="goToLoginPage">
             Sign in
           </span>
         </span>
-        <span class="link-m" @click="goToLoginPage">
+        <span class="b-get-link-m" @click="goToLoginPage">
           Sign in
         </span>
         <div class="b-auth-right-contain">
@@ -87,8 +87,7 @@
                 <div class="b-auth-form__description-after-form">
                   By creating an account,
                   <div>you argee to the <a href="/terms" target="_blank">
-                    Terms of Service</a> & <a href="/policy" target="_blank">Privacy Policy</a>
-                  .
+                    Terms of Service</a> & <a href="/policy" target="_blank">Privacy Policy</a>.
                   </div>
                 </div>
               </div><!--/.b-form-row -->

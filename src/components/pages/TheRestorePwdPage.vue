@@ -23,14 +23,6 @@
         <span class="b-auth-right__logo-ptah">
           <BasePtahLogo />
         </span>
-        <span class="b-auth-right__get-start">
-          <span>
-            Don`t have an account?
-          </span>
-          <span class="link link_m-hide" @click="goToSignUp">
-            Get started
-          </span>
-        </span>
         <div class="b-auth-right-contain">
           <!-- form -->
           <div class="b-auth-form">
@@ -50,9 +42,9 @@
                   label="Email"
                   placeholder="Email or login"
                   type="text"
-                  :hasError="errorText.length > 0"
-                  :errorText="errorText"
-                  v-model="email"
+                  :hasError="$v.email.$error"
+                  :errorText="errorTexts.email"
+                  v-model.trim="$v.email.$model"
                 />
               </div><!--/.b-form-row -->
               <div class="b-form-row">
@@ -84,6 +76,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import {email, required} from "vuelidate/lib/validators";
 
 export default {
   name: 'TheRestorePwdPage',
@@ -92,7 +85,17 @@ export default {
     return {
       email: '',
       emailSendSuccess: false,
-      errorText: ''
+      errorText: '',
+      errorTexts: {
+        email: 'Enter a valid email'
+      }
+    }
+  },
+
+  validations: {
+    email: {
+      required,
+      email
     }
   },
 
@@ -102,11 +105,12 @@ export default {
     }
   },
 
+
   methods: {
     ...mapActions('User', ['restorePwdFirst']),
 
     submit () {
-      this.restorePwdFirst(this.email)
+      this.restorePwdFirst({ email: this.email })
         .then(() => {
           this.emailSendSuccess = true
         })

@@ -11,12 +11,26 @@
           </p>
         </div>
         <div class="footer__upper-right">
-          <form class="footer__form" action="#" method="post">
+          <form
+            class="footer__form"
+            target="_blank"
+            action="https://one.us3.list-manage.com/subscribe/post?u=55f00c05234d901bda453f466&amp;id=78db8b8c67"
+            method="post"
+          >
             <input
-              type="text"
               class="footer__input"
+              aria-label="Paste your email"
+              type="email"
+              name="EMAIL"
+              required="required"
               placeholder="Paste your email"
             />
+            <input
+              type="hidden"
+              name="b_55f00c05234d901bda453f466_78db8b8c67"
+              tabindex="-1"
+              value=""
+            >
             <Button
               class="footer__submit alter"
               type="submit"
@@ -27,18 +41,18 @@
       </div>
       <div class="footer__lower">
         <div class="footer__menu-container">
-          <ul class="footer__menu">
+          <ul class="footer__menu" v-if="false">
             <li class="footer__menu-header">
               <span>Product</span>
             </li>
             <li class="footer__menu-item">
               <Link href="/" text="Overview" />
             </li>
-            <!--li class="footer__menu-item">
+            <li class="footer__menu-item">
               <Link href="/pricing" text="Pricing" />
-            </li-->
+            </li>
           </ul>
-          <ul class="footer__menu">
+          <ul class="footer__menu" v-if="false">
             <li class="footer__menu-header">
               <span>Resources</span>
             </li>
@@ -63,7 +77,7 @@
               </a>
             </li>
           </ul>
-          <ul class="footer__social">
+          <ul class="footer__social" v-if="false">
             <li class="footer__social-item">
               <a href="fb.com" class="footer__social-link" target="_blank">
                 <IconFb />

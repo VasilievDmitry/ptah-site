@@ -5,11 +5,22 @@
         <swiper-slide v-for="(slide, index) in slides" :key="slide + index">
           <div class="swiper-rounded-images__slide">
             <div class="swiper-rounded-images__image-wrapper">
-              <img
-                class="swiper-rounded-images__image"
-                :src="require(`@assets/images/${slide.image}`)"
-                alt="slide"
-              />
+              <template v-if=" slide.image.indexOf('http') !== -1">
+                <a :href="slide.link" target="_blank">
+                  <img
+                    class="swiper-rounded-images__image"
+                    :src="slide.image"
+                    alt="slide"
+                  />
+                </a>
+              </template>
+              <template v-else>
+                 <img
+                  class="swiper-rounded-images__image"
+                  :src="require(`@assets/images/${slide.image}`)"
+                  alt="slide"
+                />
+              </template>
             </div>
             <span class="swiper-rounded-images__heading">{{ slide.name }}</span>
           </div>

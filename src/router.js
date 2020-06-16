@@ -8,7 +8,9 @@ const allowedPaths = [
   '/login',
   '/signup',
   '/restore',
+  '/account',
   '/policy',
+  '/terms',
   '/about',
   '/pricing',
   '/features',
@@ -36,7 +38,12 @@ let router = new VueRouter(
 
 router.beforeEach(
   (to, from, next) => {
-    if (!allowedPaths.includes(to.path) && (getCookie('token') === null)) {
+    if (!allowedPaths.includes(to.path) && (getCookie('token') === null || getCookie('token') === undefined)) {
+      next('/login')
+      return
+    }
+
+    if (to.path === '/account' && (getCookie('token') === null || getCookie('token') === undefined)) {
       next('/login')
       return
     }

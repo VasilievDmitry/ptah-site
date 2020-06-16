@@ -19,13 +19,8 @@
         <span class="b-auth-right__logo-ptah">
           <BasePtahLogo />
         </span>
-        <span class="b-auth-right__get-start">
-          <span>
-            Don`t have an account?
-          </span>
-          <span class="link link_m-hide" @click="goToSignUp">
-            Get started
-          </span>
+        <span class="b-auth-right__get-start _m-hide">
+          <BaseGetStarted />
         </span>
         <div class="b-auth-right-contain">
           <!-- form -->
@@ -42,8 +37,10 @@
                   label="Email"
                   placeholder="Email"
                   type="email"
-                  :hasError="errorText.length > 0"
                   v-model="email"
+                  :hasError="$v.email.$error"
+                  :errorText="errorTexts.email"
+                  v-model.trim="$v.email.$model"
                 />
               </div><!--/.b-form-row -->
               <div class="b-form-row">
@@ -51,15 +48,11 @@
                   label="Password"
                   placeholder="Create password"
                   :hasError="errorText.length > 0"
+                  :errorText="errorText"
                   type="password"
                   v-model="password"
                 />
               </div><!--/.b-form-row -->
-              <div>
-                <base-error-text-auth v-if="errorText.length">
-                  {{errorText}}
-                </base-error-text-auth>
-              </div>
               <div class="b-form-row">
                 <div class="b-auth-form__description-after-form">
                   <span class="b-auth-form__forgot-link" @click="goToRestorePage">
@@ -78,6 +71,11 @@
                   </button>
                 </div>
               </div><!--/.b-form-row -->
+              <div class="b-form-row _d-hide">
+                <div class="b-get-start">
+                  <BaseGetStarted />
+                </div>
+              </div><!--/.b-form-row -->
             </div>
           </div>
           <!--/ end form -->
@@ -89,7 +87,9 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { email, minLength, required } from "vuelidate/lib/validators";
+import {email, required} from "vuelidate/lib/validators";
+
+const errText = 'Invalid email and password pair'
 
 export default {
   name: 'TheLoginPage',
@@ -99,7 +99,17 @@ export default {
       email: '',
       password: '',
       errorText: '',
-      bg: 'bg_auth.svg'
+      bg: 'bg_auth.svg',
+      errorTexts: {
+        email: 'Enter a valid email'
+      }
+    }
+  },
+
+  validations: {
+    email: {
+      required,
+      email
     }
   },
 
@@ -109,40 +119,26 @@ export default {
     }
   },
 
-  validations: {
-    email: {
-      required,
-      email
-    },
-    password: {
-      required,
-      minLength: minLength(8)
-    }
-  },
 
   methods: {
     ...mapActions('User', ['login']),
 
     submit () {
-      this.$v.$touch()
-
-      if (!this.$v.$invalid) {
-        this.login({
-          email: this.email,
-          password: this.password
+      this.login({
+        email: this.email,
+        password: this.password
+      })
+        .then(() => {
+          if (process.env.NODE_ENV === 'production') {
+            window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+          } else {
+            this.$router.push('/')
+          }
+          this.errorText = ''
         })
-          .then(() => {
-            if (process.env.NODE_ENV === 'production') {
-              window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
-            } else {
-              this.$router.push('/')
-            }
-            this.errorText = ''
-          })
-          .catch(() => {
-            this.errorText = 'Invalid username and password pair'
-          })
-      }
+        .catch(() => {
+          this.errorText = errText
+        })
     },
 
     goToRestorePage () {
@@ -157,5 +153,10 @@ export default {
 </script>
 
 <style lang="sass">
-  @import '../../assets/sass/auth.sass'
+@import '../../assets/sass/auth.sass'
+.b-error
+  .b-base-error-text
+    position: relative
+.b-get-start
+  margin: 3.2rem 0 0
 </style>

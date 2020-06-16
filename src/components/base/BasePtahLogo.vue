@@ -1,5 +1,5 @@
 ﻿<template>
-  <div class="b-ptah-logo">
+  <div class="b-ptah-logo" @click="goToMain">
     <svg width="90" height="31" viewBox="0 0 90 31" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0)">
         <path d="M14.2709 11.1423L0 2.77905V27.8457L4.75698 30.6258V22.274L14.2709 27.8457V11.1423ZM9.51393 19.4939L4.75698 16.7139V11.1423L9.51393 13.9224V19.4939Z" fill="white"/>
@@ -17,6 +17,18 @@
     </svg>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'BasePathLogo',
+
+    methods: {
+      goToMain () {
+        this.$router.push({ path: `/` })
+      }
+    }
+  }
+</script>
 
 <style lang="sass" scoped>
   .b-ptah-logo

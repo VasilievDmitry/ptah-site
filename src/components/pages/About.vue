@@ -13,28 +13,39 @@
       <SwiperRoundedImages
         :slides="[
           {
-            name: 'CEO & founder',
-            image: 'swiper-round-1.png'
+            name: 'PM, Frontend',
+            image: 'https://s3.protocol.one/src/o_knAjw.jpg',
+            link: 'https://github.com/Temarie'
           },
           {
-            name: 'Game dev',
-            image: 'swiper-round-2.png'
+            name: 'Frontend',
+            image: 'https://s3.protocol.one/src/o_vIrF3.jpg',
+            link: 'https://github.com/grebnev-av'
           },
           {
-            name: 'UX/UI Designer',
-            image: 'swiper-round-3.png'
+            name: 'Backend',
+            image: 'https://s3.protocol.one/src/o_1sJxaX.jpg',
+            link: 'https://github.com/EvgeniyStrigo'
+          },
+          {
+            name: 'DevOps',
+            image: 'https://s3.protocol.one/src/o_J2Bl9.jpg',
+            link: 'https://github.com/vesvalo'
+          },
+          {
+            name: 'DevOps',
+            image: 'https://s3.protocol.one/src/o_1t3u9d.jpg',
+            link: 'https://github.com/atlix'
           },
           {
             name: 'Full stack',
-            image: 'swiper-round-4.png'
+            image: 'https://s3.protocol.one/src/o_cImtM.jpg',
+            link: 'https://github.com/sidmal'
           },
           {
-            name: 'CEO & founder',
-            image: 'swiper-round-1.png'
-          },
-          {
-            name: 'Game dev',
-            image: 'swiper-round-2.png'
+            name: 'CTO',
+            image: 'https://s3.protocol.one/src/o_YnxbC.jpg',
+            link: 'https://github.com/misterion'
           }
         ]"
       />

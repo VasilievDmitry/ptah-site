@@ -2,6 +2,10 @@
   <button
     @click="handleClick"
     class="button"
+    :class="[
+      { '_circle': type === 'circle' },
+      { '_active': active }
+    ]"
     :disabled="isDisabled"
   >
     <span class="button__text">
@@ -16,7 +20,12 @@ export default {
   props: {
     text: String,
     isDisabled: Boolean,
-    defaultValue: Boolean
+    defaultValue: Boolean,
+    active: Boolean,
+    type: {
+      defaultValue: '',
+      type: String
+    }
   },
   methods: {
     handleClick() {
@@ -46,6 +55,7 @@ export default {
   border-radius: 10px;
   cursor: pointer;
   transition: box-shadow $ease-in;
+
 
   @media (max-width: $desktop) {
     min-width: 220px;
@@ -125,6 +135,44 @@ export default {
     @media (max-width: $mobile) {
       height: 44px;
       padding: 0 55px;
+    }
+  }
+
+
+  &.small._circle {
+    height: 70px;
+    width: 70px;
+    min-width: auto;
+    border-radius: 100%;
+    text-align: center;
+    padding: 0;
+
+    &:after {
+      display: none;
+    }
+
+    @media (max-width: $desktop) {
+      height: 41px;
+      width: 41px;
+    }
+
+    @media (max-width: $mobile) {
+      height: 44px;
+      width: 44px;
+    }
+
+    &._active {
+      color: $black;
+      background: $white;
+    }
+
+    &:hover {
+      color: $black;
+      background: $white;
+      &:after {
+        border-radius: 100%;
+        background: $white;
+      }
     }
   }
 

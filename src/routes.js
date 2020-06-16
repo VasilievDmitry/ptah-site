@@ -6,6 +6,7 @@ import TheTermsPage from './components/pages/TheTermsPage'
 
 import Home from "./components/pages//Home.vue";
 import About from "./components/pages/About.vue";
+import TheAccountPage from "./components/pages/TheAccountPage.vue";
 // import Pricing from "./components/pages/Pricing.vue";
 import Features from "./components/pages/Features.vue";
 import Ui from "./components/pages/Ui.vue";
@@ -37,6 +38,13 @@ const routes = [
     component: TheRestorePwdPage,
     meta: {
       title: 'Ptah — Restore password'
+    }
+  },
+  {
+    path: '/account',
+    component: TheAccountPage,
+    meta: {
+      title: 'Ptah — Account settings'
     }
   },
   {

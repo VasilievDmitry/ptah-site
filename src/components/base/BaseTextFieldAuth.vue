@@ -33,6 +33,7 @@
         v-bind="$attrs"
         v-model="innerValue"
         :placeholder="placeholder"
+        :disabled="disabled"
         @input="$emit('input', innerValue)"
         @focus="$emit('focus', $event), hasFocus = true"
         @blur="$emit('blur', $event), hasFocus = false"
@@ -69,6 +70,10 @@ export default {
     value: {
       type: [String, Number],
       default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
     hasError: {
       type: Boolean,
@@ -183,7 +188,12 @@ export default {
     border-radius: .8rem
     transition: all .2s linear
     background: linear-gradient(0deg, #F3F6F6 0%, #F3F6F6 100%)
-
+    @media only screen and (max-width: 400px)
+      &
+        height: 4rem
+    @media only screen and (max-height: 400px)
+      &
+        height: 4rem
     &_focus
       background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
     &_error
@@ -201,15 +211,20 @@ export default {
       color: rgba(#0D0D0C, 1)
       outline: none
       border: none
+      @media only screen and (max-width: 400px)
+        &
+          padding: .5rem .8rem
+      @media only screen and (max-height: 400px)
+        &
+          padding: .5rem .8rem
       &::placeholder
         font-size: 1.4rem
         color: rgba(#0D0D0C, 0.54)
 
-        &:focus
-          outline: none
+      &:focus
+        outline: none
 
-        &:disabled
-          border-color: transparent
-          color: #888888
-          cursor: pointer
+      &:disabled
+        border-color: transparent
+        color: #888888
 </style>

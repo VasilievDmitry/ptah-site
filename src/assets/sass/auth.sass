@@ -24,18 +24,21 @@ body
 .b-auth
   background: #ffffff
   width: 100vw
-  height: 100vh
+  min-height: 100vh
   display: flex
   justify-content: center
   align-items: center
 
   font-family: 'Rubik', sans-serif
+  @media only screen and (max-height: 400px) and (max-width: 768px)
+    &
+      height: auto
   *
     user-select: none
   &-left,
   &-right
     width: 100%
-    height: 100%
+    min-height: 100vh
 
     position: relative
     background-color: #ffffff
@@ -82,45 +85,7 @@ body
       display: flex
       justify-content: flex-end
       align-items: center
-      & .link
-        display: inline-block
-        margin: 0 0 0 1.6rem
-        background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
 
-        cursor: pointer
-        transition: all .3s cubic-bezier(.2,.85,.4,1.275)
-
-        &:hover
-          background: linear-gradient(-270deg, #9E00FB 0%, #F9005B 100%)
-          -webkit-background-clip: text
-          -webkit-text-fill-color: transparent
-      @media only screen and (max-width: 768px)
-        &
-          top: auto
-          bottom: 10%
-          right: 0
-          left: 0
-          text-align: center
-
-          justify-content: center
-          &._m-hide
-            display: none
-    .link-m
-      display: none
-
-      position: absolute
-      top: 2.5rem
-      right: 3rem
-      font-size: 1.6rem
-      font-weight: 500
-      line-height: 2.2rem
-      color: #0D0D0C
-      letter-spacing: 0.16px
-      @media only screen and (max-width: 768px)
-        &
-          display: block
     &-contain
       padding: 1rem
 
@@ -129,7 +94,7 @@ body
       align-items: center
 
       width: 100%
-      height: 100%
+      min-height: 100vh
   &-logo-ptah
     width: 9rem
     height: 3rem
@@ -171,7 +136,7 @@ body
     color: #0D0D0C
     font-family: 'Rubik', sans-serif
 
-    padding: 5% 0
+    padding: 15vh 0 2rem
   &__description
     width: 100%
     font-size: 1.6rem
@@ -214,16 +179,35 @@ body
     &:hover
       cursor: pointer
       opacity: 1
+  &__color-link
+    font-size: 1.4rem
+    line-height: 1.8rem
+    font-weight: 600
+    display: inline-block
+    margin: 0 0 0 1.6rem
+    background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+    transition: all .3s cubic-bezier(.2,.85,.4,1.275)
 
 .b-form
   width: 100%
   font-family: 'Open Sans', sans-serif
 
   &-row
-    width: 33rem
+    width: 100%
+    max-width: 33rem
+    min-width: 20rem
     padding: 0 0 2.1rem 0
 
     margin: 0 auto
+    @media only screen and (max-width: 768px)
+      &
+        padding: 0 0 2rem 0
+    @media only screen and (max-height: 400px)
+      &
+        padding: 0 0 2rem 0
   &-label
     display: block
     width: 100%
@@ -261,5 +245,52 @@ body
     &:hover
       box-shadow: none
       background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
+
+.b-get-link
+  display: inline-block
+  margin: 0 0 0 1.6rem
+  background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+  cursor: pointer
+  transition: all .3s cubic-bezier(.2,.85,.4,1.275)
+
+  &:hover
+    background: linear-gradient(-270deg, #9E00FB 0%, #F9005B 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.b-get-link-m
+  display: none
+
+  position: absolute
+  top: 2.5rem
+  right: 3rem
+  font-size: 1.6rem
+  font-weight: 500
+  line-height: 2.2rem
+  color: #0D0D0C
+  letter-spacing: 0.16px
+  @media only screen and (max-width: 768px)
+    &
+      display: block
+
+._m-hide
+  @media only screen and (max-width: 768px)
+    &
+      display: none
+  @media only screen and (max-height: 400px)
+    &
+      display: none
+
+._d-hide
+  display: none
+  @media only screen and (max-width: 768px)
+    &
+      display: block
+  @media only screen and (max-height: 400px)
+    &
+      display: block
 
 
