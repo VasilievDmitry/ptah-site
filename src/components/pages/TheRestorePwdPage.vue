@@ -38,7 +38,7 @@
                   label="Email"
                   placeholder="Email or login"
                   type="text"
-                  :hasError="$v.email.$error || errorText.length > 0"
+                  :hasError="$v.email.$error || hasError"
                   :errorText="$v.email.$error ? errorTexts.email : errorText"
                   v-model.trim="$v.email.$model"
                 />
@@ -86,6 +86,7 @@ export default {
     return {
       email: '',
       emailSendSuccess: false,
+      hasError: false,
       errorText: '',
       errorTexts: {
         email: 'Enter a valid email'
@@ -111,12 +112,14 @@ export default {
     ...mapActions('User', ['restorePwdFirst']),
 
     submit () {
+      this.hasError = false
       this.restorePwdFirst(this.email)
         .then(() => {
           this.emailSendSuccess = true
           this.errorText = ''
         })
         .catch((e) => {
+          this.hasError = true
           if (e.response.data.error.code === 404) {
             this.errorText = 'The specified email address was not found'
           } else {
