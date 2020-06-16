@@ -110,7 +110,7 @@ export default {
     ...mapActions('User', ['restorePwdFirst']),
 
     submit () {
-      this.restorePwdFirst({ email: this.email })
+      this.restorePwdFirst(this.email)
         .then(() => {
           this.emailSendSuccess = true
         })

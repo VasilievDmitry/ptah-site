@@ -77,9 +77,8 @@ export default {
      * @param email {String}
      * @returns {Promise.<T>|Promise<any>|Promise}
      */
-    restorePwdFirst (email) {
-      console.log(email)
-      
+    // eslint-disable-next-line
+    restorePwdFirst ({ }, email) {
       return axios.post(`${process.env.VUE_APP_API}/auth/restore_password_step1`, { email })
         .then((response) => {
           return response
