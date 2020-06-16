@@ -167,25 +167,4 @@ export default {
       &
         max-width: 26rem
 
-  .b-text-confirm
-    padding: 1.8rem 0
-    font-size: 1.2rem
-    line-height: 1.8rem
-    color: #00ADB6
-    & a
-      font-size: 1.2rem
-      line-height: 1.8rem
-      display: inline-block
-      background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-
-      cursor: pointer
-      transition: all .3s cubic-bezier(.2,.85,.4,1.275)
-
-      &:hover
-        background: linear-gradient(-270deg, #9E00FB 0%, #F9005B 100%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-
 </style>
