@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div v-if="emailSendSuccess">
-      An email was sent to the specified email address. Please follow the link in it.
-    </div>
-
-    <form action="" @submit.prevent="submit" class="b-auth" v-if="!emailSendSuccess">
+    <form action="" @submit.prevent="submit" class="b-auth">
       <div class="b-auth-left">
       <span class="b-auth-logo-ptah">
         <BasePtahLogo />
@@ -42,10 +38,15 @@
                   label="Email"
                   placeholder="Email or login"
                   type="text"
-                  :hasError="$v.email.$error"
-                  :errorText="errorTexts.email"
+                  :hasError="$v.email.$error || errorText.length > 0"
+                  :errorText="$v.email.$error ? errorTexts.email : errorText"
                   v-model.trim="$v.email.$model"
                 />
+              </div><!--/.b-form-row -->
+              <div class="b-form-row" v-if="emailSendSuccess">
+                <span class="b-text-confirm">
+                  An email was sent to the specified email address. Please follow the link in it.
+                </span>
               </div><!--/.b-form-row -->
               <div class="b-form-row">
                 <div class="b-auth-form__description-after-form">
@@ -113,6 +114,7 @@ export default {
       this.restorePwdFirst(this.email)
         .then(() => {
           this.emailSendSuccess = true
+          this.errorText = ''
         })
         .catch((e) => {
           if (e.response.data.error.code === 404) {
