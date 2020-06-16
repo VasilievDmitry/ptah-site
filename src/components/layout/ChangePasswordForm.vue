@@ -14,14 +14,14 @@
               type="password"
             />
           </div><!--/.b-form-row -->
-          <div class="b-form-row">
+          <div class="b-form-row newPass">
             <base-text-field-auth
               label="New password"
               placeholder="Enter new password"
               type="password"
-              :hasError="errors.newPass"
+              :hasError="errors.newPass || $v.newPass.$error"
               :errorText="errorTexts.newPass"
-              v-model="newPass"
+              v-model="$v.newPass.$model"
             />
           </div><!--/.b-form-row -->
           <div class="b-form-row">
@@ -61,6 +61,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import {required, minLength} from 'vuelidate/lib/validators'
 
 export default {
   name: 'TheSignUpPage',
@@ -76,9 +77,7 @@ export default {
         rePass: false
       },
       errorTexts: {
-        currentPass: '',
-        newPass: '',
-        rePass: ''
+        newPass: 'The password must be at least 8 characters long and include letters and numbers only'
       },
       errorsArr: {
         'user_weak_password': {
@@ -87,6 +86,13 @@ export default {
         }
       },
       isChangeSuccess: false
+    }
+  },
+
+  validations: {
+    newPass: {
+      required,
+      minLength: minLength(8)
     }
   },
 
@@ -100,6 +106,11 @@ export default {
     }
   },
 
+  watch: {
+    newPass () {
+      this.resetErrors()
+    }
+  },
 
   methods: {
     ...mapActions('User', ['setUserPassword']),
@@ -139,6 +150,8 @@ export default {
     },
 
     resetErrors () {
+      this.$v.$reset
+
       Object.keys(this.errors).forEach(key => {
         this.errors[key] = false
       })
@@ -158,4 +171,9 @@ export default {
   @media only screen and (max-width: 768px)
     &
       max-width: 26rem
+.newPass
+  position: relative
+  .b-base-error-text
+    position: relative !important
+    text-align: left
 </style>

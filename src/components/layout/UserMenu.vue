@@ -30,7 +30,7 @@
       </template>
       <Button
         class="small b-user-menu__controls-button"
-        text="RB"
+        :text="getShortName(name)"
         type="circle"
         :active="isShow"
         @click="onIconUserClick"
@@ -63,7 +63,11 @@
       goToPtah: process.env.VUE_APP_EDITOR_DOMAIN
     }),
     computed: {
-      ...mapState('User', ['isAuth'])
+      ...mapState('User', ['isAuth', 'user']),
+
+      name () {
+        return this.user ? this.user.name : ''
+      }
     },
     methods: {
       ...mapActions('User', ['logout']),
@@ -90,6 +94,15 @@
       },
       onStartFreeClick () {
         this.$router.push({ path: `/signup` })
+      },
+      getShortName (name) {
+        if (!name || name === '') {
+          return
+        }
+
+        const matches = name.match(/[^aeiouy]/gi)
+
+        return matches.slice(0, 2).join('')
       }
     }
   };

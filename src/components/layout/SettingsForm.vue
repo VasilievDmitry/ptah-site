@@ -8,9 +8,10 @@
               label="Preferred name"
               placeholder="Enter your name"
               type="text"
-              :hasError="errors.name"
-              :errorText="errorTexts.name"
+              :hasError="$v.nameV.$error || errors.name"
               v-model="nameV"
+              :errorText="errorTexts.name"
+              v-model.trim="$v.nameV.$model"
             />
           </div><!--/.b-form-row -->
           <div class="b-form-row">
@@ -55,6 +56,7 @@
 
 <script>
 import {mapActions, mapState} from 'vuex'
+import { required} from "vuelidate/lib/validators";
 
 export default {
   name: 'SettingsForm',
@@ -69,9 +71,7 @@ export default {
         name: false,
       },
       errorTexts: {
-        email: '',
-        name: '',
-        password: ''
+        name: 'Name is required'
       },
       errorsArr: {
         'user_name_is_required': {
@@ -81,6 +81,12 @@ export default {
       },
       disabled: false,
       isSendConfirm: false
+    }
+  },
+
+  validations: {
+    nameV: {
+      required
     }
   },
 
