@@ -57,7 +57,7 @@
               <div class="b-form-row">
                 <base-text-field-auth
                   label="Login"
-                  placeholder="Create login"
+                  placeholder="Your name"
                   :hasError="$v.name.$error"
                   :errorText="errorTexts.name"
                   v-model.trim="$v.name.$model"
@@ -76,7 +76,7 @@
               <div class="b-form-row">
                 <base-text-field-auth
                   label="Password"
-                  placeholder="Create password"
+                  placeholder="8+ symbols long with letters & numbers"
                   :hasError="errors.password || $v.password.$error"
                   :errorText="errorTexts.password"
                   type="password"
