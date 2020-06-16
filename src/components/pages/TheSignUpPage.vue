@@ -58,9 +58,9 @@
                 <base-text-field-auth
                   label="Login"
                   placeholder="Create login"
-                  :hasError="errors.name"
+                  :hasError="$v.name.$error"
                   :errorText="errorTexts.name"
-                  v-model="name"
+                  v-model.trim="$v.name.$model"
                 />
               </div><!--/.b-form-row -->
               <div class="b-form-row">
@@ -68,19 +68,19 @@
                   label="Email"
                   placeholder="Paste your email"
                   type="text"
-                  :hasError="errors.email"
+                  :hasError="errors.email || $v.email.$error"
                   :errorText="errorTexts.email"
-                  v-model="email"
+                  v-model.trim="$v.email.$model"
                 />
               </div><!--/.b-form-row -->
               <div class="b-form-row">
                 <base-text-field-auth
                   label="Password"
                   placeholder="Create password"
-                  :hasError="errors.password"
+                  :hasError="errors.password || $v.password.$error"
                   :errorText="errorTexts.password"
                   type="password"
-                  v-model="password"
+                  v-model="$v.password.$model"
                 />
               </div><!--/.b-form-row -->
               <div class="b-form-row">
@@ -131,9 +131,9 @@ export default {
         password: false
       },
       errorTexts: {
-        email: '',
-        name: '',
-        password: ''
+        email: 'Enter a valid email',
+        name: 'Name is required',
+        password: 'The password must be at least 8 characters long and include letters and numbers only'
       },
       errorsArr: {
         'signup_name_is_required': {

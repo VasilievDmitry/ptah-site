@@ -7,7 +7,7 @@
 <style lang="sass" scoped>
   .b-base-error-text
     position: absolute
-    bottom: -1.4rem
+    // bottom: -1.4rem
     font-size: 1.2rem
     line-height: 1.2rem
     color: #F9005B
