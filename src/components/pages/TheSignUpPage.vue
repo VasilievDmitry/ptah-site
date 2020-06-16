@@ -86,9 +86,9 @@
               <div class="b-form-row">
                 <div class="b-auth-form__description-after-form">
                   By creating an account,
-                  <div>you argee to the <a href="/policy" target="_blank">
-                    Terms of Service & Privacy Policy
-                  </a>.
+                  <div>you argee to the <a href="/terms" target="_blank">
+                    Terms of Service</a> & <a href="/policy" target="_blank">Privacy Policy</a>
+                  .
                   </div>
                 </div>
               </div><!--/.b-form-row -->
@@ -114,7 +114,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { required, sameAs, minLength, email } from 'vuelidate/lib/validators'
+import { required, minLength, email } from 'vuelidate/lib/validators'
 
 export default {
   name: 'TheSignUpPage',
@@ -150,7 +150,7 @@ export default {
         },
         'signup_weak_password': {
           name: 'password',
-          text: 'Your password must be at least 8 characters'
+          text: 'The password must be at least 8 characters long and include letters and numbers only'
         }
       }
     }
@@ -173,9 +173,6 @@ export default {
     password: {
       required,
       minLength: minLength(8)
-    },
-    repeatPassword: {
-      sameAsPassword: sameAs('password')
     }
   },
 

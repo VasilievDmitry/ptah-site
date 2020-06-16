@@ -31,8 +31,6 @@ export function setCookie (name, value, options = {}) {
     }
   }
 
-  console.log(updatedCookie)
-
   document.cookie = updatedCookie
 }
 

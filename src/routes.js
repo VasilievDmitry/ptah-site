@@ -2,6 +2,7 @@ import TheLoginPage from './components/pages/TheLoginPage'
 import TheSignUpPage from './components/pages/TheSignUpPage'
 import TheRestorePwdPage from './components/pages/TheRestorePwdPage'
 import ThePrivacyPolicyPage from './components/pages/ThePrivacyPolicyPage'
+import TheTermsPage from './components/pages/TheTermsPage'
 
 import Home from "./components/pages//Home.vue";
 import About from "./components/pages/About.vue";
@@ -42,7 +43,14 @@ const routes = [
     path: '/policy',
     component: ThePrivacyPolicyPage,
     meta: {
-      title: 'Terms of Service & Privacy Policy — Ptah'
+      title: 'The Privacy Policy — Ptah'
+    }
+  },
+  {
+    path: '/terms',
+    component: TheTermsPage,
+    meta: {
+      title: 'Terms of Service — Ptah'
     }
   },
   {
