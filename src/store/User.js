@@ -126,10 +126,19 @@ export default {
 
     /**
      * Logout
+     * @param dispatch
+     */
+    logout ({ dispatch }) {
+      dispatch('clearAuth')
+      axios.get(`${process.env.VUE_APP_API}/auth/logout`)
+
+    },
+
+    /**
+     * Clear cookie & redirect to login
      * @param commit
      */
-    logout ({ commit }) {
-      axios.get(`${process.env.VUE_APP_API}/auth/logout`)
+    clearAuth ({commit}) {
       deleteCookie('token')
       deleteCookie('refreshToken')
       commit('setAuth', false)

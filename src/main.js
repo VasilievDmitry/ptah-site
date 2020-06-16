@@ -37,7 +37,7 @@ const createUpdateAuthInterceptor = (store, http) => async error => {
   let status = error.response.status
 
   if ((status === 500 || status === 401) && method === 'refresh') {
-    store.dispatch('User/logout')
+    store.dispatch('User/clearAuth')
   }
   if (error.response.data.error.code !== 401) {
     return Promise.reject(error)
