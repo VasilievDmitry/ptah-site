@@ -1,6 +1,6 @@
 import axios from 'axios'
 import router from '@src/router'
-import { setCookie, deleteCookie } from '@src/utils'
+import { setCookie } from '@src/utils'
 
 export default {
   state: {
@@ -119,7 +119,6 @@ export default {
           return response.data
         })
         .catch((error) => {
-          dispatch('logout')
           return error
         })
     },
@@ -138,9 +137,12 @@ export default {
      * Clear cookie & redirect to login
      * @param commit
      */
-    clearAuth ({commit}) {
-      deleteCookie('token')
-      deleteCookie('refreshToken')
+    clearAuth ({commit, dispatch}) {
+      dispatch('setToken', {
+        accessToken: '',
+        refreshToken: ''
+      })
+
       commit('setAuth', false)
       router.push({ path: `/login` })
     },
