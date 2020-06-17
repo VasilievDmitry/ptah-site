@@ -1,5 +1,4 @@
 import axios from 'axios'
-import router from '@src/router'
 import { setCookie } from '@src/utils'
 
 export default {
@@ -119,6 +118,7 @@ export default {
           return response.data
         })
         .catch((error) => {
+          dispatch('clearAuth')
           return error
         })
     },
@@ -140,17 +140,18 @@ export default {
     clearAuth ({commit, dispatch}) {
       dispatch('setToken', {
         accessToken: '',
-        refreshToken: ''
+        refreshToken: '',
+        clear: true
       })
 
       commit('setAuth', false)
-      router.push({ path: `/login` })
+      window.location.href = '/login'
     },
 
     /**
      * Set new access token to store and localeStorage
      * @param commit
-     * @param token {Object} {accessToken, refreshToken}
+     * @param token {Object} {accessToken, refreshToken, clear}
      */
     setToken ({ commit }, token) {
       let options
@@ -160,6 +161,11 @@ export default {
           domain: `${process.env.VUE_APP_COOKIE_DOMAIN}`,
           secure: true
         }
+      }
+
+      if (token.clear) {
+        options = {}
+        options['max-age'] = -1
       }
 
       setCookie('token', token.accessToken, options)
