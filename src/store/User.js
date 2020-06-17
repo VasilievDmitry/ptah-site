@@ -119,7 +119,6 @@ export default {
           return response.data
         })
         .catch((error) => {
-          dispatch('logout')
           return error
         })
     },
