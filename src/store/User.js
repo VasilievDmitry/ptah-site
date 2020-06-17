@@ -154,7 +154,7 @@ export default {
      * @param token {Object} {accessToken, refreshToken, clear}
      */
     setToken ({ commit }, token) {
-      let options
+      let options = {}
 
       if (process.env.NODE_ENV === 'production') {
         options = {
@@ -164,7 +164,6 @@ export default {
       }
 
       if (token.clear) {
-        options = {}
         options['max-age'] = -1
       }
 
