@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { setCookie } from '@src/utils'
+import {getCookie} from '../utils';
 
 export default {
   state: {
@@ -106,12 +107,11 @@ export default {
      * Refresh expired token
      * @param commit
      * @param dispatch
-     * @param refreshToken {String}
      * @returns {Promise.<T>|Promise<any>|Promise}
      */
-    refreshToken ({ dispatch }, refreshToken) {
+    refreshToken ({ dispatch }) {
       return axios.post(`${process.env.VUE_APP_API}/auth/refresh`, {
-        refreshToken
+        refreshToken: getCookie('refreshToken')
       })
         .then((response) => {
           dispatch('setToken', response.data)
