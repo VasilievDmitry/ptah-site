@@ -211,6 +211,7 @@ export default {
       color: rgba(#0D0D0C, 1)
       outline: none
       border: none
+      user-select: text
       @media only screen and (max-width: 400px)
         &
           padding: .5rem .8rem
