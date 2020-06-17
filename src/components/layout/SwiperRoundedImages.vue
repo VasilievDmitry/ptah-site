@@ -6,7 +6,7 @@
           <div class="swiper-rounded-images__slide">
             <div class="swiper-rounded-images__image-wrapper">
               <template v-if=" slide.image.indexOf('http') !== -1">
-                <a :href="slide.link" target="_blank">
+                <a :href="slide.link" target="_blank" ref="noopener noreferrer nofollow">
                   <img
                     class="swiper-rounded-images__image"
                     :src="slide.image"
