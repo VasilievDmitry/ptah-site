@@ -252,12 +252,11 @@
       }
 
       &::after {
-        top: 11px;
-        left: 12px;
         width: 8px;
         height: 8px;
         border-left: 3px solid $white;
         border-bottom: 3px solid $white;
+        top: 0;
       }
 
       &--next.swiper-button {
@@ -268,7 +267,6 @@
         }
 
         &::after {
-          left: 10px;
           transform: rotate(-135deg);
         }
       }

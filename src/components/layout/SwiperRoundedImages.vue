@@ -180,8 +180,6 @@ export default {
   }
 
   &::after {
-    top: 10px;
-    left: 12px;
     width: 9px;
     height: 9px;
   }
@@ -191,11 +189,6 @@ export default {
 
     @media (max-width: $mobile) {
       left: 55%;
-    }
-
-    &::after {
-      top: 10px;
-      left: 8px;
     }
   }
 }

@@ -12,6 +12,9 @@
     border: none;
     border-radius: 50%;
     transition: box-shadow $ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: $mobile) {
         left: 20px;
@@ -29,19 +32,16 @@
 
     &::after {
         content: '';
-        position: absolute;
-        top: 18px;
-        left: 22px;
         width: 16px;
         height: 16px;
         opacity: 1;
         border-left: 4px solid $white;
         border-bottom: 4px solid $white;
         transform: rotate(45deg);
+        position: relative;
+        top: -1px;
 
         @media (max-width: $mobile) {
-            top: 11px;
-            left: 12px;
             width: 8px;
             height: 8px;
             border-left: 3px solid $white;
@@ -63,12 +63,12 @@
         }
 
         &::after {
-            left: 15px;
             transform: rotate(-135deg);
-
-            @media (max-width: $mobile) {
-                left: 10px;
-            }
         }
+    }
+    &.swiper-button-prev {
+      &::after {
+        right: -2px;
+      }
     }
 }
