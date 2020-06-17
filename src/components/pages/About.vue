@@ -14,48 +14,58 @@
         :slides="[
           {
             name: 'PM, Frontend',
-            image: 'https://s3.protocol.one/src/o_knAjw.jpg',
+            image: 'https://s3.protocol.one/images/avatars/image 67.png',
             link: 'https://github.com/Temarie'
           },
           {
             name: 'Frontend',
-            image: 'https://s3.protocol.one/src/o_vIrF3.jpg',
+            image: 'https://s3.protocol.one/images/avatars/image 68.png',
             link: 'https://github.com/grebnev-av'
           },
           {
+            name: 'Designer',
+            image: 'https://s3.protocol.one/images/avatars/image 78.png',
+            link: 'https://www.behance.net/anastasiianastasiia'
+          },
+          {
             name: 'Backend',
-            image: 'https://s3.protocol.one/src/o_1sJxaX.jpg',
+            image: 'https://s3.protocol.one/images/avatars/image 73.png',
             link: 'https://github.com/EvgeniyStrigo'
           },
           {
-            name: 'DevOps',
-            image: 'https://s3.protocol.one/src/o_J2Bl9.jpg',
-            link: 'https://github.com/vesvalo'
-          },
-          {
-            name: 'DevOps',
-            image: 'https://s3.protocol.one/src/o_1t3u9d.jpg',
-            link: 'https://github.com/atlix'
-          },
-          {
-            name: 'Full stack',
-            image: 'https://s3.protocol.one/src/o_cImtM.jpg',
-            link: 'https://github.com/sidmal'
-          },
-          {
-            name: 'CTO',
-            image: 'https://s3.protocol.one/src/o_YnxbC.jpg',
-            link: 'https://github.com/misterion'
+            name: 'Tech Writer',
+            image: 'https://s3.protocol.one/images/avatars/image 71.png',
+            link: 'https://github.com/snezhana-dorogova'
           },
           {
             name: 'QA',
-            image: 'https://s3-eu-west-1.amazonaws.com/dev.s3.ptah.super.com/image/62032125-6d9a-4f90-a541-b60bd65bafb1.jpg',
+            image: 'https://s3.protocol.one/images/avatars/image 70.png',
             link: 'https://github.com/mike-kirpa/'
           },
           {
             name: 'QA',
-            image: 'https://s3-eu-west-1.amazonaws.com/dev.s3.ptah.super.com/image/416d6833-79e0-4c40-bb65-0c33bfff5ba2.jpg',
+            image: 'https://s3.protocol.one/images/avatars/image 69.png',
             link: 'https://github.com/Win32agent'
+          },
+           {
+            name: 'CTO',
+            image: 'https://s3.protocol.one/images/avatars/image 74.png',
+            link: 'https://github.com/misterion'
+          },
+          {
+            name: 'DevOps',
+            image: 'https://s3.protocol.one/images/avatars/image 75.png',
+            link: 'https://github.com/vesvalo'
+          },
+          {
+            name: 'DevOps',
+             image: 'https://s3.protocol.one/images/avatars/image 77.png',
+            link: 'https://github.com/atlix'
+          },
+          {
+            name: 'Full stack',
+             image: 'https://s3.protocol.one/images/avatars/image 76.png',
+            link: 'https://github.com/sidmal'
           },
         ]"
       />

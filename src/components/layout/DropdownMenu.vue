@@ -51,6 +51,7 @@
 
       clickOnSettings () {
         if (this.$route.path === '/account') {
+          this.$emit('clickOnSetting');
           return
         }
 

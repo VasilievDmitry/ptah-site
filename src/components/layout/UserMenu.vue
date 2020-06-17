@@ -36,6 +36,7 @@
         @click="onIconUserClick"
       />
       <DropdownMenu
+        @clickOnSetting="clickOnSettingsInDropMenu"
         v-if="isShow"
       />
       <Button
@@ -74,14 +75,18 @@
 
       clickOnSettings () {
         if (this.$route.path === '/account') {
+          this.onBurgerClick()
           return
         }
 
         this.$router.push({ path: `/account` })
       },
 
+      clickOnSettingsInDropMenu () {
+        this.isShow = !this.isShow;
+      },
+
       clickSignOut () {
-        console.log(234)
         this.logout()
       },
       onBurgerClick () {
