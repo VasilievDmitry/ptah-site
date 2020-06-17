@@ -32,9 +32,9 @@ export default {
       this.confirm(this.$route.query.confirm_email)
     }
 
-    if (this.$route.query.restore_pwd) {
+    if (this.$route.query.reset_pwd) {
       // restore pwd
-      this.restore(this.$route.query.restore_pwd)
+      this.restore(this.$route.query.reset_pwd)
     }
 
     this.checkAuth()

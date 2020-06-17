@@ -5,7 +5,9 @@
         {{ title }}
       </h3>
       <p class="promo-short__subtitle">{{ subtitle }}</p>
+      <Button v-if="isAuth" @click="goToEditor" class="black" text="Create landing page"></Button>
       <Button
+        v-else
         class="black"
         :text="button"
         @click="onStartFreeClick"
@@ -16,6 +18,7 @@
 
 <script>
 import Button from "./Button";
+import { mapState } from 'vuex'
 
 export default {
   name: "PromoShort",
@@ -25,9 +28,18 @@ export default {
     subtitle: String,
     button: String
   },
+
+  computed: {
+    ...mapState('User', ['isAuth'])
+  },
+
   methods: {
     onStartFreeClick () {
       this.$router.push({ path: `/signup` })
+    },
+
+    goToEditor () {
+      window.location.href = 'https://editor.ptah.pro'
     }
   }
 };

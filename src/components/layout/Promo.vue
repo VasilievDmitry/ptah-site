@@ -3,7 +3,9 @@
     <div class="promo__container">
       <h3 class="promo__title">{{ title }}</h3>
       <p class="promo__subtitle">{{ subtitle }}</p>
+      <Button v-if="isAuth && !isAlter" @click="goToEditor" :class="{ alter: isAlter }" text="Create landing page"></Button>
       <Button
+        v-else
         :class="{ alter: isAlter }"
         :text="button"
         @click="handleClick"
@@ -14,6 +16,8 @@
 
 <script>
 import Button from "./Button";
+import { mapState } from 'vuex'
+
 export default {
   name: "Promo",
   components: { Button },
@@ -23,9 +27,18 @@ export default {
     button: String,
     isAlter: Boolean
   },
+
+  computed: {
+    ...mapState('User', ['isAuth'])
+  },
+
   methods: {
     handleClick() {
       this.$emit("clickBtnPromo");
+    },
+
+    goToEditor () {
+      window.location.href = 'https://editor.ptah.pro'
     }
   }
 };
