@@ -24,7 +24,8 @@
           },
           {
             name: 'Designer',
-            image: 'https://s3.protocol.one/images/avatars/image 78.png'
+            image: 'https://s3.protocol.one/images/avatars/image 78.png',
+            link: 'https://www.behance.net/anastasiianastasiia'
           },
           {
             name: 'Backend',
