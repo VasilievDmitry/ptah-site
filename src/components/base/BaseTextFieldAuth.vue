@@ -236,4 +236,10 @@ export default {
         pointer-events: none
         position: absolute
         right: 0
+
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+  select,
+  textarea,
+  input
+    font-size: 16px
 </style>
