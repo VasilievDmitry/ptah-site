@@ -170,9 +170,9 @@ export default {
         font-size: 1.2rem
     &:hover
       color: #000
-    &._selected,
-    &._selected:hover
-      background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
+    &._selected span,
+    &._selected:hover span
+      background: linear-gradient(to left, #9E00FB 0%, #F9005B 100%)
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
     &._selected:after,
