@@ -1,6 +1,6 @@
 <template>
   <header class="header" :isActive="isActive">
-    <div class="header__logo" v-scroll="handleScroll">
+    <div class="header__logo" ref="logo" v-scroll="handleScroll">
       <router-link to="/" class="header__logo-link">
         <IconLogo class="header__logo-icon" />
       </router-link>
@@ -70,11 +70,25 @@ export default {
     IconGithub,
     UserMenu
   },
+
   data: () => ({
     isActive: false,
     linkToHelp: process.env.VUE_APP_HELP,
     linkToGithub: process.env.VUE_APP_GITHUB
   }),
+
+  watch: {
+    isActive (value) {
+
+      if (value && window.scrollY > 400) {
+        this.$refs.logo.classList.remove('_hide')
+      }
+
+      if (!value && window.scrollY > 400) {
+        this.$refs.logo.classList.add('_hide')
+      }
+    }
+  },
 
   methods: {
     setActive (value) {
