@@ -1,6 +1,6 @@
 <template>
   <header class="header" :isActive="isActive">
-    <div class="header__logo">
+    <div class="header__logo" v-scroll="handleScroll">
       <router-link to="/" class="header__logo-link">
         <IconLogo class="header__logo-icon" />
       </router-link>
@@ -79,6 +79,14 @@ export default {
   methods: {
     setActive (value) {
       this.isActive = value
+    },
+
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 400) {
+        el.classList.add('_hide')
+      } else {
+        el.classList.remove('_hide')
+      }
     }
   }
 };
@@ -112,6 +120,12 @@ export default {
     position: relative;
     z-index: 1;
     padding: 0 3.5vw 0 1vw;
+
+    &._hide {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
   }
 
   &__logo-link {
