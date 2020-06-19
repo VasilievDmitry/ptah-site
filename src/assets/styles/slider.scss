@@ -54,6 +54,10 @@
         pointer-events: none;
     }
 
+    @media (min-width: $mobile) {
+      display: none;
+    }
+
     &.swiper-button-next {
         left: calc(100% - 120px);
         right: auto;
