@@ -128,7 +128,7 @@
       margin: 0 3vw 0 1vw;
       font-size: 26px;
       line-height: 30px;
-      font-weight: 800;
+      font-weight: 600;
       color: $white;
       // background: $purple-pink;
       // -webkit-background-clip: text;
