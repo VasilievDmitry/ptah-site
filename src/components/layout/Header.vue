@@ -82,7 +82,7 @@ export default {
     },
 
     handleScroll: function (evt, el) {
-      if (window.scrollY > 400) {
+      if (window.scrollY > 400 && !this.isActive) {
         el.classList.add('_hide')
       } else {
         el.classList.remove('_hide')
@@ -165,11 +165,11 @@ export default {
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
+      // bottom: 0;
       z-index: -1;
       background: url("../../assets/images/header_mobile.png");
       background-repeat: no-repeat;
-      background-position: 50% 0;
+      background-position: 55% bottom;
       opacity: 0;
       transition: opacity 0ms ease-in;
     }
@@ -192,7 +192,7 @@ export default {
 
     @media (max-width: $mobile) {
       flex-direction: column;
-      padding: 65px 0 200px;
+      padding: 65px 0 100px;
     }
   }
 
@@ -253,7 +253,9 @@ export default {
         color: $black;
         text-decoration: none;
         text-transform: none;
-        font-weight: 600;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: 'Rubik', sans-serif;
       }
     }
   }

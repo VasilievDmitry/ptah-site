@@ -149,7 +149,7 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 0 0 45px;
-    border-bottom: 1px solid $gray2;
+    border-bottom: 1px solid rgba($gray2, .3);
 
     @media (max-width: $mobile) {
       flex-direction: column;
@@ -340,6 +340,7 @@ export default {
   }
 
   &__menu-link {
+    font-family: 'Rubik', sans-serif;
     position: relative;
     display: block;
     align-items: center;

@@ -143,10 +143,10 @@
       @media (max-width: $mobile) {
         display: none;
         position: fixed;
-        top: 300px;
+        top: 260px;
         left: 50%;
         margin: 0;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 21px;
         font-weight: 600;
         transform: translateX(-50%);
