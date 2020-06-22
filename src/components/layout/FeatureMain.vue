@@ -85,7 +85,7 @@ export default {
   @media (max-width: $mobile) {
     min-height: 710px;
     margin: 0 0 65px;
-    background-image: url("../../assets/images/feature_bg_mobile.png");
+    background-image: url("../../assets/images/feature_bg_mobile.jpg");
     background-position: 50% 0;
   }
 
