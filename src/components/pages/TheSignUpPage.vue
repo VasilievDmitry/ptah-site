@@ -56,7 +56,7 @@
             <div class="b-form">
               <div class="b-form-row">
                 <base-text-field-auth
-                  label="Login"
+                  label="How can we name you?"
                   placeholder="Your name"
                   :hasError="$v.name.$error"
                   :errorText="errorTexts.name"
@@ -65,8 +65,8 @@
               </div><!--/.b-form-row -->
               <div class="b-form-row">
                 <base-text-field-auth
-                  label="Email"
-                  placeholder="Paste your email"
+                  label="Your email"
+                  placeholder="Provide your email to sign up"
                   type="text"
                   :hasError="errors.email || $v.email.$error"
                   :errorText="errorTexts.email"
