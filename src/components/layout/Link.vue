@@ -6,7 +6,7 @@
       </router-link>
     </template>
     <template v-else>
-      <a class="link" :href="href" target="_blank">
+      <a class="link" :href="href" target="_blank" rel="noopener noreferrer">
         {{ text }}
       </a>
     </template>
