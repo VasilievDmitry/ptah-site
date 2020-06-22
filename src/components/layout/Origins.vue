@@ -3,11 +3,21 @@
     <h1 class="origins__title">{{ title }}</h1>
     <div class="origins__columns">
       <div class="origins__column">
-        <p class="origins__paragraph" v-html="text[0]"></p>
+        <p class="origins__paragraph">Path is a game dev focused website building tool.</p>
+        <p class="origins__paragraph">Our mission - We reinvent the industry on a fair and transparent basis.</p>
+        <p class="origins__paragraph">Our team - The core Ptah team is made up of employees of
+          <a href="https://protocol.one/" target="_blank" rel="noopener noreferrer" class="link--embeded">Protocol
+            One</a>. It is part of
+          <a href="https://super.com/" target="_blank" rel="noopener noreferrer" class="link--embeded">Super.com</a>
+          company which is focused on making free and open-source solutions available both for internal use and to all
+          game developers in the
+          world.</p>
       </div>
       <div class="origins__column">
-        <p class="origins__paragraph" v-html="text[1]"></p>
-        <p class="origins__paragraph" v-html="text[2]"></p>
+        <p class="origins__paragraph">Available to all - We’re focused on open source code. Thus our products can be
+          used independently. Ptah can be like an embedded page editor for any service that needs it.
+          If you like our project, you can help us make it even better on
+          <a href="https://github.com/ProtocolONE/ptah-editor" class="link--embeded">GitHub</a>.</p>
       </div>
     </div>
     <div class="origins__logos">

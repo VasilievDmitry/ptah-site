@@ -136,6 +136,7 @@ export default {
     /**
      * Clear cookie & redirect to login
      * @param commit
+     * @param dispatch
      */
     clearAuth ({commit, dispatch}) {
       dispatch('setToken', {

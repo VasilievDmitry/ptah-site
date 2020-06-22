@@ -5,7 +5,7 @@
       <FeaturesDesc
         title="Features"
         heading="Promote your game with a professional site builder"
-        content="The Ptah makes editing pretty intuitive. Change and customize content right on the page in the real-time autosave preview area."
+        content="Ptah makes editing pretty intuitive. Change and customize content right on the page in the real-time autosave preview area."
         :featuresList="[
           {
             name: '100+ Ready-to-Use Templates',

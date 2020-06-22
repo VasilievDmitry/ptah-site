@@ -26,7 +26,7 @@
           <div class="b-form-row" v-if="!emailConfirmed && isSendConfirm">
             <div class="b-auth-form__description-after-form">
               <span class="b-auth-form__color-link">
-                Send confirmation on your email
+                Please check your email and verify your account
               </span>
             </div>
           </div><!--/.b-form-row -->
