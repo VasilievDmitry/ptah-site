@@ -57,20 +57,21 @@ export default {
   &.capital {
     text-transform: uppercase;
   }
+}
 
-  &.linkHeader {
-    @media (max-width: $desktop) {
-      font-size: 12px;
-      line-height: 14px;
-    }
+.linkHeader * {
+  @media (max-width: $desktop) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 
-    @media (max-width: $mobile) {
-      color: $black;
-      font-size: 18px;
-      line-height: 21px;
-      font-weight: 600;
-      text-transform: none;
-    }
+  @media (max-width: $mobile) {
+    color: $black;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+    text-transform: none;
+    font-family: 'Rubik', sans-serif;
   }
 }
 </style>

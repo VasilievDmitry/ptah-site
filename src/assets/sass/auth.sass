@@ -79,6 +79,7 @@ body
       position: absolute
       top: 1rem
       right: 3rem
+      font-family: 'Open Sans'
       font-size: 1.6rem
       line-height: 2.2rem
       color: #0D0D0C
@@ -154,8 +155,18 @@ body
     text-align: center
     color: #A2A5A5
 
+    @media (max-width: 768px)
+      &
+        line-height: 1.2rem
+
     padding: 4% 0
+    & span
+      font-size: 1.2rem
+      @media (max-width: 768px)
+        &
+          display: block
     & a
+      font-size: 1.2rem
       background: linear-gradient(270deg, #9B01FF 21%, #2089FF 100%)
       -webkit-background-clip: text
       -webkit-text-fill-color: transparent
@@ -199,7 +210,7 @@ body
 
   &-row
     width: 100%
-    max-width: 33rem
+    max-width: 35rem
     min-width: 20rem
     padding: 0 0 2.1rem 0
 

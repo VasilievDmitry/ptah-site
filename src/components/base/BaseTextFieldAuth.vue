@@ -195,9 +195,9 @@ export default {
       &
         height: 4rem
     &_focus
-      background: linear-gradient(270deg, #9E00FB 0%, #F9005B 100%)
+      background: linear-gradient(to left, #9E00FB 0%, #F9005B 100%)
     &_error
-      background: linear-gradient(270deg, #F9005B 0%, #F9005B 100%)
+      background: linear-gradient(to left, #F9005B 0%, #F9005B 100%)
 
     & input
       width: 100%
@@ -212,6 +212,7 @@ export default {
       outline: none
       border: none
       user-select: text
+
       @media only screen and (max-width: 400px)
         &
           padding: .5rem .8rem
@@ -228,4 +229,17 @@ export default {
       &:disabled
         border-color: transparent
         color: #888888
+
+      &::-webkit-contacts-auto-fill-button
+        visibility: hidden
+        display: none !important
+        pointer-events: none
+        position: absolute
+        right: 0
+
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+  select,
+  textarea,
+  input
+    font-size: 16px
 </style>

@@ -38,8 +38,8 @@
                   placeholder="Email"
                   type="email"
                   v-model="email"
-                  :hasError="$v.email.$error"
-                  :errorText="errorTexts.email"
+                  :hasError="errorText.length > 0 || $v.email.$error"
+                  :errorText="errorText.length > 0 ? '' : errorTexts.email"
                   v-model.trim="$v.email.$model"
                 />
               </div><!--/.b-form-row -->
@@ -115,7 +115,7 @@ export default {
 
   computed: {
     disabledBtn () {
-      return this.email !== '' &&  this.password !== ''
+      return this.email !== '' &&  this.password !== '' && !this.$v.email.$error
     }
   },
 
@@ -124,21 +124,25 @@ export default {
     ...mapActions('User', ['login']),
 
     submit () {
-      this.login({
-        email: this.email,
-        password: this.password
-      })
-        .then(() => {
-          if (process.env.NODE_ENV === 'production') {
-            window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
-          } else {
-            this.$router.push('/')
-          }
-          this.errorText = ''
+      this.$v.$touch()
+
+      if (!this.$v.$invalid) {
+        this.login({
+          email: this.email,
+          password: this.password
         })
-        .catch(() => {
-          this.errorText = errText
-        })
+          .then(() => {
+            if (process.env.NODE_ENV === 'production') {
+              window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+            } else {
+              this.$router.push('/')
+            }
+            this.errorText = ''
+          })
+          .catch(() => {
+            this.errorText = errText
+          })
+      }
     },
 
     goToRestorePage () {

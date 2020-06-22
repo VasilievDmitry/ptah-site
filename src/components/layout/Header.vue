@@ -1,6 +1,6 @@
 <template>
   <header class="header" :isActive="isActive">
-    <div class="header__logo">
+    <div class="header__logo" ref="logo" v-scroll="handleScroll">
       <router-link to="/" class="header__logo-link">
         <IconLogo class="header__logo-icon" />
       </router-link>
@@ -70,15 +70,37 @@ export default {
     IconGithub,
     UserMenu
   },
+
   data: () => ({
     isActive: false,
     linkToHelp: process.env.VUE_APP_HELP,
     linkToGithub: process.env.VUE_APP_GITHUB
   }),
 
+  watch: {
+    isActive (value) {
+
+      if (value && window.scrollY > 400) {
+        this.$refs.logo.classList.remove('_hide')
+      }
+
+      if (!value && window.scrollY > 400) {
+        this.$refs.logo.classList.add('_hide')
+      }
+    }
+  },
+
   methods: {
     setActive (value) {
       this.isActive = value
+    },
+
+    handleScroll: function (evt, el) {
+      if (window.scrollY > 400 && !this.isActive) {
+        el.classList.add('_hide')
+      } else {
+        el.classList.remove('_hide')
+      }
     }
   }
 };
@@ -112,6 +134,12 @@ export default {
     position: relative;
     z-index: 1;
     padding: 0 3.5vw 0 1vw;
+
+    &._hide {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
   }
 
   &__logo-link {
@@ -151,11 +179,11 @@ export default {
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
+      // bottom: 0;
       z-index: -1;
       background: url("../../assets/images/header_mobile.png");
       background-repeat: no-repeat;
-      background-position: 50% 0;
+      background-position: 55% bottom;
       opacity: 0;
       transition: opacity 0ms ease-in;
     }
@@ -178,7 +206,7 @@ export default {
 
     @media (max-width: $mobile) {
       flex-direction: column;
-      padding: 65px 0 200px;
+      padding: 65px 0 100px;
     }
   }
 
@@ -239,7 +267,9 @@ export default {
         color: $black;
         text-decoration: none;
         text-transform: none;
-        font-weight: 600;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: 'Rubik', sans-serif;
       }
     }
   }

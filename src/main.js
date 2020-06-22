@@ -16,6 +16,17 @@ Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(Vuelidate)
 
+Vue.directive('scroll', {
+  inserted: function (el, binding) {
+    let f = function (evt) {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('scroll', f)
+      }
+    }
+    window.addEventListener('scroll', f)
+  }
+})
+
 sync(store, router)
 
 // request interceptor

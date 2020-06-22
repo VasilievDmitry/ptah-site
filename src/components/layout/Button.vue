@@ -179,11 +179,9 @@ export default {
   &__text {
     position: relative;
     z-index: 1;
-    font-size: 24px;
-    line-height: 34px;
+    font-weight: 800;
 
     @media (max-width: $desktop) {
-      font-size: 18px;
       line-height: 1;
     }
 
@@ -202,12 +200,13 @@ export default {
     }
 
     .small & {
-      font-size: 22px;
+      font-size: 14px;
       line-height: 32px;
+      font-weight: 600;
 
       @media (max-width: $laptop) {
         font-size: 14px;
-        line-height: 24px;
+        line-height: 19px;
       }
 
       @media (max-width: $mobile) {

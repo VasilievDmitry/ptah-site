@@ -85,10 +85,12 @@
               </div><!--/.b-form-row -->
               <div class="b-form-row">
                 <div class="b-auth-form__description-after-form">
-                  By creating an account,
-                  <div>you argee to the <a href="/terms" target="_blank">
-                    Terms of Service</a> & <a href="/policy" target="_blank">Privacy Policy</a>.
-                  </div>
+                  <span>By creating an account, you argee to the</span>
+                  <a href="/terms" target="_blank">
+                    Terms of Service</a>
+                  & <a href="/policy" target="_blank">
+                  Privacy Policy
+                </a>.
                 </div>
               </div><!--/.b-form-row -->
               <div class="b-form-row">
