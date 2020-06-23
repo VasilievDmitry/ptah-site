@@ -15,11 +15,9 @@
       />
       <div class="feature__icon">
         <div class="feature__icon-gif-wrapper">
-          <img
-            src="../../assets/images/pc-screen.gif"
-            alt="screen"
-            class="feature__icon-gif"
-          />
+          <video class="feature__icon-gif"  preload="auto" autoplay="true" loop="true" muted="muted">
+           <source src="../../assets/video/pc-screen.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
@@ -62,8 +60,8 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 1700px;
-  margin: 0 0 260px;
+  min-height: 100vh;
+  margin: 0 0 26rem;
   color: $white;
   background-position: 50% 50%;
   background-size: auto;
@@ -71,8 +69,8 @@ export default {
   background-image: url("../../assets/images/feature_bg.jpg");
 
   @media (max-width: $desktop) {
-    min-height: 940px;
-    margin: 0 0 120px;
+    min-height: 94rem;
+    margin: 0 0 12rem;
     background-size: 100% auto;
     background-image: url("../../assets/images/feature_bg_desktop.jpg");
   }
@@ -88,19 +86,23 @@ export default {
   @media (max-width: $mobile) {
     min-height: 710px;
     margin: 0 0 65px;
-    background-image: url("../../assets/images/feature_bg_mobile.png");
+    background-image: url("../../assets/images/feature_bg_mobile.jpg");
     background-position: 50% 0;
   }
 
   &__container {
     flex-grow: 1;
-    max-width: 1440px;
-    padding: 550px 0;
+    max-width: 144rem;
+    padding: 55rem 0;
     margin: 0 auto;
+
+    @media (min-width: $desktop) {
+      padding: 44rem 0;
+    }
 
     @media (max-width: $desktop) {
       max-width: 800px;
-      padding: 320px 0 340px;
+      padding: 30rem 0;
     }
 
     @media (max-width: $tablet) {
@@ -183,38 +185,51 @@ export default {
     width: 399px;
     height: 186px;
     transform: perspective(120px) rotateX(-17deg);
+    overflow: hidden;
+    border-radius: 2px 2px 4px 4px;
 
     @media (max-width: $desktop) {
       top: 31px;
       left: 50px;
       width: 202px;
       height: 86px;
+      border-radius: 3px;
       transform: perspective(130px) rotateX(-28deg);
     }
 
     @media (max-width: $mobile) {
       top: 17px;
       left: 35px;
-      width: 142px;
-      height: 56px;
+      width: 144px;
+      height: 60px;
+      border-radius: 1px 1px 3px 3px;
       transform: perspective(90px) rotateX(-27deg);
     }
   }
 
   &__icon-gif {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+
     width: 312px;
     height: 111px;
+
+    width: 104%;
+    height: 104%;
     border-radius: 2px 2px 4px 4px;
 
     @media (max-width: $desktop) {
-      width: 202px;
-      height: 86px;
+      // width: 202px;
+      // height: 86px;
       border-radius: 3px;
     }
 
     @media (max-width: $mobile) {
-      width: 144px;
-      height: 61px;
+      // width: 144px;
+      // height: 61px;
       border-radius: 1px 1px 3px 3px;
     }
   }

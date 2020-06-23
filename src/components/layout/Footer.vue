@@ -101,7 +101,7 @@
           >
         </a-->
       </div>
-      <p class="footer__copyright">© 2020, Ptah. All Rights Reserved.</p>
+      <p class="footer__copyright">© 2018 - 2020, Protocol.One LTD. All Rights Reserved.</p>
     </div>
   </footer>
 </template>

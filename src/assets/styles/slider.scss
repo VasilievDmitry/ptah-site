@@ -55,7 +55,9 @@
     }
 
     @media (min-width: $mobile) {
-      display: none;
+      .promo-large & {
+        display: none;
+      }
     }
 
     &.swiper-button-next {
