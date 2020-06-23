@@ -98,7 +98,12 @@
         this.isShow = !this.isShow;
       },
       onStartFreeClick () {
-        this.$gtag('Header_button_click', { 'event_category': 'CTA' })
+        try {
+          this.$gtag('Header_button_click', { 'event_category': 'CTA' })
+        } catch (e) {
+          console.log(e)
+        }
+
         this.$router.push({ path: `/signup` })
       },
       getShortName (name) {

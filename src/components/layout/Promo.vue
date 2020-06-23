@@ -34,7 +34,12 @@ export default {
 
   methods: {
     handleClick() {
-      this.$gtag('Features_button_click', { 'event_category': 'CTA' })
+      try {
+        this.$gtag('Features_button_click', { 'event_category': 'CTA' })
+      } catch (e) {
+        console.log(e)
+      }
+
       this.$emit("clickBtnPromo");
     },
 

@@ -122,7 +122,11 @@ export default {
 
   methods: {
     submitForm () {
-      this.$gtag.event('Subscribed to the newsletter')
+      try {
+        this.$gtag.event('Subscribed to the newsletter')
+      } catch (e) {
+        console.log(e)
+      }
     }
   }
 };
