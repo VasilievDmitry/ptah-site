@@ -31,6 +31,7 @@
               name="b_55f00c05234d901bda453f466_78db8b8c67"
               tabindex="-1"
               class="ptah-valid"
+              value=""
             >
             <Button
               class="footer__submit alter ptah-submit "
@@ -134,8 +135,6 @@ export default {
       let email = form.querySelector('.ptah-input').value
       let control = [form.querySelector('.ptah-valid').value, form.querySelector('.ptah-valid').getAttribute('name')]
       let body = `EMAIL=${encodeURIComponent(email)}&${control[1]}=${control[0]}`
-
-      console.log(body)
 
       let req = new XMLHttpRequest()
       req.open('POST', url, true)
