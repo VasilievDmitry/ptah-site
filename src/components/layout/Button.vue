@@ -200,9 +200,14 @@ export default {
     }
 
     .small & {
-      font-size: 14px;
+      font-size: 26px;
       line-height: 32px;
       font-weight: 600;
+
+      @media (max-width: $desktop) {
+        font-size: 14px;
+        line-height: 32px;
+      }
 
       @media (max-width: $laptop) {
         font-size: 14px;

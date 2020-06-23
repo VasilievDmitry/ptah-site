@@ -102,7 +102,7 @@ export default {
     margin: 0 auto;
 
     @media (min-width: $desktop) {
-      padding: 44rem 0;
+      padding: 34rem 0 55rem;
     }
 
     @media (max-width: $desktop) {
@@ -110,8 +110,13 @@ export default {
       padding: 30rem 0;
     }
 
+    @media (max-width: $laptopSmall) {
+      padding: 20rem 0 30rem;
+    }
+
     @media (max-width: $tablet) {
-      max-width: 768px;
+      max-width: 500px;
+      padding: 25rem 0 30rem;
     }
 
     @media (max-width: $mobile) {
@@ -161,7 +166,7 @@ export default {
   &__icon {
     position: absolute;
     left: 50%;
-    bottom: -210px;
+    bottom: -230px;
     width: 530px;
     height: 770px;
     background-image: url("../../assets/images/pc_user.png");
