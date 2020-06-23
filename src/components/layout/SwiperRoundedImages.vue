@@ -91,6 +91,11 @@ export default {
   background-position: 0 calc(100% + 2px);
   background-size: 100% auto;
 
+  @media (min-width: $desktop) {
+    min-height: 80rem;
+    background-position: top right;
+  }
+
   @media (max-width: $laptop) {
     background-size: auto;
   }
@@ -110,6 +115,11 @@ export default {
     height: 105px;
     border-radius: 50%;
     object-fit: cover;
+
+    @media (min-width: $desktop) {
+      width: 160px;
+      height: 160px;
+    }
   }
 
   &__heading {
@@ -163,7 +173,11 @@ export default {
   box-shadow: 0 2px 8px rgba($black, 0.15);
   border-radius: 10px;
 
-  @media (max-width: $desktop) {
+  @media (min-width: 1600px) {
+    height: 300px;
+  }
+
+  @media (max-width: 1600px) {
     height: 230px;
   }
 }

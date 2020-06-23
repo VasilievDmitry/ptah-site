@@ -56,6 +56,11 @@ export default {
   background-image: url("../../assets/images/promo.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
+  background-position: top right;
+
+  @media (min-width: $desktop) {
+    min-height: 80vh;
+  }
 
   @media (max-width: $laptop) {
     background-size: auto;
@@ -72,6 +77,10 @@ export default {
     max-width: 1000px;
     padding: 90px 20px;
     margin: 0 auto;
+
+    @media (min-width: $desktop) {
+      padding: 150px 20px;
+    }
 
     @media (max-width: $mobile) {
       padding: 35px 20px;

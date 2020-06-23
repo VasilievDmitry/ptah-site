@@ -106,6 +106,12 @@ export default {
     line-height: 36px;
     text-align: left;
 
+
+    @media (max-width: $desktop) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
     @media (max-width: $laptop) {
       font-size: 22px;
       line-height: 30px;

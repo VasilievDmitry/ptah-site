@@ -52,10 +52,16 @@ export default {
     margin: 0 auto;
     padding: 130px 38vw 100px 16vw;
 
+    @media (min-width: $desktop) {
+      max-width: 144rem;
+      padding: 130px 0 100px 18rem;
+      margin: 0 auto;
+    }
+
     @media (max-width: $desktop) {
-      max-width: none;
-      padding: 130px 58vw 100px 16vw;
-      margin: 0;
+      max-width: 144rem;
+      padding: 130px 0 100px 18rem;
+      margin: 0 auto;
     }
 
     @media (max-width: $tablet) {
@@ -68,6 +74,7 @@ export default {
   }
 
   &__content {
+    max-width: 40rem;
     text-align: left;
     font-family: $font-secondary;
     color: $white;
@@ -124,6 +131,18 @@ export default {
     height: auto;
     max-height: 475px;
     object-fit: cover;
+
+    @media (min-width: $desktop) {
+      bottom: -52px;
+      width: 650px;
+      right: 20.5vw;
+    }
+
+    @media (max-width: $desktop) {
+      bottom: -52px;
+      width: 550px;
+      right: 12.5vw;
+    }
 
     @media (max-width: $laptopSmall) {
       bottom: -44px;
