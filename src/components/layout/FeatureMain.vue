@@ -198,6 +198,15 @@ export default {
     overflow: hidden;
     border-radius: 2px 2px 4px 4px;
 
+    @media (min-width: $desktop) {
+      top: 96px;
+      left: 63px;
+      width: 377px;
+      height: 132px;
+      border-radius: 6px 6px 4px 4px;
+      transform: perspective(132px) rotateX(-17deg);
+    }
+
     @media (max-width: $desktop) {
       top: 31px;
       left: 50px;
@@ -230,6 +239,10 @@ export default {
     width: 104%;
     height: 104%;
     border-radius: 2px 2px 4px 4px;
+
+    @media (min-width: $desktop) {
+      border-radius: 6px 6px 4px 4px;
+    }
 
     @media (max-width: $desktop) {
       // width: 202px;
