@@ -20,7 +20,11 @@
       </a>
       <template v-if="isActive">
         <div class="b-list">
-          <a class="b-link" @click="clickOnSettings">
+          <a class="b-link" @click="clickOnSettings"
+             :class="[
+               { 'active' : $route.fullPath === `/account` }
+             ]"
+          >
             Account settings
           </a>
           <a class="b-link" @click="clickSignOut">
@@ -191,19 +195,25 @@
       top: 330px;
       left: 50%;
       margin: 0;
-      font-size: 16px;
+      font-size: 18px;
+      font-family: "Rubik", sans-serif;
       line-height: 21px;
-      font-weight: 600;
+      font-weight: 500;
       transform: translateX(-50%);
 
       display: flex;
       flex-direction: column;
 
       & a {
-        color: $white;
+        font-size: 18px;
+        color: $black;
         margin: 1rem 0;
         &:last-child {
           color: $black2;
+        }
+
+        &.active {
+          color: $white;
         }
       }
     }

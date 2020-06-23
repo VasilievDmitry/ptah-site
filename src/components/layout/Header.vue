@@ -228,7 +228,7 @@ export default {
 
     @media (max-width: $mobile) {
       flex-direction: column;
-      padding: 65px 0 100px;
+      padding: 65px 0 200px;
     }
   }
 
