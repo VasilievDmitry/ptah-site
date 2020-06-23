@@ -35,6 +35,7 @@ export default {
 
   methods: {
     onStartFreeClick () {
+      this.$gtag('Footer_button_click', { 'event_category': 'CTA' })
       this.$router.push({ path: `/signup` })
     },
 

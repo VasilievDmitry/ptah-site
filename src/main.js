@@ -9,6 +9,8 @@ import { sync } from 'vuex-router-sync'
 import axios from 'axios/index'
 import '@components/_globals'
 import { getCookie } from './utils'
+import VueGtag from 'vue-gtag'
+import VueYandexMetrika from 'vue-yandex-metrika'
 
 Vue.config.productionTip = false
 
@@ -67,6 +69,29 @@ const createUpdateAuthInterceptor = (store, http) => async error => {
 
 const updateAuthCb = createUpdateAuthInterceptor(store, axios)
 axios.interceptors.response.use(null, updateAuthCb)
+
+if (process.env.VUE_APP_PROD === '1') {
+  Vue.use(VueGtag, {
+    config: {
+      id: process.env.VUE_APP_GTAG
+    },
+    linker: {
+      domains: ['editor.ptah.pro', 'docs.ptah.pro']
+    }
+  })
+
+  Vue.use(VueYandexMetrika, {
+    id: process.env.VUE_APP_METRIKA,
+    router: router,
+    env: process.env.NODE_ENV,
+    options: {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+    }
+  })
+}
 
 new Vue({
   router: router,

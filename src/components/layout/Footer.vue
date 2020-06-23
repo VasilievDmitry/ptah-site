@@ -16,6 +16,7 @@
             target="_blank"
             action="https://one.us3.list-manage.com/subscribe/post?u=55f00c05234d901bda453f466&amp;id=78db8b8c67"
             method="post"
+            @submit="submitForm"
           >
             <input
               class="footer__input"
@@ -118,6 +119,12 @@ export default {
   data: () => ({
     linkToGithub: process.env.VUE_APP_GITHUB
   }),
+
+  methods: {
+    submitForm () {
+      this.$gtag.event('Subscribed to the newsletter')
+    }
+  }
 };
 </script>
 

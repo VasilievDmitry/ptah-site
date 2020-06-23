@@ -46,6 +46,7 @@ export default {
 
   methods: {
     onStartFreeClick () {
+      this.$gtag('FirstScreen_button_click', { 'event_category': 'CTA' })
       this.$router.push({ path: `/signup` })
     },
 
