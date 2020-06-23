@@ -12,14 +12,13 @@
         </div>
         <div class="footer__upper-right">
           <form
-            class="footer__form"
-            target="_blank"
-            action="https://one.us3.list-manage.com/subscribe/post?u=55f00c05234d901bda453f466&amp;id=78db8b8c67"
+            class="footer__form ptah-form"
+            data-action="https://one.us3.list-manage.com/subscribe/post?u=55f00c05234d901bda453f466&id=78db8b8c67"
             method="post"
             @submit="submitForm"
           >
             <input
-              class="footer__input"
+              class="footer__input ptah-input"
               aria-label="Paste your email"
               type="email"
               name="EMAIL"
@@ -27,13 +26,14 @@
               placeholder="Paste your email"
             />
             <input
-              type="hidden"
+              style="position: fixed; left: -9999px;"
+              type="text"
               name="b_55f00c05234d901bda453f466_78db8b8c67"
               tabindex="-1"
-              value=""
+              class="ptah-valid"
             >
             <Button
-              class="footer__submit alter"
+              class="footer__submit alter ptah-submit "
               type="submit"
               text="Subscribe"
             />
@@ -127,7 +127,43 @@ export default {
       } catch (e) {
         console.log(e)
       }
+    },
+
+    submitFormPost (form) {
+      let url = form.dataset.action
+      let email = form.querySelector('.ptah-input').value
+      let control = [form.querySelector('.ptah-valid').value, form.querySelector('.ptah-valid').getAttribute('name')]
+      let body = `EMAIL=${encodeURIComponent(email)}&${control[1]}=${control[0]}`
+
+      console.log(body)
+
+      let req = new XMLHttpRequest()
+      req.open('POST', url, true)
+      req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+      req.onreadystatechange = function () {
+        let button = form.getElementsByClassName('ptah-submit')[0]
+        button.classList.add('submited')
+
+        setTimeout(() => {
+          button.classList.remove('submited')
+        }, 1000)
+      }
+
+      req.send(body)
     }
+  },
+
+  mounted() {
+    Array.from(document.querySelectorAll('.ptah-form')).forEach((element) => {
+
+      console.log(element);
+
+      element.addEventListener('submit', (e) => {
+        e.preventDefault()
+        this.submitFormPost(element)
+      })
+    })
   }
 };
 </script>
