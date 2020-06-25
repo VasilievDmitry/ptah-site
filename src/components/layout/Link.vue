@@ -54,6 +54,12 @@ export default {
     cursor: default;
   }
 
+  &.active {
+    background: $white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   &.capital {
     text-transform: uppercase;
   }

@@ -59,10 +59,8 @@
           'swiper-simple-2.jpg',
           'swiper-simple-3.jpg',
           'swiper-simple-4.jpg',
-          'swiper-simple-1.jpg',
-          'swiper-simple-2.jpg',
-          'swiper-simple-3.jpg',
-          'swiper-simple-4.jpg'
+          'swiper-simple-5.jpg',
+          'swiper-simple-6.jpg'
         ]"
       />
       <PromoShort

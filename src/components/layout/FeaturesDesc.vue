@@ -41,8 +41,8 @@ export default {
 <style scoped lang="scss">
 .features-desc {
   &__inner {
-    max-width: 1250px;
-    padding: 145px 40px 85px;
+    max-width: 144rem;
+    padding: 145px 40px 85px 140px;
     margin: 0 auto;
 
     @media (max-width: $mobile) {

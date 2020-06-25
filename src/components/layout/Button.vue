@@ -111,6 +111,14 @@ export default {
     }
   }
 
+  &.submited {
+    background: $green-blue;
+
+    &::after {
+      background: $green-blue;
+    }
+  }
+
   &.black {
     background: $black;
 

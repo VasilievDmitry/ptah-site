@@ -14,7 +14,7 @@
           ]"
           @click="handleClick(index)"
         >
-          {{ item }}
+          <span>{{ item }}</span>
         </button>
       </div>
       <ul class="swiper-circle__image-list">
@@ -316,9 +316,26 @@
     &__circle-button {
       font-size: 0;
       line-height: 0;
-      background: $purple-blue;
+      // background: $purple-blue;
+      padding: 2px;
       border: none;
       cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & span {
+        width: 51px;
+        height: 51px;
+        display: inline-block;
+        border-radius: 50%;
+
+        text-indent: -9999px;
+        overflow: hidden;
+
+        background: $purple-blue;
+      }
 
       &:hover::before {
         opacity: 0.3;
@@ -329,10 +346,11 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 47px;
-        height: 47px;
+        width: 46px;
+        height: 46px;
         background: $white;
-        transform: translate3d(-50%, -50%, 0);
+        margin: -23px 0 0 -23px;
+        // transform: translate3d(-50%, -50%, 0);
         border-radius: 50%;
         opacity: 1;
         transition: opacity $ease-in;
@@ -346,16 +364,21 @@
       &::after {
         content: "";
         position: absolute;
-        top: -1px;
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        border: 9px solid $white;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 8px solid $white;
         border-radius: 50%;
+        box-shadow: 0 0 2px rgba(#fff,0.5);
       }
 
       &.is-active {
         background: $purple-pink2;
+
+        & span {
+          display: none;
+        }
 
         &::before {
           display: none;

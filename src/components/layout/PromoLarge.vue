@@ -111,6 +111,10 @@ export default {
     padding: 100px 2vw 50px 50vw;
     text-align: left;
 
+    @media (min-width: $desktop) {
+      padding: 100px 3vw 50px 60vw;
+    }
+
     @media (max-width: $desktop) {
       padding: 100px 12vw 50px 61.5vw;
     }
@@ -134,6 +138,14 @@ export default {
     height: auto;
     max-height: 475px;
     object-fit: cover;
+
+    @media (min-width: $desktop) {
+      left: 27vw;
+    }
+
+    @media (max-width: $desktop) {
+      left: 20vw;
+    }
 
     @media (max-width: $laptopSmall) {
       top: 137px;
@@ -207,6 +219,14 @@ export default {
     margin: 0 0 30px;
     color: $white;
     background: $purple-pink4;
+
+    @media (min-width: $desktop) {
+      padding: 60px 5vw 30px 23vw;
+    }
+
+    @media (max-width: $desktop) {
+      padding: 60px 5vw 30px 14vw;
+    }
 
     @media (max-width: $tablet) {
       max-width: 90vw;

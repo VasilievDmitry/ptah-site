@@ -1,58 +1,59 @@
 <template>
   <header class="header" :isActive="isActive">
-    <div class="header__logo" ref="logo" v-scroll="handleScroll">
-      <router-link to="/" class="header__logo-link">
-        <IconLogo class="header__logo-icon" />
-      </router-link>
-    </div>
-    <nav class="header__menu">
-      <ul class="header__menu-list">
-        <li class="header__menu-item">
-          <Link
-            href="/features"
-            text="Features"
-            class="header__menu-link linkHeader"
-          />
-        </li>
-        <li class="header__menu-item">
-          <Link
-            href="/about"
-            text="About us"
-            class="header__menu-link linkHeader"
-          />
-        </li>
-        <li class="header__menu-item" v-if="false">
-          <Link
-            href="/pricing"
-            text="Pricing"
-            class="header__menu-link linkHeader"
-          />
-        </li>
-        <li class="header__menu-item">
-          <Link
-            :href="linkToHelp"
-            :externalRef="true"
-            text="Docs"
-            class="header__menu-link linkHeader"
-          />
-        </li>
-        <li class="header__menu-item">
-          <a
-            :href="linkToGithub"
-            target="_blank"
-            class="header__menu-link linkHeader header__menu-link--icon"
-          >
-            <span class="header__menu-link header__menu-link--mobile"
-              >GitHub</span
+    <div class="header__container">
+      <div class="header__logo" ref="logo" v-scroll="handleScroll">
+        <router-link to="/" class="header__logo-link">
+          <IconLogo class="header__logo-icon" />
+        </router-link>
+      </div>
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <Link
+              href="/features"
+              text="Features"
+              class="header__menu-link linkHeader"
+            />
+          </li>
+          <li class="header__menu-item">
+            <Link
+              href="/about"
+              text="About us"
+              class="header__menu-link linkHeader"
+            />
+          </li>
+          <li class="header__menu-item" v-if="false">
+            <Link
+              href="/pricing"
+              text="Pricing"
+              class="header__menu-link linkHeader"
+            />
+          </li>
+          <li class="header__menu-item">
+            <Link
+              :href="linkToHelp"
+              :externalRef="true"
+              text="Docs"
+              class="header__menu-link linkHeader"
+            />
+          </li>
+          <li class="header__menu-item">
+            <a
+              :href="linkToGithub"
+              target="_blank"
+              class="header__menu-link linkHeader header__menu-link--icon"
             >
-            <IconGithub />
-          </a>
-        </li>
-      </ul>
-    </nav>
+              <span class="header__menu-link header__menu-link--mobile"
+                >GitHub</span
+              >
+              <IconGithub />
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-    <UserMenu @setActive="setActive" />
-
+      <UserMenu @setActive="setActive" />
+    </div>
   </header>
 </template>
 
@@ -114,20 +115,41 @@ export default {
   left: 0;
   right: 0;
   display: flex;
-  padding: 30px 2vw;
   justify-content: flex-start;
   align-items: center;
   background: $black2;
   box-shadow: 0 5px 15px rgba($black, 0.15);
 
   @media (max-width: $desktop) {
-    padding: 17px 2vw;
+    // padding: 1.7rem 2vw;
   }
 
   @media (max-width: $mobile) {
-    padding: 20px 3.5vw;
     background: transparent;
     box-shadow: none;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 78vw;
+    margin: 0 auto;
+    display: flex;
+    padding: 3rem 2vw;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (max-width: $desktop) {
+      min-width: 144rem;
+      padding: 1.7rem 2vw;
+    }
+
+    @media (max-width: $mobile) {
+      padding: 2rem 3.5vw;
+    }
+
+    @media (max-width: $mobile) {
+      min-width: 100%;
+    }
   }
 
   &__logo {
@@ -158,17 +180,17 @@ export default {
   }
 
   &__logo-icon {
-    width: 120px;
-    height: 45px;
+    width: 12rem;
+    height: 4.5rem;
 
     @media (max-width: $desktop) {
-      width: 100px;
-      height: 34px;
+      width: 10rem;
+      height: 3.4rem;
     }
 
     @media (max-width: $mobile) {
-      width: 90px;
-      height: 30px;
+      width: 9rem;
+      height: 3rem;
     }
   }
 
@@ -206,7 +228,7 @@ export default {
 
     @media (max-width: $mobile) {
       flex-direction: column;
-      padding: 65px 0 100px;
+      padding: 65px 0 200px;
     }
   }
 
