@@ -121,6 +121,7 @@ export default {
   box-shadow: 0 5px 15px rgba($black, 0.15);
 
   @media (max-width: $desktop) {
+    min-height: 71px;
     // padding: 1.7rem 2vw;
   }
 
@@ -139,7 +140,7 @@ export default {
     align-items: center;
 
     @media (max-width: $desktop) {
-      min-width: 144rem;
+      min-width: 100%;
       padding: 1.7rem 2vw;
     }
 
