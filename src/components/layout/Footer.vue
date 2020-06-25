@@ -156,8 +156,6 @@ export default {
   mounted() {
     Array.from(document.querySelectorAll('.ptah-form')).forEach((element) => {
 
-      console.log(element);
-
       element.addEventListener('submit', (e) => {
         e.preventDefault()
         this.submitFormPost(element)
