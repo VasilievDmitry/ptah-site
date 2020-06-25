@@ -13,6 +13,7 @@ const allowedPaths = [
   '/about',
   '/pricing',
   '/features',
+  '/oauth2',
   '/404'
 ]
 

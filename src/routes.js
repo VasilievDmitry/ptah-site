@@ -84,7 +84,7 @@ const routes = [
     }
   },
   {
-    path: '/mc_callback',
+    path: '/oauth2',
     component: Mailchimp,
     meta: {
       title: 'Ptah — oauth'
