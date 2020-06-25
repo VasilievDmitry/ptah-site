@@ -35,7 +35,7 @@
               <div class="b-form-row">
                 <base-text-field-auth
                   label="Email"
-                  placeholder="Email"
+                  placeholder="Type your email"
                   type="email"
                   v-model="email"
                   :hasError="errorText.length > 0 || $v.email.$error"
@@ -46,7 +46,7 @@
               <div class="b-form-row">
                 <base-text-field-auth
                   label="Password"
-                  placeholder="Create password"
+                  placeholder="Type your password"
                   :hasError="errorText.length > 0"
                   :errorText="errorText"
                   type="password"

@@ -1,2 +1,4 @@
 ﻿User-agent: *
 Disallow: /*utm_source
+Disallow: /restore
+Disallow: /account

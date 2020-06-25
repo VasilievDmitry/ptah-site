@@ -6,6 +6,7 @@ import { getCookie } from './utils'
 const allowedPaths = [
   '/',
   '/login',
+  '/restore',
   '/signup',
   '/policy',
   '/terms',
