@@ -11,6 +11,14 @@
       @close="showConfirmWindow = false">
       Thank you, the email address is confirmed.
     </base-confirm>
+
+    <base-confirm
+      :isHideCancel="true"
+      title="Reset Password"
+      v-if="showResetPwdWindow"
+      @close="showResetPwdWindow = false">
+      A new password has been sent to your email address.
+    </base-confirm>
   </div>
 </template>
 
@@ -22,7 +30,8 @@ export default {
   name: 'App',
   data () {
     return {
-      showConfirmWindow: false
+      showConfirmWindow: false,
+      showResetPwdWindow: false
     }
   },
 
@@ -56,7 +65,7 @@ export default {
     restore (token) {
       this.restorePwdSecond(token)
         .then(() => {
-          // redirect to new pwd window
+          this.showResetPwdWindow = true
         })
         .catch(e => console.warn(e))
     },

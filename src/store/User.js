@@ -95,7 +95,7 @@ export default {
      * @param token {String}
      */
     restorePwdSecond ({ commit, dispatch }, token) {
-      return axios.post(`${process.env.VUE_APP_API}/auth/restore_password_step1`, { token })
+      return axios.post(`${process.env.VUE_APP_API}/auth/restore_password_step2`, { token })
         .then((response) => {
           commit('setUser', response.data)
           dispatch('setToken', response.data)
