@@ -34,7 +34,7 @@
       </template>
       <Button
         class="small b-user-menu__controls-button"
-        :text="getShortName(name)"
+        :text="shortName"
         type="circle"
         :active="isShow"
         @click="onIconUserClick"
@@ -72,6 +72,10 @@
 
       name () {
         return this.user ? this.user.name : ''
+      },
+
+      shortName () {
+        return this.getShortName(this.name)
       }
     },
     methods: {
