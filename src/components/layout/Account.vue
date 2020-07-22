@@ -130,6 +130,7 @@
     margin: 0 0 3.5rem;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 
     &__avatar {
       width: 8rem;
@@ -158,8 +159,12 @@
       color: $black2;
       font-weight: 600;
       font-size: 2rem;
-      line-height: 8rem;
+      line-height: 2.4rem;
       margin: 0;
+      display: inline-block;
+      max-width: 20rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &__links {

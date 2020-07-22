@@ -130,6 +130,10 @@
       font-size: 1.4rem;
       line-height: 1.8rem;
       margin: 0 0 0.3rem;
+      display: inline-block;
+      max-width: 20rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     &__email {
