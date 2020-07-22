@@ -92,6 +92,13 @@
 
       clickSignOut () {
         this.logout()
+          .then(() => {
+            try {
+              this.$gtag.event('logout')
+            } catch (e) {
+              console.log('event | logout')
+            }
+          })
       },
       onBurgerClick () {
         this.isActive = !this.isActive;
@@ -103,7 +110,7 @@
       },
       onStartFreeClick () {
         try {
-          this.$gtag('Header_button_click', { 'event_category': 'CTA' })
+          this.$gtag.event('Header_button_click', { 'event_category': 'CTA' })
         } catch (e) {
           console.log(e)
         }

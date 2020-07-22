@@ -191,9 +191,13 @@ export default {
           password: this.password
         })
           .then(() => {
+            this.$gtag.event('registration_complete')
+
             // redirect to onboarding
             if (process.env.NODE_ENV === 'production') {
-              window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+              setTimeout(() => {
+                window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+              }, 100)
             } else {
               this.$router.push('/')
             }

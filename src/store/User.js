@@ -126,11 +126,11 @@ export default {
     /**
      * Logout
      * @param dispatch
+     * @returns {Promise.<T>|Promise<any>|Promise}
      */
     logout ({ dispatch }) {
       dispatch('clearAuth')
-      axios.get(`${process.env.VUE_APP_API}/auth/logout`)
-
+      return axios.get(`${process.env.VUE_APP_API}/auth/logout`)
     },
 
     /**

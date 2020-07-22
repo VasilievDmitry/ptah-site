@@ -36,7 +36,7 @@ export default {
   methods: {
     onStartFreeClick () {
       try {
-        this.$gtag('Footer_button_click', { 'event_category': 'CTA' })
+        this.$gtag.event('Footer_button_click', { 'event_category': 'CTA' })
       } catch (e) {
         console.log(e)
       }
