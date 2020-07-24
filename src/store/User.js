@@ -58,16 +58,14 @@ export default {
 
     /**
      * confirm user's email by token from link
-     * @param commit
      * @param dispatch
      * @param token {String} confirm token
      * @returns {Promise.<T>|Promise<any>|Promise}
      */
-    confirmEmail ({ commit, dispatch }, token) {
+    confirmEmail ({ dispatch }, token) {
       return axios.post(`${process.env.VUE_APP_API}/auth/confirm_email`, { token })
         .then((response) => {
-          commit('setUser', response.data)
-          dispatch('setToken', response.data)
+          dispatch('getUser')
           return response.data
         })
     },
