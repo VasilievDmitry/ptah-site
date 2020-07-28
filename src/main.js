@@ -11,6 +11,7 @@ import '@components/_globals'
 import { getCookie } from './utils'
 import VueGtag from 'vue-gtag'
 import VueYandexMetrika from 'vue-yandex-metrika'
+import VueGtm from 'vue-gtm'
 
 Vue.config.productionTip = false
 
@@ -90,6 +91,11 @@ if (process.env.VUE_APP_PROD === '1') {
       accurateTrackBounce:true,
       webvisor:true
     }
+  })
+
+  Vue.use(VueGtm, {
+    id: 'GTM-PSFK7BN',
+    vueRouter: router
   })
 }
 

@@ -81,6 +81,7 @@ import Promo from "../layout/Promo";
 import PromoShort from "../layout/PromoShort";
 import SwiperImages from "../layout/SwiperImages";
 import SwiperCircle from "../layout/SwiperCircle";
+import { scrollEvent, fixTime, timeFormat, getTimeInterval, getScrollingInterval } from '../../trackEvents'
 
 export default {
   name: "Home",
@@ -92,6 +93,41 @@ export default {
     Header,
     FeatureMain,
     SwiperImages
+  },
+
+  data () {
+    return {
+      current_max: 0,
+      startLiveDoc: 0
+    }
+  },
+
+  mounted () {
+    this.startLiveDoc = fixTime()
+
+    window.addEventListener('scroll', function () {
+      this.current_max = scrollEvent(this.current_max)
+    })
+  },
+
+  beforeDestroy () {
+    let current_max_string = this.current_max.toString() + '%'
+    let endLiveDoc = fixTime()
+    let timeLiveDoc = timeFormat(endLiveDoc - this.startLiveDoc)
+    let percent_of_scrolling_int = getScrollingInterval(this.current_max)
+    let time_on_page_int = getTimeInterval(endLiveDoc - this.startLiveDoc)
+
+    try {
+      this.$gtm.trackEvent({
+        'event': 'Scroll to',
+        'percent_of_scrolling': current_max_string,
+        'time_on_page': timeLiveDoc,
+        'percent_of_scrolling_interval' : percent_of_scrolling_int,
+        'time_on_page_interval' : time_on_page_int
+      })
+    } catch (e) {
+      console.log(current_max_string)
+    }
   }
 };
 </script>

@@ -98,7 +98,7 @@
                   <button
                     class="b-button-main"
                     type="submit"
-                    :disabled="!disabledBtn"
+                    :disabled="!disabledBtn || loading"
                   >
                     Sign Up
                   </button>
@@ -122,6 +122,7 @@ export default {
 
   data () {
     return {
+      loading: false,
       email: '',
       name: '',
       password: '',
@@ -181,6 +182,7 @@ export default {
     ...mapActions('User', ['signUp']),
 
     submit () {
+      this.loading = true
       this.$v.$touch()
       this.resetErrors()
 
@@ -210,6 +212,7 @@ export default {
             this.errorTexts[name] = text
             this.errors[name] = true
           })
+          .finally(() => this.loading = false)
       }
     },
 
