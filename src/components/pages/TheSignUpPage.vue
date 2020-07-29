@@ -193,7 +193,11 @@ export default {
           password: this.password
         })
           .then(() => {
-            this.$gtag.event('registration_complete')
+            try {
+              this.$gtag.event('registration_complete')
+            } catch (e) {
+              console.log('registration_complete')
+            }
 
             // redirect to onboarding
             if (process.env.NODE_ENV === 'production') {
