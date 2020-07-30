@@ -195,6 +195,7 @@ export default {
           .then(() => {
             try {
               this.$gtag.event('registration_complete')
+              window.fbq('track', 'SignUp');
             } catch (e) {
               console.log('registration_complete')
             }
