@@ -185,6 +185,7 @@ export default {
       this.loading = true
       this.$v.$touch()
       this.resetErrors()
+      window.fbq('track', 'CompleteRegistration');
 
       if (!this.$v.$invalid) {
         this.signUp({
@@ -195,7 +196,7 @@ export default {
           .then(() => {
             try {
               this.$gtag.event('registration_complete')
-              window.fbq('track', 'SignUp');
+              window.fbq('track', 'Lead');
             } catch (e) {
               console.log('registration_complete')
             }
