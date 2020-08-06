@@ -3,7 +3,7 @@
     <h1 class="origins__title">{{ title }}</h1>
     <div class="origins__columns">
       <div class="origins__column">
-        <p class="origins__paragraph">Path is a game dev focused website building tool.</p>
+        <p class="origins__paragraph">Ptah is a game dev focused website building tool.</p>
         <p class="origins__paragraph">Our mission - We reinvent the industry on a fair and transparent basis.</p>
         <p class="origins__paragraph">Our team - The core Ptah team is made up of employees of
           <a href="https://protocol.one/" target="_blank" rel="noopener noreferrer" class="link--embeded">Protocol
