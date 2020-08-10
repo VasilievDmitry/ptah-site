@@ -185,7 +185,7 @@ export default {
       this.loading = true
       this.$v.$touch()
       this.resetErrors()
-      window.fbq('track', 'CompleteRegistration');
+      window.fbq('track', 'Lead');
 
       if (!this.$v.$invalid) {
         this.signUp({
@@ -196,9 +196,16 @@ export default {
           .then(() => {
             try {
               this.$gtag.event('registration_complete')
-              window.fbq('track', 'Lead');
             } catch (e) {
               console.log('registration_complete')
+            }
+
+            try {
+              window.carrotquest.track('Registration_complete', {
+                page: this.$route.path
+              })
+            } catch (e) {
+              console.log(e)
             }
 
             // redirect to onboarding

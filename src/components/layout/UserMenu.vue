@@ -119,6 +119,14 @@
           console.log(e)
         }
 
+        try {
+          window.carrotquest.track('Header_button_click', {
+            page: this.$route.path
+          })
+        } catch (e) {
+          console.log(e)
+        }
+
         this.$router.push({ path: `/signup` })
       },
       getShortName (name) {
