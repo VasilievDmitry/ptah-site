@@ -128,6 +128,14 @@ export default {
       } catch (e) {
         console.log(e)
       }
+
+      try {
+        window.carrotquest.track('Subscribed to the newsletter', {
+          page: this.$route.path
+        })
+      } catch (e) {
+        console.log(e)
+      }
     },
 
     submitFormPost (form) {
