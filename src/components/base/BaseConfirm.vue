@@ -15,7 +15,7 @@
           v-if="!isHideCancel"
           tabindex="0"
           ref="cancel"
-          size="middle"
+          size="small"
           color="transparent"
           @click.prevent="$emit('close')"
         >
@@ -23,7 +23,7 @@
         </base-button>
         <base-button
           tabindex="1"
-          size="middle"
+          size="small"
           color="main-red"
           @click.prevent="$emit('confirm'), $emit('close')"
         >

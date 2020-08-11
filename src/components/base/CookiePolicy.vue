@@ -8,9 +8,19 @@
       &times;
     </span>
     <p class="cookies-policy__description">
-      This website uses cookies.
-      If you do not wish us to set cookies on your device, please do not use the website.
-      Please read the <a href="https://cdn.ptah.pro/o_1ohKcv.pdf" target="_blank">Cookies Policy</a> for more information.
+      Ptah uses cookies to ensure you get the best experience on our website.
+      By staying on the page and continuing to use the site you are confirming
+      that you agree to our <a href="https://cdn.ptah.pro/o_1ohKcv.pdf" target="_blank">Cookies Policy</a>. Thank you!
+      <base-button
+        tabindex="0"
+        ref="ok"
+        size="small"
+        color="light-gray"
+        @click="remove"
+        class="cookies-policy__btn"
+      >
+        OK
+      </base-button>
     </p>
   </div>
 </template>
@@ -68,6 +78,9 @@
     font-size: 30px
     cursor: pointer
 
+    @media only screen and (max-width: 800px)
+      top: 20px
+
   &__description
     margin: 0
 
@@ -79,5 +92,10 @@
       font-size: 12px
       color: #2089FF
       text-decoration: none
+
+  &__btn
+    @media only screen and (max-width: 800px)
+      display: block
+      margin-left: -8px
 
 </style>
