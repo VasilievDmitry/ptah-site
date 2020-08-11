@@ -7,9 +7,6 @@
     >
       &times;
     </span>
-    <h2 class="cookies-policy__title">
-      Cookies policy
-    </h2>
     <p class="cookies-policy__description">
       This website uses cookies.
       If you do not wish us to set cookies on your device, please do not use the website.
@@ -57,36 +54,30 @@
   z-index: 99999
 
   width: 100%
-  padding: 1.7rem 2vw
+  padding: 1rem 2rem 1rem 4rem
 
   background-color: #404958
   color: #fff
 
   &__close
     position: absolute
-    top: 8px
+    top: 50%
+    margin-top: -18px
     left: 8px
 
-    font-size: 18px
+    font-size: 30px
     cursor: pointer
-
-  &__title
-    margin: 0
-    margin-bottom: 15px
-
-    font-size: 20px
-    font-weight: normal
-    text-align: left
 
   &__description
     margin: 0
 
-    font-size: 14px
+    font-size: 12px
     text-align: left
     line-height: 1.5
 
     a
-      color: #1a79ac
+      font-size: 12px
+      color: #2089FF
       text-decoration: none
 
 </style>
