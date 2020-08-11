@@ -19,6 +19,8 @@
       @close="showResetPwdWindow = false">
       A new password has been sent to your email address.
     </base-confirm>
+
+    <cookie-policy />
   </div>
 </template>
 
