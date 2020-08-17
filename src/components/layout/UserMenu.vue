@@ -172,7 +172,7 @@
       @media (max-width: $mobile) {
         display: none;
         position: fixed;
-        top: 260px;
+        top: 340px;
         left: 50%;
         margin: 0;
         font-size: 18px;
@@ -211,7 +211,7 @@
   .b-list {
     @media (max-width: $mobile) {
       position: fixed;
-      top: 330px;
+      top: 370px;
       left: 50%;
       margin: 0;
       font-size: 18px;

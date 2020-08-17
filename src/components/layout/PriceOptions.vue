@@ -94,11 +94,6 @@ export default {
       font-size: 22px;
       line-height: 26px;
     }
-
-    @media (max-width: $mobile) {
-      text-align: left;
-      padding: 0 0 0 58px;
-    }
   }
 
   &__description {

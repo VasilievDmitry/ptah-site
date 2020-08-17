@@ -22,7 +22,7 @@
               class="header__menu-link linkHeader"
             />
           </li>
-          <li class="header__menu-item" v-if="false">
+          <li class="header__menu-item">
             <Link
               href="/pricing"
               text="Pricing"

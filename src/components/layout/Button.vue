@@ -65,7 +65,7 @@ export default {
   @media (max-width: $mobile) {
     min-width: 200px;
     height: 50px;
-    padding: 0 45px;
+    padding: 0 15px;
   }
 
   &:hover {
@@ -142,7 +142,7 @@ export default {
 
     @media (max-width: $mobile) {
       height: 44px;
-      padding: 0 55px;
+      padding: 0 15px;
     }
   }
 

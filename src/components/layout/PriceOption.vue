@@ -25,8 +25,9 @@
     />
     <ul class="price-option__pro-list">
       <li
-        class="price-option__pro-item"
         v-for="(item, index) in data.advantages"
+        class="price-option__pro-item"
+        :class="{ '_active': item.active }"
         :key="index"
       >
         {{ item.value }}
@@ -211,8 +212,8 @@ export default {
       left: 32px;
       width: 14px;
       height: 5px;
-      border-left: 2px solid $purple3;
-      border-bottom: 2px solid $purple3;
+      border-left: 2px solid $gray5;
+      border-bottom: 2px solid $gray5;
       transform: rotate(-45deg);
 
       @media (max-width: $tablet) {
@@ -222,6 +223,14 @@ export default {
       @media (max-width: $mobile) {
         top: 6px;
         left: 1px;
+      }
+    }
+
+    &._active {
+      color: $black;
+      &::before {
+        border-left: 2px solid $purple3;
+        border-bottom: 2px solid $purple3;
       }
     }
   }

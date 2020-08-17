@@ -4,8 +4,7 @@
     <main class="main">
       <PriceOptions
         title="Pricing"
-        description="Choose a new plan to satisfy your needs. Please choose the currency"
-        currency="USD"
+        description="Choose a new plan to satisfy your needs."
         :optionsData="[
           {
             title: 'Free',
@@ -16,45 +15,102 @@
             period: 'Only for one project',
             description: [
               'For inviduals or small team.',
-              'Allows publish only one project.'
+              'Allows publish only three projects.'
             ],
             button: 'Start free',
             advantages: [
               {
-                value: 'Advantages'
+                value: 'Landings: 3',
+                active: true
+              },
+              {
+                value: 'Team members: 1',
+                active: true
+              },
+              {
+                value: 'Library space: 50Mb',
+                active: true
+              },
+              {
+                value: 'Free hosting',
+                active: true
+              },
+              {
+                value: 'Integrations',
+                active: true
+              },
+              {
+                value: 'Custom domains',
+                active: false
+              },
+              {
+                value: 'Remove branding',
+                active: false
+              },
+              {
+                value: 'Export Source code',
+                active: false
               }
             ]
           },
           {
-            title: 'Solo',
+            title: 'Startup',
             isActive: true,
             price: {
               currency: '$',
-              value: '15'
+              value: '29',
+              additional: 'per year 290$'
             },
             period: 'Per month, billing annually',
             description: [
               'For inviduals.',
-              'Allows publishing up to 5 projects.'
+              'Allows publishing up to 15 projects.'
             ],
-            button: 'Start with solo',
+            button: 'Start with startup',
             advantages: [
               {
-                value: 'Advantages'
+                value: 'Landings: 15',
+                active: true
               },
               {
-                value: 'Advantages'
+                value: 'Team members: 1',
+                active: true
+              },
+              {
+                value: 'Library space: 300Mb',
+                active: true
+              },
+              {
+                value: 'Free hosting',
+                active: true
+              },
+              {
+                value: 'Integrations',
+                active: true
+              },
+              {
+                value: 'Custom domains',
+                active: true
+              },
+              {
+                value: 'Remove branding',
+                active: true
+              },
+              {
+                value: 'Export Source code',
+                active: true
               }
             ]
           },
+          /*
           {
             title: 'Team',
             price: {
               currency: '$',
-              value: '7',
-              additional: 'per person'
+              value: '49',
+              additional: 'per year 490$'
             },
-            period: 'Per month, billing monthly, up to 2 user',
+            period: 'Per month, billing monthly, up to 10 users',
             description: [
               'For companies with professional teams',
               'collaborationg arcoss several projects.'
@@ -62,19 +118,43 @@
             button: 'Start with team',
             advantages: [
               {
-                value: 'Advantages'
+                value: 'Landings: 300',
+                active: true
               },
               {
-                value: 'Advantages'
+                value: 'Team members: 10',
+                active: true
               },
               {
-                value: 'Advantages'
+                value: 'Library space: 15Gb',
+                active: true
+              },
+              {
+                value: 'Free hosting',
+                active: true
+              },
+              {
+                value: 'Integrations',
+                active: true
+              },
+              {
+                value: 'Custom domains',
+                active: true
+              },
+              {
+                value: 'Remove branding',
+                active: true
+              },
+              {
+                value: 'Export Source code',
+                active: true
               }
             ]
-          }
+          }*/
         ]"
       />
       <Faq
+        v-if="false"
         title="Faq"
         :categories="[
           'Builder',
@@ -201,4 +281,10 @@ export default {
 
 <style lang="scss">
   @import "../../assets/styles/styles";
+
+  @media (min-width: $mobile) {
+    .swiper-wrapper {
+      justify-content: center;
+    }
+  }
 </style>

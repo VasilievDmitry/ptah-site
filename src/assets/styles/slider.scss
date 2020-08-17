@@ -55,6 +55,7 @@
     }
 
     @media (min-width: $mobile) {
+      .price-options &,
       .promo-large & {
         display: none;
       }

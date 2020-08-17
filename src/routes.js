@@ -8,7 +8,7 @@ import Home from "./components/pages//Home.vue";
 import About from "./components/pages/About.vue";
 import TheAccountPage from "./components/pages/TheAccountPage.vue";
 import Mailchimp from './components/pages/MailchimpOauthComplete'
-// import Pricing from "./components/pages/Pricing.vue";
+import Pricing from "./components/pages/Pricing.vue";
 import Features from "./components/pages/Features.vue";
 import Ui from "./components/pages/Ui.vue";
 
@@ -69,13 +69,13 @@ const routes = [
       title: 'About — Ptah'
     }
   },
-  /*{
+  {
     path: '/pricing',
     component: Pricing,
     meta: {
       title: 'Ptah — Pricing'
     }
-  },*/
+  },
   {
     path: '/features',
     component: Features,
