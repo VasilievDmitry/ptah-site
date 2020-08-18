@@ -6,14 +6,29 @@
         {{ data.price.currency }}
       </span>
       <span class="price-option__price-value">
-        {{ data.price.value }}
+        <template v-if="!isShow">
+          {{ data.price.value }}
+        </template>
+        <template v-else>
+          {{ data.price.additional }}
+        </template>
       </span>
-      <span class="price-option__price-additional">
+      <span class="price-option__price-additional" v-if="false">
         {{ data.price.additional }}
       </span>
     </div>
     <p class="price-option__period">
-      {{ data.period }}
+      <span>
+        {{ data.period }}
+      </span>
+      <template v-if="data.periodAnnually.length > 0">
+        <span>
+          <BaseSwitcher v-model="isShow" v-if="data.periodAnnually.length > 0" />
+        </span>
+        <span>
+          {{ data.periodAnnually }}
+        </span>
+      </template>
     </p>
     <div class="price-option__description">
       <p class="price-option__description-value">{{ data.description[0] }}</p>
@@ -45,14 +60,17 @@ export default {
   props: {
     data: Object,
     isActive: Boolean
-  }
+  },
+  data: () => ({
+    isShow: false
+  }),
 };
 </script>
 
 <style scoped lang="scss">
 .price-option {
   flex-grow: 1;
-  padding: 60px 20px 25px;
+  padding: 60px 20px 60px;
   box-shadow: 0 2px 8px rgba($black, 0.15);
   border-radius: 10px;
 
@@ -122,6 +140,17 @@ export default {
     color: $gray5;
     font-size: 14px;
     line-height: 19px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > span {
+      padding: 0 5px;
+      white-space: nowrap;
+      font-size: 14px;
+      line-height: 1.2;
+    }
 
     @media (max-width: $mobile) {
       margin: 0 0 45px;

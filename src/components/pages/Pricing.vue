@@ -13,6 +13,7 @@
               value: '0'
             },
             period: 'Only for one project',
+            periodAnnually: '',
             description: [
               'For inviduals or small team.',
               'Allows publish only three projects.'
@@ -59,14 +60,15 @@
             price: {
               currency: '$',
               value: '29',
-              additional: 'per year 290$'
+              additional: '290'
             },
-            period: 'Per month, billing annually',
+            period: 'Billed Monthly',
+            periodAnnually: 'Billed Annually',
             description: [
               'For inviduals.',
               'Allows publishing up to 15 projects.'
             ],
-            button: 'Start with startup',
+            button: 'Get started',
             advantages: [
               {
                 value: 'Landings: 15',
