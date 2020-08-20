@@ -124,7 +124,7 @@ export default {
 
     @media (max-width: $tablet) {
       max-width: 500px;
-      padding: 25rem 0 30rem;
+      padding: 12rem 0 30rem;
     }
 
     @media (max-width: $mobile) {
