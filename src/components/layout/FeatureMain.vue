@@ -136,7 +136,7 @@ export default {
     }
 
     @media (max-width: $mobile) {
-      padding: 185px 20px;
+      padding: 125px 20px;
     }
   }
 
