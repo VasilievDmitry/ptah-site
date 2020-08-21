@@ -1,11 +1,6 @@
 <template>
   <section class="feature">
     <div class="feature__container">
-
-      <div class="ph">
-        <a href="https://www.producthunt.com/posts/ptah-website-builder?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-ptah-website-builder" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=238434&theme=dark" alt="Ptah - website builder - No-code, mobile optimised landing pages for games | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
-      </div>
-
       <h1 class="feature__title">
         {{ title }}
       </h1>
@@ -74,9 +69,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.ph {
-  margin-bottom: 5rem;
-}
 .feature {
   position: relative;
   display: flex;
@@ -118,16 +110,16 @@ export default {
     margin: 0 auto;
 
     @media (min-width: $desktop) {
-      padding: 28rem 0 55rem;
+      padding: 34rem 0 55rem;
     }
 
     @media (max-width: $desktop) {
       max-width: 800px;
-      padding: 25rem 0;
+      padding: 30rem 0;
     }
 
     @media (max-width: $laptopSmall) {
-      padding: 15rem 0 30rem;
+      padding: 20rem 0 30rem;
     }
 
     @media (max-width: $tablet) {
@@ -136,7 +128,7 @@ export default {
     }
 
     @media (max-width: $mobile) {
-      padding: 125px 20px;
+      padding: 185px 20px;
     }
   }
 
