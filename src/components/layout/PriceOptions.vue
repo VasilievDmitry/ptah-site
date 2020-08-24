@@ -8,64 +8,24 @@
       <button class="link--embeded" type="button">{{ currency }}</button>
     </p>
     <div class="price-options__container">
-      <swiper class="swiper" :options="swiperOption">
-        <swiper-slide v-for="(item, index) in optionsData" :key="index">
-          <PriceOption :data="item" />
-        </swiper-slide>
-        <button
-          class="swiper-button swiper-button-prev"
-          type="button"
-          slot="button-prev"
-        />
-        <button
-          class="swiper-button swiper-button-next"
-          type="button"
-          slot="button-next"
-        />
-      </swiper>
+      <PriceOption :data="item" v-for="(item, index) in optionsData" :key="index" />
     </div>
   </div>
 </template>
 
 <script>
 import PriceOption from "./PriceOption";
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 
 export default {
   name: "PriceOptions",
   components: {
-    PriceOption,
-    Swiper,
-    SwiperSlide
+    PriceOption
   },
   props: {
     title: String,
     description: String,
     currency: String,
     optionsData: Array
-  },
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: 1,
-        watchOverflow: true,
-        spaceBetween: 15,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 15
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 30
-          }
-        }
-      }
-    };
   }
 };
 </script>
@@ -119,10 +79,10 @@ export default {
     max-width: 1280px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     @media (max-width: $mobile) {
-      flex-wrap: wrap;
+      flex-direction: column;
       margin: 0 5vw;
     }
   }
@@ -139,16 +99,6 @@ export default {
     @media (max-width: $mobile) {
       padding: 10px 10px 90px;
     }
-  }
-
-  .swiper-button {
-    top: auto;
-    bottom: 0;
-    left: 37%;
-  }
-
-  .swiper-button-next {
-    left: 56%;
   }
 }
 </style>

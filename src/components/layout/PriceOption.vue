@@ -74,14 +74,16 @@ export default {
   box-shadow: 0 2px 8px rgba($black, 0.15);
   border-radius: 10px;
 
-  @media (max-width: $mobile) {
-    padding: 38px 20px 30px;
-    margin: 0;
-  }
+  margin: 1rem;
+  max-width: 45rem;
 
-  .swiper-slide:nth-child(2n) & {
+  &:nth-child(2n) {
     background: $pink-purple2;
     color: $white;
+
+    .price-option__period {
+      color: $white;
+    }
   }
 
   &__title {
@@ -125,9 +127,9 @@ export default {
     }
 
     @media (max-width: $mobile) {
-      height: 110px;
-      line-height: 110px;
-      font-size: 145px;
+      height: 75px;
+      font-size: 100px;
+      line-height: 80px;
     }
   }
 
@@ -157,10 +159,10 @@ export default {
       font-size: 16px;
       line-height: 22px;
       font-weight: 600;
-    }
 
-    .swiper-slide:nth-child(2n) & {
-      color: $white;
+      & > span {
+        font-size: 12px;
+      }
     }
   }
 
@@ -224,10 +226,6 @@ export default {
       font-size: 16px;
       line-height: 22px;
       font-weight: 600;
-    }
-
-    .swiper-slide:nth-child(2n) & {
-      color: $white;
     }
 
     &:not(:last-of-type) {
