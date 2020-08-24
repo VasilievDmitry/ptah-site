@@ -8,9 +8,9 @@
             <base-text-field-auth
               label="Current password"
               placeholder="Enter current password"
-              :hasError="errors.currentPass"
+              :hasError="errors.currentPass || $v.currentPass.$error"
               :errorText="errorTexts.currentPass"
-              v-model="currentPass"
+              v-model="$v.currentPass.$model"
               type="password"
             />
           </div><!--/.b-form-row -->
@@ -28,15 +28,15 @@
             <base-text-field-auth
               label="Re-enter new password"
               placeholder="Re-enter new password"
-              :hasError="errors.rePass"
+              :hasError="errors.rePass || $v.rePass.$error"
               :errorText="errorTexts.rePass"
               type="password"
-              v-model="rePass"
+              v-model="$v.rePass.$model"
             />
           </div><!--/.b-form-row -->
-          <div class="b-form-row" v-if="isChangeSuccess">
-            <div class="b-auth-form__description-after-form">
-              <span class="b-auth-form__color-link">
+          <div class="b-form-row b-success-mess" v-if="isChangeSuccess">
+            <div class="b-auth-form__description-after-form b-success-mess">
+              <span class="b-auth-form__color-link b-success-mess">
                 Password has been changed
               </span>
             </div>
@@ -61,7 +61,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import {required, minLength} from 'vuelidate/lib/validators'
+import {required, minLength, sameAs } from 'vuelidate/lib/validators'
 
 export default {
   name: 'TheSignUpPage',
@@ -77,12 +77,18 @@ export default {
         rePass: false
       },
       errorTexts: {
-        newPass: 'The password must be at least 8 characters long and include letters and numbers only'
+        currentPass: 'Enter old password',
+        newPass: 'The password must be at least 8 characters long and include letters and numbers only',
+        rePass: 'Passwords must match'
       },
       errorsArr: {
         'user_weak_password': {
           name: 'newPass',
-          text: 'Your password must be at least 8 characters'
+          text: 'The password must be at least 8 characters long and include letters and numbers only'
+        },
+        'old_password_mismatch': {
+          name: 'currentPass',
+          text: 'Old password mismatch'
         }
       },
       isChangeSuccess: false
@@ -90,25 +96,25 @@ export default {
   },
 
   validations: {
+    currentPass: {
+      required,
+    },
     newPass: {
       required,
       minLength: minLength(8)
+    },
+    rePass: {
+      sameAsPassword: sameAs('newPass')
     }
   },
 
   computed: {
     disabledBtn () {
-      return this.currentPass !== '' && this.newPass !== '' &&  this.rePass !== ''
+      return this.currentPass !== '' && this.newPass !== '' &&  this.rePass !== '' && !this.$v.$invalid
     },
 
     dontMatchPass () {
       return this.newPass !== this.rePass
-    }
-  },
-
-  watch: {
-    newPass () {
-      this.resetErrors()
     }
   },
 
@@ -124,7 +130,8 @@ export default {
 
         this.errorTexts['newPass'] = ''
         this.errorTexts['rePass'] = 'Passwords must match'
-        return;
+
+        return
       }
 
       this.setUserPassword({
@@ -150,14 +157,10 @@ export default {
     },
 
     resetErrors () {
-      this.$v.$reset
+      this.$v.$reset()
 
       Object.keys(this.errors).forEach(key => {
         this.errors[key] = false
-      })
-
-      Object.keys(this.errorTexts).forEach(key => {
-        this.errorTexts[key] = ''
       })
     },
   }
@@ -176,4 +179,9 @@ export default {
   .b-base-error-text
     position: relative !important
     text-align: left
+
+.b-success-mess
+  margin: 0 auto
+  padding: 0
+  text-align: center
 </style>
