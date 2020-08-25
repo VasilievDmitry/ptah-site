@@ -80,6 +80,7 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     @media (max-width: $mobile) {
       flex-direction: column;
