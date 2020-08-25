@@ -15,7 +15,7 @@
       />
     </template>
     <template v-else>
-      <a :href="goToPtah" target="_blank" class="b-user-menu__controls-login">
+      <a :href="goToPtah" target="_blank" class="b-user-menu__controls-login" v-if="!isMobile">
         Go to Ptah
       </a>
       <template v-if="isActive">
@@ -55,6 +55,7 @@
   import {mapActions, mapState} from 'vuex'
   import DropdownMenu from "./DropdownMenu";
   import Button from "./Button";
+  import { mobileDetect } from '../../utils'
 
   export default {
     name: "UserMenu",
@@ -76,6 +77,10 @@
 
       shortName () {
         return this.getShortName(this.name)
+      },
+
+      isMobile () {
+        return mobileDetect()
       }
     },
     methods: {
@@ -211,7 +216,7 @@
   .b-list {
     @media (max-width: $mobile) {
       position: fixed;
-      top: 330px;
+      top: 290px;
       left: 50%;
       margin: 0;
       font-size: 18px;

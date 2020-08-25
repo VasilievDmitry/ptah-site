@@ -116,6 +116,7 @@
 <script>
 import { mapActions } from 'vuex'
 import { required, minLength, email } from 'vuelidate/lib/validators'
+import { mobileDetect } from '../../utils'
 
 export default {
   name: 'TheSignUpPage',
@@ -161,6 +162,10 @@ export default {
   computed: {
     disabledBtn () {
       return this.email !== '' && this.name !== '' &&  this.password !== ''
+    },
+
+    isMobile () {
+      return mobileDetect()
     }
   },
 
@@ -209,12 +214,16 @@ export default {
             }
 
             // redirect to onboarding
-            if (process.env.NODE_ENV === 'production') {
-              setTimeout(() => {
-                window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
-              }, 100)
+            if (!this.isMobile) {
+              if (process.env.NODE_ENV === 'production') {
+                setTimeout(() => {
+                  window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+                }, 100)
+              } else {
+                this.$router.push('/')
+              }
             } else {
-              this.$router.push('/')
+              this.$router.push('/after-sign-up')
             }
           })
           .catch(e => {
