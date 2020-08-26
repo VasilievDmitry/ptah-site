@@ -7,6 +7,7 @@ const allowedPaths = [
   '/',
   '/login',
   '/restore',
+  '/after-sign-up',
   '/signup',
   '/policy',
   '/terms',

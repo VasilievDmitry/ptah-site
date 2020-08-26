@@ -1,6 +1,7 @@
 import TheLoginPage from './components/pages/TheLoginPage'
 import TheSignUpPage from './components/pages/TheSignUpPage'
 import TheRestorePwdPage from './components/pages/TheRestorePwdPage'
+import TheMessageAfterSignUp from './components/pages/TheMessageAfterSignUp'
 import ThePrivacyPolicyPage from './components/pages/ThePrivacyPolicyPage'
 import TheTermsPage from './components/pages/TheTermsPage'
 
@@ -39,6 +40,13 @@ const routes = [
     component: TheRestorePwdPage,
     meta: {
       title: 'Ptah — Restore password'
+    }
+  },
+  {
+    path: '/after-sign-up',
+    component: TheMessageAfterSignUp,
+    meta: {
+      title: 'Ptah — The Message After SignUp'
     }
   },
   {

@@ -88,6 +88,7 @@
 <script>
 import { mapActions } from 'vuex'
 import {email, required} from "vuelidate/lib/validators";
+import { mobileDetect } from '../../utils'
 
 const errText = 'Invalid email and password pair'
 
@@ -116,6 +117,10 @@ export default {
   computed: {
     disabledBtn () {
       return this.email !== '' &&  this.password !== '' && !this.$v.email.$error
+    },
+
+    isMobile () {
+      return mobileDetect()
     }
   },
 
@@ -132,10 +137,14 @@ export default {
           password: this.password
         })
           .then(() => {
-            if (process.env.NODE_ENV === 'production') {
-              window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+            if (!this.isMobile) {
+              if (process.env.NODE_ENV === 'production') {
+                window.location.href = process.env.VUE_APP_EDITOR_DOMAIN
+              } else {
+                this.$router.push('/')
+              }
             } else {
-              this.$router.push('/')
+              this.$router.push('/after-sign-up')
             }
             this.errorText = ''
           })
