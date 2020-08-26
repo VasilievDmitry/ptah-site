@@ -16,7 +16,7 @@
       <div class="feature__icon">
         <div class="feature__icon-gif-wrapper">
           <video class="feature__icon-gif" preload="auto" autoplay="true" loop="true" muted="muted">
-           <source src="https://s3.protocol.one/images/pc-screen.mp4" type="video/mp4" />
+           <source src="https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/dd283335-fc79-409b-a17f-f66d1c55524f.mp4" type="video/mp4" />
           </video>
         </div>
       </div>

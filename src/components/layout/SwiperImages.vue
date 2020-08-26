@@ -4,9 +4,9 @@
       <img
         alt="slide"
         loading="lazy"
-        :srcset="`${image.large} 450px, ${image.small} 150px`"
+        :srcset="`${image.large} 700w, ${image.small} 200w`"
         :src="image.large"
-        sizes="(max-width: 768px) 150px, (min-width: 768px) 450px"
+        sizes="(max-width: 768px) 200px, (min-width: 768px) 600px"
       />
     </swiper-slide>
     <button

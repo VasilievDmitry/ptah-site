@@ -17,7 +17,7 @@
               <template v-else>
                  <img
                   class="swiper-rounded-images__image"
-                  :src="require(`@assets/images/${slide.image}`)"
+                  :src="slide.image"
                   alt="slide"
                 />
               </template>
