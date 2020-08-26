@@ -16,11 +16,11 @@
         $angle: (360 / $item-count);
         $rot: 0;
 
-        @media (max-width: $tablet) {
-            width: 48px;
-            height: 48px;
-            margin: -20px;
-        }
+        //@media (max-width: $tablet) {
+        //    width: 48px;
+        //    height: 48px;
+        //    margin: -20px;
+        //}
 
         @for $i from 1 through $item-count {
             &:nth-of-type(#{$i}) {

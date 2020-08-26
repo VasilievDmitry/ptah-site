@@ -357,8 +357,8 @@
         transition: opacity $ease-in;
 
         @media (max-width: $tablet) {
-          width: 28px;
-          height: 28px;
+          // width: 28px;
+          // height: 28px;
         }
       }
 
