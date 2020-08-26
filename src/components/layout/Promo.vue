@@ -61,7 +61,7 @@ export default {
 <style scoped lang="scss">
 .promo {
   min-height: 630px;
-  background-image: url("../../assets/images/promo.png");
+  background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/5e8b4919-da59-416f-93f4-9be2662927bd.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: top right;
@@ -76,7 +76,7 @@ export default {
 
   @media (max-width: $mobile) {
     min-height: 350px;
-    background-image: url("../../assets/images/promo_mobile.png");
+    background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/d90e63da-04e5-4b96-b364-b6047656c4ca.png);
     background-size: 100% auto;
     background-position: 0 calc(100% + 2px);
   }

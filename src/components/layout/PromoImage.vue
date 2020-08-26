@@ -3,17 +3,19 @@
     <div class="promo-image__container">
       <div class="promo-image__content">
         <img
-          :src="require(`@assets/images/${icon}`)"
+          :src="icon"
           alt="icon"
           class="promo-image__icon"
+          loading="lazy"
         />
         <h1 class="promo-image__title">{{ title }}</h1>
         <p class="promo-image__desc">{{ description }}</p>
       </div>
       <img
-        :src="require(`@assets/images/${image}`)"
+        :src="image"
         alt="image"
         class="promo-image__image"
+        loading="lazy"
       />
     </div>
   </section>

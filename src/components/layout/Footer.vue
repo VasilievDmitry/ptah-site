@@ -96,7 +96,7 @@
           <h5 class="footer__blog-title">
             From the blog
           </h5>
-          <img src="../../assets/images/blog.png" alt="Blog image" />
+          <img src="https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/66877932-0e20-488a-8f1c-7b163d56f98f.png" alt="Blog image" />
           <span class="footer__blog-description"
             >How to promote your landing page?</span
           >

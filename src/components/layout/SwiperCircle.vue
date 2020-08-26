@@ -28,8 +28,9 @@
         >
           <img
             class="swiper-circle__image"
-            :src="require(`@assets/images/${item.image}`)"
+            :src="item.image"
             alt="slide"
+            loading="lazy"
           />
         </li>
       </ul>

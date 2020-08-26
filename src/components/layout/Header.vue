@@ -204,7 +204,7 @@ export default {
       right: 0;
       // bottom: 0;
       z-index: -1;
-      background: url("../../assets/images/header_mobile.png");
+      background: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/bc13688e-c932-41db-aaa5-340bbbd5621a.png);
       background-repeat: no-repeat;
       background-position: 55% bottom;
       opacity: 0;

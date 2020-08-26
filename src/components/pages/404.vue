@@ -26,7 +26,7 @@ export default {
 .b-not-found
   width: 100vw
   height: 100vh
-  background: url("../../assets/images/404bg.png") no-repeat
+  background: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/44e1040b-134b-4eaa-b7de-d38ef5d612c9.jpg) no-repeat
   background-size: cover
   display: flex
   justify-content: center

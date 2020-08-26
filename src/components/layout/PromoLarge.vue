@@ -2,15 +2,17 @@
   <section class="promo-large">
     <div class="promo-large__upper">
       <img
-        :src="require(`@assets/images/${image}`)"
+        :src="image"
         alt="Promo image"
         class="promo-large__upper-image"
+        loading="lazy"
       />
       <div class="promo-large__upper-content">
         <img
-          :src="require(`@assets/images/${icon}`)"
+          :src="icon"
           alt="Promo icon"
           class="promo-large__upper-icon"
+          loading="lazy"
         />
         <h2 class="promo-large__title">{{ title }}</h2>
         <p class="promo-large__description">{{ description }}</p>

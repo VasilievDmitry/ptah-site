@@ -15,8 +15,8 @@
       />
       <div class="feature__icon">
         <div class="feature__icon-gif-wrapper">
-          <video class="feature__icon-gif"  preload="auto" autoplay="true" loop="true" muted="muted">
-           <source src="../../assets/video/pc-screen.mp4" type="video/mp4" />
+          <video class="feature__icon-gif" preload="auto" autoplay="true" loop="true" muted="muted">
+           <source src="https://s3.protocol.one/images/pc-screen.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -79,13 +79,13 @@ export default {
   background-position: 50% 50%;
   background-size: auto;
   background-repeat: no-repeat;
-  background-image: url("../../assets/images/feature_bg.jpg");
+  background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/c37f0f6b-c142-4bef-9004-6dabde0dd1cd.jpg);
 
   @media (max-width: $desktop) {
     min-height: 94rem;
     margin: 0 0 12rem;
     background-size: 100% auto;
-    background-image: url("../../assets/images/feature_bg_desktop.jpg");
+    background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/f41ea527-a59a-42e6-bfc9-5a464d633a26.jpg);
   }
 
   @media (max-width: $laptop) {
@@ -99,7 +99,7 @@ export default {
   @media (max-width: $mobile) {
     min-height: 710px;
     margin: 0 0 65px;
-    background-image: url("../../assets/images/feature_bg_mobile.jpg");
+    background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/99e8fc50-a975-4685-8aa5-e4e9621d3076.jpg);
     background-position: 50% 0;
   }
 
@@ -177,7 +177,7 @@ export default {
     bottom: -230px;
     width: 530px;
     height: 770px;
-    background-image: url("../../assets/images/pc_user.png");
+    background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/4bb55edc-11f8-4cd7-b677-5690945e9e91.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;

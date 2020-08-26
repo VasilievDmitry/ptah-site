@@ -13,36 +13,36 @@
             title: '100+ Ready to Use Templates',
             desc:
               'For a variety of purposes from setting up an informational website to boosting your game sales',
-            image: 'swiper-circle-1.png'
+            image: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/5873814f-6d5b-4e4d-a697-a6b5d3482452.png'
           },
           {
             title: 'No coding or designing',
             desc:
               'So you can build your website without writing a single line of code',
-            image: 'swiper-circle-2.png'
+            image: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/27760126-b4ec-419d-9c76-f6d33efcf321.png'
           },
           {
             title: 'Numerous integrations',
             desc:
               'With third-party services for email marketing, social media reach, design, analytics, and much more',
-            image: 'swiper-circle-3.png'
+            image: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/cc1e885b-98ad-4f87-b647-21317eee3955.png'
           },
           {
             title: 'Responsive design',
             desc:
               'And numerous features to create a powerful website in a single interface',
-            image: 'swiper-circle-4.png'
+            image: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/37088955-7942-48ef-b43b-e266e7f7ee06.png'
           },
           {
             title: 'Tailored to your goals',
             desc: 'With a variety of tools to deliver top performance',
-            image: 'swiper-circle-5.png'
+            image: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/1b518fae-d35d-4f8a-a1e5-4919c99f5f70.png'
           },
           {
             title: 'Fully customizable',
             desc:
               'Pick, create, launch. Or add your code and design for even deeper customization',
-            image: 'swiper-circle-6.png'
+            image: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/e415da2b-758b-43f9-9868-053735125617.png'
           }
         ]"
       />
@@ -55,12 +55,30 @@
       />
       <SwiperImages
         :images="[
-          'swiper-simple-1.jpg',
-          'swiper-simple-2.jpg',
-          'swiper-simple-3.jpg',
-          'swiper-simple-4.jpg',
-          'swiper-simple-5.jpg',
-          'swiper-simple-6.jpg'
+          {
+            large: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/8cc6c70b-952d-4517-a2c2-7f5daa6c0b17.jpg',
+            small: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/4242064f-481b-4a2c-96d8-1ea2c9dda1ae.jpg'
+          },
+          {
+            large: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/b0696ad8-8666-423d-8f0a-785c8b809248.jpg',
+            small: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/b5ea44e6-332b-4f02-8a77-5c32c2638bca.jpg'
+          },
+          {
+            large: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/ef13e30c-fae4-4d67-8599-c172afa3cbc7.jpg',
+            small: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/f2a1305c-7528-450b-b84d-369071f1a818.jpg'
+          },
+          {
+            large: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/2c6c09d8-d69d-4783-925e-3bc1e8456564.jpg',
+            small: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/d8b02d94-f261-4fe4-a110-3a215ab6d77d.jpg'
+          },
+          {
+            large: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/389f9b66-534d-43b0-a193-c0dddac598d1.jpg',
+            small: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/11146dbe-1fc8-455a-a99e-2f3a8d699a41.jpg'
+          },
+          {
+            large: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/f4fca071-8df5-448e-9eb7-d2c6e2c6802f.jpg',
+            small: 'https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/784ef867-5e30-408c-b12e-3083e4864da0.jpg'
+          }
         ]"
       />
       <PromoShort

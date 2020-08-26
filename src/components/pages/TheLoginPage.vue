@@ -100,7 +100,6 @@ export default {
       email: '',
       password: '',
       errorText: '',
-      bg: 'bg_auth.svg',
       errorTexts: {
         email: 'Enter a valid email'
       }

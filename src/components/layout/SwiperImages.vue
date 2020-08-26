@@ -1,9 +1,12 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <swiper-slide v-for="(image, index) in images" :key="image + index">
+    <swiper-slide v-for="(image, index) in images" :key="index">
       <img
-        :src="require(`@assets/images/${image}`)"
         alt="slide"
+        loading="lazy"
+        :srcset="`${image.large} 450px, ${image.small} 150px`"
+        :src="image.large"
+        sizes="(max-width: 768px) 150px, (min-width: 768px) 450px"
       />
     </swiper-slide>
     <button
@@ -37,7 +40,7 @@ export default {
       swiperOption: {
         slidesPerView: 2,
         watchOverflow: true,
-        spaceBetween: 12,
+        spaceBetween: 0,
         initialSlide: 1,
         slidesOffsetBefore: 0,
         slidesOffsetAfter: 0,
@@ -50,7 +53,7 @@ export default {
             slidesPerView: 4,
             slidesOffsetBefore: 75,
             slidesOffsetAfter: 75,
-            spaceBetween: 20
+            spaceBetween: 0
           }
         }
       }

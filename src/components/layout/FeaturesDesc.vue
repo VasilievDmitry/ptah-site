@@ -16,8 +16,9 @@
             :key="index"
           >
             <img
-              :src="require(`@assets/images/${item.src}`)"
+              :src="item.src"
               :alt="item.name"
+              loading="lazy"
             />
             <span>{{ item.name }}</span>
           </li>
