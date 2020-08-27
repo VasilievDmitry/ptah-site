@@ -38,17 +38,19 @@ export default {
   },
 
   created () {
-    if (this.$route.query.confirm_email) {
-      // confirm
-      this.confirm(this.$route.query.confirm_email)
-    }
+    setTimeout(() => {
+      if (this.$route.query.confirm_email) {
+        // confirm
+        this.confirm(this.$route.query.confirm_email)
+      }
 
-    if (this.$route.query.reset_pwd) {
-      // restore pwd
-      this.restore(this.$route.query.reset_pwd)
-    }
+      if (this.$route.query.reset_pwd) {
+        // restore pwd
+        this.restore(this.$route.query.reset_pwd)
+      }
 
-    this.checkAuth()
+      this.checkAuth()
+    }, 500)
   },
 
   methods: {
