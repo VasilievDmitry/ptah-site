@@ -2,63 +2,63 @@
 const routes = [
   {
     path: '/',
-    component: () => import('./components/pages/Home.vue'),
+    component: () => import(/* webpackChunkName: "Home" */ './components/pages/Home.vue'),
     meta: {
       title: 'Home — Ptah'
     }
   },
   {
     path: '/login',
-    component: () => import('./components/pages/TheLoginPage.vue'),
+    component: () => import(/* webpackChunkName: "Login", webpackPrefetch: true */ './components/pages/TheLoginPage.vue'),
     meta: {
       title: 'Sign in — Ptah'
     }
   },
   {
     path: '/signup',
-    component: () => import('./components/pages/TheSignUpPage.vue'),
+    component: () => import(/* webpackChunkName: "SignUp", webpackPrefetch: true */ './components/pages/TheSignUpPage.vue'),
     meta: {
       title: 'Sign up — Ptah'
     }
   },
   {
     path: '/restore',
-    component: () => import('./components/pages/TheRestorePwdPage.vue'),
+    component: () => import(/* webpackChunkName: "Restore", webpackPrefetch: true */ './components/pages/TheRestorePwdPage.vue'),
     meta: {
       title: 'Ptah — Restore password'
     }
   },
   {
     path: '/after-sign-up',
-    component: () => import('./components/pages/TheMessageAfterSignUp.vue'),
+    component: () => import(/* webpackChunkName: "MessageAfterSignUp", webpackPrefetch: true */ './components/pages/TheMessageAfterSignUp.vue'),
     meta: {
       title: 'Ptah — The Message After SignUp'
     }
   },
   {
     path: '/account',
-    component: () => import('./components/pages/TheAccountPage.vue'),
+    component: () => import(/* webpackChunkName: "Account", webpackPrefetch: true */ './components/pages/TheAccountPage.vue'),
     meta: {
       title: 'Ptah — Account settings'
     }
   },
   {
     path: '/policy',
-    component: () => import('./components/pages/ThePrivacyPolicyPage.vue'),
+    component: () => import(/* webpackChunkName: "PrivacyPolicy", webpackPrefetch: true */ './components/pages/ThePrivacyPolicyPage.vue'),
     meta: {
       title: 'The Privacy Policy — Ptah'
     }
   },
   {
     path: '/terms',
-    component: () => import('./components/pages/TheTermsPage.vue'),
+    component: () => import(/* webpackChunkName: "Terms", webpackPrefetch: true */ './components/pages/TheTermsPage.vue'),
     meta: {
       title: 'Terms of Service — Ptah'
     }
   },
   {
     path: '/about',
-    component: () => import('./components/pages/About.vue'),
+    component: () => import(/* webpackChunkName: "About", webpackPrefetch: true */ './components/pages/About.vue'),
     meta: {
       title: 'About — Ptah'
     }
@@ -73,21 +73,21 @@ const routes = [
   },*/
   {
     path: '/features',
-    component: () => import('./components/pages/Features.vue'),
+    component: () => import(/* webpackChunkName: "Features", webpackPrefetch: true */ './components/pages/Features.vue'),
     meta: {
       title: 'Features — Ptah'
     }
   },
   {
     path: '/oauth2',
-    component: () => import('./components/pages/MailchimpOauthComplete.vue'),
+    component: () => import(/* webpackChunkName: "MailchimpOauthComplete", webpackPrefetch: true */ './components/pages/MailchimpOauthComplete.vue'),
     meta: {
       title: 'Ptah — oauth'
     }
   },
   {
     path: '/ui',
-    component: () => import('./components/pages/Ui.vue'),
+    component: () => import(/* webpackChunkName: "Ui", webpackPrefetch: true */ './components/pages/Ui.vue'),
     meta: {
       title: 'Ptah — Ui kit'
     }
@@ -95,7 +95,7 @@ const routes = [
   {
     path: '/404',
     name: '404',
-    component: () => import('@components/pages/404'),
+    component: () => import(/* webpackChunkName: "404", webpackPrefetch: true */ '@components/pages/404'),
     meta: {
       title: '404 - Ptah'
     }

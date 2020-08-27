@@ -79,13 +79,13 @@ export default {
   background-position: 50% 50%;
   background-size: auto;
   background-repeat: no-repeat;
-  background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/c37f0f6b-c142-4bef-9004-6dabde0dd1cd.jpg);
+  background-image: url(https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/7c6e53ba-7e11-4ab4-bf85-c9c06e4dbd99.svg);
 
   @media (max-width: $desktop) {
     min-height: 94rem;
     margin: 0 0 12rem;
     background-size: 100% auto;
-    background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/f41ea527-a59a-42e6-bfc9-5a464d633a26.jpg);
+    background-image: url(https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/7c6e53ba-7e11-4ab4-bf85-c9c06e4dbd99.svg);
   }
 
   @media (max-width: $laptop) {
@@ -99,7 +99,7 @@ export default {
   @media (max-width: $mobile) {
     min-height: 710px;
     margin: 0 0 65px;
-    background-image: url(https://cdn.ptah.pro/prod/5ee8df25480c4e00018c407e/99e8fc50-a975-4685-8aa5-e4e9621d3076.jpg);
+    background-image: url(https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/934da996-b686-487e-ba0d-95d72b86b623.svg);
     background-position: 50% 0;
   }
 
