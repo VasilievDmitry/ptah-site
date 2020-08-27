@@ -17,7 +17,6 @@
     "swiper": "^5.4.1",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-gtag": "^1.6.5",
     "vue-gtm": "^2.3.1",
     "vue-router": "^3.3.1",
     "vue-yandex-metrika": "^1.8.3",

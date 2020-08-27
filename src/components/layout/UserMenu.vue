@@ -103,7 +103,7 @@
         this.logout()
           .then(() => {
             try {
-              this.$gtag.event('logout')
+              window.gtag('event', 'logout')
             } catch (e) {
               console.log('event | logout')
             }
@@ -119,7 +119,7 @@
       },
       onStartFreeClick () {
         try {
-          this.$gtag.event('Header_button_click', { 'event_category': 'CTA' })
+          window.gtag('event', 'Header_button_click', { 'event_category': 'CTA' })
         } catch (e) {
           console.log(e)
         }

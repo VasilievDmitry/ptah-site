@@ -45,7 +45,7 @@ export default {
   methods: {
     onStartFreeClick () {
       try {
-        this.$gtag.event('FirstScreen_button_click', { 'event_category': 'CTA' })
+        window.gtag('event', 'FirstScreen_button_click', { 'event_category': 'CTA' })
       } catch (e) {
         console.log(e)
       }

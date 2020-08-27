@@ -35,7 +35,7 @@ export default {
   methods: {
     handleClick() {
       try {
-        this.$gtag.event('Features_button_click', { 'event_category': 'CTA' })
+        window.gtag('event', 'Features_button_click', { 'event_category': 'CTA' })
       } catch (e) {
         console.log(e)
       }

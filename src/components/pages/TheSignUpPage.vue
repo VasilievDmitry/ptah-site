@@ -200,7 +200,7 @@ export default {
         })
           .then(() => {
             try {
-              this.$gtag.event('registration_complete')
+              window.gtag('event', 'registration_complete')
             } catch (e) {
               console.log('registration_complete')
             }

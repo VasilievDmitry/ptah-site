@@ -9,7 +9,6 @@ import { sync } from 'vuex-router-sync'
 import axios from 'axios/index'
 import '@components/_globals'
 import { getCookie } from './utils'
-import VueGtag from 'vue-gtag'
 import VueYandexMetrika from 'vue-yandex-metrika'
 import VueGtm from 'vue-gtm'
 
@@ -72,15 +71,6 @@ const updateAuthCb = createUpdateAuthInterceptor(store, axios)
 axios.interceptors.response.use(null, updateAuthCb)
 
 if (process.env.VUE_APP_PROD === '1') {
-  Vue.use(VueGtag, {
-    config: {
-      id: process.env.VUE_APP_GTAG
-    },
-    linker: {
-      domains: ['editor.ptah.pro', 'docs.ptah.pro']
-    }
-  })
-
   Vue.use(VueYandexMetrika, {
     id: process.env.VUE_APP_METRIKA,
     router: router,
@@ -92,7 +82,6 @@ if (process.env.VUE_APP_PROD === '1') {
       webvisor:true
     }
   })
-
   Vue.use(VueGtm, {
     id: 'GTM-PSFK7BN',
     vueRouter: router
