@@ -24,6 +24,10 @@ html {
   }
 }
 
+body {
+  background-color: #9E00FB;
+}
+
 #app {
     display: flex;
     flex-direction: column;
@@ -33,6 +37,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
+    background-color: #fff;
 }
 
 .container {

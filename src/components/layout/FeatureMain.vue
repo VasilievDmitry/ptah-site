@@ -77,9 +77,10 @@ export default {
   margin: 0 0 26rem;
   color: $white;
   background-position: 50% 50%;
-  background-size: auto;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-image: url(https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/7c6e53ba-7e11-4ab4-bf85-c9c06e4dbd99.svg);
+  background-color: #9E00FB;
 
   @media (max-width: $desktop) {
     min-height: 94rem;
