@@ -20,8 +20,8 @@
     </div>
     <div class="promo-large__lower">
       <h3 class="promo-large__heading" v-html="heading" />
-      <swiper class="swiper promo-large__swiper" :options="swiperOption">
-        <swiper-slide
+      <div class="promo-large__swiper">
+        <div
           v-for="(column, index) in swiperData"
           :key="column + index"
         >
@@ -39,28 +39,17 @@
               </p>
             </li>
           </ul>
-        </swiper-slide>
-        <button
-          class="swiper-button swiper-button-prev"
-          type="button"
-          slot="button-prev"
-        />
-        <button
-          class="swiper-button swiper-button-next"
-          type="button"
-          slot="button-next"
-        />
-      </swiper>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 
 export default {
   name: "PromoLarge",
-  components: { Swiper, SwiperSlide },
+
   props: {
     image: String,
     icon: String,
@@ -68,25 +57,6 @@ export default {
     description: String,
     heading: String,
     swiperData: Array
-  },
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: 1,
-        watchOverflow: true,
-        spaceBetween: 15,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 0
-          }
-        }
-      }
-    };
   }
 };
 </script>
@@ -242,6 +212,22 @@ export default {
     }
   }
 
+  &__swiper {
+    display: flex;
+
+    & > div {
+      &:last-child {
+        .promo-large__list {
+          padding-right: 0;
+        }
+      }
+    }
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
   &__heading {
     margin: 0 0 65px;
     text-align: left;
@@ -276,7 +262,7 @@ export default {
 
   &__list-item {
     min-height: 225px;
-    padding: 0 0 30px;
+    padding: 0 0 50px;
     text-align: left;
 
     @media (max-width: $mobile) {
@@ -313,20 +299,6 @@ export default {
     @media (max-width: $mobile) {
       padding: 0 30px 0 0;
       font-size: 16px;
-    }
-  }
-
-  .swiper-button {
-    @media (max-width: $mobile) {
-      top: auto;
-      left: 35%;
-      bottom: 0;
-    }
-
-    &.swiper-button-next {
-      @media (max-width: $mobile) {
-        left: 55%;
-      }
     }
   }
 }
