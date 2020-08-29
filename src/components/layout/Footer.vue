@@ -79,14 +79,14 @@
               </a>
             </li>
           </ul>
-          <ul class="footer__social" v-if="false">
+          <ul class="footer__social">
             <li class="footer__social-item">
-              <a href="fb.com" class="footer__social-link" target="_blank">
+              <a href="https://www.facebook.com/ptah.pro" class="footer__social-link" target="_blank">
                 <IconFb />
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="twitter.com" class="footer__social-link" target="_blank">
+              <a href="https://twitter.com/Ptahpro" class="footer__social-link" target="_blank">
                 <IconTwit />
               </a>
             </li>
