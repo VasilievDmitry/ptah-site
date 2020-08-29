@@ -8,11 +8,13 @@
         {{ subtitle }}
       </h2>
       <Button @click="goToEditor" v-if="isAuth" text="Create landing page"></Button>
-      <Button
-        v-else
-        @click="onStartFreeClick"
-        text="Try for free"
-      />
+      <template v-else>
+        <Button
+          @click="onStartFreeClick"
+          text="Try for free"
+        />
+        <p class="feature__sub">* - no obligations, no credit card, no hassle</p>
+      </template>
       <div class="feature__icon">
         <div class="feature__icon-gif-wrapper">
           <video class="feature__icon-gif" preload="auto" autoplay="true" loop="true" muted="muted">
@@ -169,6 +171,12 @@ export default {
       font-size: 12px;
       line-height: 16px;
     }
+  }
+
+  &__sub {
+    margin: 15px 0 0;
+    font-size: 12px;
+    opacity: .8;
   }
 
   &__icon {
