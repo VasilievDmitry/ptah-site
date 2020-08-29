@@ -27,7 +27,8 @@
           :key="ind + 'imageSlide'"
         >
           <img
-            class="swiper-circle__image"
+            v-if="currentIndex === ind"
+            class="swiper-circle__image swiper-lazy slider_image"
             :src="item.image"
             alt="slide"
             loading="lazy"
@@ -82,8 +83,12 @@
         currentIndex: 0,
         sliderBullets: [1, 2, 3, 4, 5, 6],
         swiperOption: {
-          slidesPerView: 1,
+          preloadImages: false,
+          lazy: true,
+          watchSlidesVisibility: true,
           spaceBetween: 0,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"

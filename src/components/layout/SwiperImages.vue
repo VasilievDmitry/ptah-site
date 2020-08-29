@@ -2,10 +2,11 @@
   <swiper class="swiper" :options="swiperOption">
     <swiper-slide v-for="(image, index) in images" :key="index">
       <img
+        class="swiper-lazy slider_image"
         alt="slide"
         loading="lazy"
-        :srcset="`${image.large} 700w, ${image.small} 200w`"
-        :src="image.large"
+        :data-srcset="`${image.large} 700w, ${image.small} 200w`"
+        :data-src="image.large"
         sizes="(max-width: 768px) 200px, (min-width: 768px) 600px"
       />
     </swiper-slide>
@@ -39,7 +40,9 @@ export default {
     return {
       swiperOption: {
         slidesPerView: 2,
-        watchOverflow: true,
+        preloadImages: false,
+        lazy: true,
+        watchSlidesVisibility: true,
         spaceBetween: 0,
         initialSlide: 1,
         slidesOffsetBefore: 0,

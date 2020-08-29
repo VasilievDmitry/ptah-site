@@ -1,64 +1,78 @@
+import TheLoginPage from './components/pages/TheLoginPage'
+import TheSignUpPage from './components/pages/TheSignUpPage'
+import TheRestorePwdPage from './components/pages/TheRestorePwdPage'
+import TheMessageAfterSignUp from './components/pages/TheMessageAfterSignUp'
+import ThePrivacyPolicyPage from './components/pages/ThePrivacyPolicyPage'
+import TheTermsPage from './components/pages/TheTermsPage'
+
+import Home from "./components/pages//Home.vue";
+import About from "./components/pages/About.vue";
+import TheAccountPage from "./components/pages/TheAccountPage.vue";
+import Mailchimp from './components/pages/MailchimpOauthComplete'
+// import Pricing from "./components/pages/Pricing.vue";
+import Features from "./components/pages/Features.vue";
+import Ui from "./components/pages/Ui.vue";
 
 const routes = [
   {
     path: '/',
-    component: () => import('./components/pages/Home.vue'),
+    component: Home,
     meta: {
       title: 'Home — Ptah'
     }
   },
   {
     path: '/login',
-    component: () => import('./components/pages/TheLoginPage.vue'),
+    component: TheLoginPage,
     meta: {
       title: 'Sign in — Ptah'
     }
   },
   {
     path: '/signup',
-    component: () => import('./components/pages/TheSignUpPage.vue'),
+    component: TheSignUpPage,
     meta: {
       title: 'Sign up — Ptah'
     }
   },
   {
     path: '/restore',
-    component: () => import('./components/pages/TheRestorePwdPage.vue'),
+    component: TheRestorePwdPage,
     meta: {
       title: 'Ptah — Restore password'
     }
   },
   {
     path: '/after-sign-up',
-    component: () => import('./components/pages/TheMessageAfterSignUp.vue'),
+    component: TheMessageAfterSignUp,
     meta: {
       title: 'Ptah — The Message After SignUp'
     }
   },
   {
     path: '/account',
-    component: () => import('./components/pages/TheAccountPage.vue'),
+    component: TheAccountPage,
     meta: {
       title: 'Ptah — Account settings'
     }
   },
   {
     path: '/policy',
-    component: () => import('./components/pages/ThePrivacyPolicyPage.vue'),
+    component: ThePrivacyPolicyPage,
     meta: {
       title: 'The Privacy Policy — Ptah'
     }
   },
   {
     path: '/terms',
-    component: () => import('./components/pages/TheTermsPage.vue'),
+    component: TheTermsPage,
     meta: {
       title: 'Terms of Service — Ptah'
     }
   },
   {
     path: '/about',
-    component: () => import('./components/pages/About.vue'),
+    component: About,
     meta: {
       title: 'About — Ptah'
     }
@@ -66,28 +80,27 @@ const routes = [
   /*{
     path: '/pricing',
     component: Pricing,
-    component: () => import('./components/pages/Pricing.vue'),
     meta: {
       title: 'Ptah — Pricing'
     }
   },*/
   {
     path: '/features',
-    component: () => import('./components/pages/Features.vue'),
+    component: Features,
     meta: {
       title: 'Features — Ptah'
     }
   },
   {
     path: '/oauth2',
-    component: () => import('./components/pages/MailchimpOauthComplete.vue'),
+    component: Mailchimp,
     meta: {
       title: 'Ptah — oauth'
     }
   },
   {
     path: '/ui',
-    component: () => import('./components/pages/Ui.vue'),
+    component: Ui,
     meta: {
       title: 'Ptah — Ui kit'
     }

@@ -21,6 +21,9 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    // удаляем prefetch плагин:
+    config.plugins.delete('prefetch')
+
     const svgRule = config.module.rule("svg");
 
     svgRule.uses.clear();

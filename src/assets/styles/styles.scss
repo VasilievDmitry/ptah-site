@@ -24,6 +24,10 @@ html {
   }
 }
 
+body {
+  background-color: #9E00FB;
+}
+
 #app {
     display: flex;
     flex-direction: column;
@@ -70,6 +74,7 @@ ul {
 .main {
     flex-grow: 1;
     padding: 130px 0 0;
+    background-color: #fff;
 
     @media (max-width: $desktop) {
         padding: 71px 0 0;
