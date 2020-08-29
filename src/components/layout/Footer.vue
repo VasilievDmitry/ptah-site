@@ -73,7 +73,7 @@
               <Link href="/about" text="About us" />
             </li>
             <li class="footer__menu-item footer__menu-item--icon">
-              <a :href="linkToGithub" class="footer__menu-link" target="_blank">
+              <a :href="linkToGithub" rel="noopener" class="footer__menu-link" target="_blank">
                 <span>GitHub</span>
                 <IconGithub />
               </a>
@@ -81,12 +81,12 @@
           </ul>
           <ul class="footer__social">
             <li class="footer__social-item">
-              <a href="https://www.facebook.com/ptah.pro" class="footer__social-link" target="_blank">
+              <a href="https://www.facebook.com/ptah.pro" rel="noopener" class="footer__social-link" target="_blank">
                 <IconFb />
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="https://twitter.com/Ptahpro" class="footer__social-link" target="_blank">
+              <a href="https://twitter.com/Ptahpro" rel="noopener" class="footer__social-link" target="_blank">
                 <IconTwit />
               </a>
             </li>

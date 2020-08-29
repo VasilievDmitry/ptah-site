@@ -40,6 +40,7 @@
           <li class="header__menu-item">
             <a
               :href="linkToGithub"
+              rel="noopener"
               target="_blank"
               class="header__menu-link linkHeader header__menu-link--icon"
             >
