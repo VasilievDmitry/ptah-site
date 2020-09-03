@@ -14,62 +14,62 @@
         :slides="[
           {
             name: 'PM, Frontend',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/070d38d9-b473-4eae-b047-412939c3f99b.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/1ba68504-0e98-46ee-bfac-720e7bfbe1a9.jpg',
             link: 'https://github.com/Temarie'
           },
           {
             name: 'Frontend',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/d1239229-9ccf-4319-a962-a07bd82068b0.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/dfc63873-5981-47f4-beac-632b52ae27cc.jpg',
             link: 'https://github.com/grebnev-av'
           },
           {
             name: 'Designer',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/4fd2237c-d548-4371-af99-7b243af58690.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/2b2d032a-1350-4566-82d2-b94c140f989f.jpg',
             link: 'https://www.behance.net/anastasiianastasiia'
           },
           {
             name: 'Backend',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/55d51119-736a-449a-b2e4-9681b659c5bf.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/088399fb-91d7-48ef-85eb-44e6470f7eed.jpg',
             link: 'https://github.com/EvgeniyStrigo'
           },
           {
             name: 'Tech Writer',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/25d88db1-5cff-4435-8061-1e42eee2a44a.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/446b1b2b-2b37-4ce8-9b7b-305c15daf490.jpg',
             link: 'https://github.com/snezhana-dorogova'
           },
           {
             name: 'QA',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/f63e9fe2-fcc7-4097-8414-85b94eee3517.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/c027aedb-302b-4d32-98f7-e6741e67f24d.jpg',
             link: 'https://github.com/mike-kirpa/'
           },
           {
             name: 'QA',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/d7e6f95b-6c3d-4a42-8171-813d33c39b15.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/bd1fd85b-9b6f-41df-a92c-c179cf0f5d6a.jpg',
             link: 'https://github.com/Win32agent'
           },
            {
             name: 'CTO',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/68388782-0bcb-4891-9859-bd6d2312bebb.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/7907264f-214f-42ea-a1a4-fe708de88749.jpg',
             link: 'https://github.com/misterion'
           },
           {
             name: 'DevOps',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/13c6cbe0-e487-498c-b116-a61584fe3d87.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/06bb76f8-7d0e-41bf-b6d7-2ff5bf3326a7.jpg',
             link: 'https://github.com/vesvalo'
           },
           {
             name: 'DevOps',
-             image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/13d4b659-3b4f-4630-a3c6-67a43cb58fb7.png',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/ffa37765-fe88-49b1-b492-20b2cac2cf7b.jpg',
             link: 'https://github.com/atlix'
           },
           {
             name: 'Frontend',
-            image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/a8ab5558-65d7-41f1-8191-494b18d41d37.jpg',
+            image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/bb29cb1b-e7e7-4ddb-b882-9401a05a72a8.jpg',
             link: 'https://github.com/fullfs'
           },
           {
             name: 'Full stack',
-             image: 'https://cdn.ptah.pro/prod/5ee8d62d480c4e00018c404d/adfe7e99-392f-473a-b179-efe9e323e9f7.png',
+             image: 'https://cdn.ptah.pro/prod/5f4785b2cedc5f000141fe68/9106e780-17b1-41ee-afca-c577e024abe5.jpg',
             link: 'https://github.com/sidmal'
           },
         ]"
