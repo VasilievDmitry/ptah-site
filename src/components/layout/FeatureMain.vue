@@ -52,14 +52,6 @@ export default {
         console.log(e)
       }
 
-      try {
-        window.carrotquest.track('FirstScreen_button_click', {
-          page: this.$route.path
-        })
-      } catch (e) {
-        console.log(e)
-      }
-
       this.$router.push({ path: `/signup` })
     },
 

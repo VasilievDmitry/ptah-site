@@ -205,14 +205,6 @@ export default {
               console.log('registration_complete')
             }
 
-            try {
-              window.carrotquest.track('Registration_complete', {
-                page: this.$route.path
-              })
-            } catch (e) {
-              console.log(e)
-            }
-
             // redirect to onboarding
             if (!this.isMobile) {
               if (process.env.NODE_ENV === 'production') {

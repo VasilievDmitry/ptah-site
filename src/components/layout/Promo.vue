@@ -40,14 +40,6 @@ export default {
         console.log(e)
       }
 
-      try {
-        window.carrotquest.track('Features_button_click', {
-          page: this.$route.path
-        })
-      } catch (e) {
-        console.log(e)
-      }
-
       this.$emit("clickBtnPromo");
     },
 
